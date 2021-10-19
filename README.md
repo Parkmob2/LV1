@@ -2,8 +2,8 @@
 **LAST UPDATE** : 2021 10 19  
 **CONTRIBUTOR** : 박몹
       
-**CONTACT** : @MOBCA_D  / mobca0.5@gmail.com   
-**FAST CONTACT** : @PARKMOB_PBL / yeojinp0415@gmail.com      
+**CONTACT** : @PARKMOB_PBL   / mobca0.5@gmail.com   
+**FAST CONTACT** : @PARKMOB_AO / yeojinp0415@gmail.com      
 시트 이용 도중 문제가 발생했을 경우 트위터 계정 혹은 이메일로 문의 바랍니다.     
    
       
