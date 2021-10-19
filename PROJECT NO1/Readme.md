@@ -1,9 +1,12 @@
 # PROJECT NO1
 **신청자** : @ho*********  
 **작업자** : @MOBCA_D   
+     
 **커미션 최종 전달 일자** : 2021 10 19  
 **커미션 최종 갱신 일자** : 2021 10 19  
-**CONTACT** : @MOBCA_D  / mobca0.5@gmail.com (@PARKMOB_A0 / yeojinp0415@gmail.com)  
+      
+**CONTACT** : @MOBCA_D  / mobca0.5@gmail.com   
+**FAST CONTACT** : @PARKMOB_A0 / yeojinp0415@gmail.com      
 시트 이용 도중 문제가 발생했을 경우 트위터 계정 혹은 이메일로 문의 바랍니다.     
 빠른 답변이 필요할 경우 후자의 계정 및 이메일을 사용해 주세요.   
       
