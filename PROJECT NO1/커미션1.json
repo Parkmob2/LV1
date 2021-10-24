@@ -196,6 +196,8 @@
 	"animalhandling-u": "동물 다루기(05%)",
 	"firearms(varies)-u": "화기(다양)",
 	"art/craft-u": "예술/공예(05%)",
+	"art/craft-txt": "예술/공예",
+	"art/craft-r-txt": "예술/공예",
 	"hypnosis-u": "최면술(01%)",
 	"artillery-u": "포격(01%)",
 	"language(other)-u": "언어(외국어)(01%)",
