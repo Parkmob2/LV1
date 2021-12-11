@@ -1,0 +1,2134 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400&display=swap');
+
+@import url("https://use.typekit.net/bsb8xfo.css");
+
+.charsheet {
+  background-image: url("https://i.imgur.com/JtwYfQO.png");
+  color: #ffffff;
+  width: 850px;
+  font-family: 'Montserrat', sans-serif;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 2px;
+  background-color: #020110;
+  border: solid #000000 1px;
+  position:absolute;
+}
+  
+  
+/* -------------------------------------추가옵션--------------------------------------------- */
+.sheet-OA_TITLE {
+  margin-top: 5px;
+  background-color: #606060;
+  border-radius: 6px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 900;
+}
+
+select.sheet-game-select {
+  margin-bottom: 10px;
+}
+
+.sheet-OPTIONAL_ADDITION_BOX {
+  background-color: #e4e4e5;
+  border: 1.5px solid #9b9b9b;
+  border-radius: 7px;
+  margin: 0px;
+  padding-top: 4px;
+  padding-bottom: 7px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.sheet-PLAYRECORD { 
+  margin-top: 5px;
+  background-color: #606060;
+  border-radius: 6px;
+  color: #e4e4e5;
+  text-align: center;
+  font-weight: 900;
+}
+
+/* -------------------------------------정보--------------------------------------------- */
+.sheet-INFO-ROW {
+display:grid;
+grid-template-columns: 1fr 4fr;
+}
+
+input[type="text"].sheet-INFO{
+  margin: 2px;
+  height: 23px;
+  BORDER-BOTTOM: 1px solid;
+  BORDER-LEFT: medium none;
+  BORDER-RIGHT: medium none;
+  BORDER-TOP: medium none;
+  border-radius:0px;
+  border-image: radial-gradient(circle, rgba(0,42,255,1) 0%, rgba(0,20,120,1) 91%, rgba(0,0,0,1) 100%);
+  border-image-slice: 1;
+  color: white;
+  text-align:center;
+  width:100%;
+}
+
+/* -------------------------------------특성치--------------------------------------------- */
+.sheet-STAUTS-ROW1,
+.sheet-STAUTS-ROW2,
+.sheet-STAUTS-ROW3 {
+  display:grid;
+  grid-template-columns:
+  1.5fr 1.5fr 1fr 
+  1.5fr 1.5fr 1fr 
+  1.5fr 1.5fr 1fr ;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  }
+
+  .sheet-attr-label1{ 
+    width:100%;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    font-size:16px;
+    font-weight: bold;
+    align-self: center;
+    text-align: center;
+  }
+
+input[type="text"].sheet-attr-input1 {
+  width:100%;
+    font-size: 250%;
+    text-align: center;
+    background-color: #000000;
+    font-weight: 400;
+    border:none;
+    color:#0c00ff;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+button[type="roll"].sheet-old-roll-stat1:before{
+  content: ' ';
+}
+
+button[type="roll"].sheet-old-roll-stat1:hover{
+  background-position: 0;
+  background-image: url(https://i.imgur.com/h7R5xPD.png);
+  background-color:#f5f5f5;
+}
+
+button[type="roll"].sheet-old-roll-stat1 {
+background-color: transparent;
+background-image: url(https://i.imgur.com/h7R5xPD.png);
+background-repeat: no-repeat;
+background-size: cover;
+height: 20px;
+width: 20px;
+padding: 0;
+box-shadow:none;
+border: none;
+grid-row-start:1;
+align-self: end;
+
+}
+
+
+
+button[type="roll"].sheet-new-roll-stat1:before{
+  content: ' ';
+}
+
+button[type="roll"].sheet-new-roll-stat1:hover{
+  background-position: 0;
+  background-color:#0c00ff;
+  background-image:url(https://i.imgur.com/xNL0PRt.png);
+  
+}
+
+button[type="roll"].sheet-new-roll-stat1 {
+background-color: transparent;
+background-image: url(https://i.imgur.com/xNL0PRt.png);
+background-repeat: no-repeat;
+background-size: cover;
+box-shadow:none;
+border: none;
+height: 20px;
+width: 20px;
+padding: 0;
+grid-row-start: 2;
+align-self: start;
+}
+
+
+
+
+/* -------------------------------------로고--------------------------------------------- */
+.sheet-LOGO {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* -------------------------------------일시적 광기--------------------------------------------- */
+.sheet-attr_build {
+  text-align: left;
+}
+/* -------------------------------------------------------------------------- */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+select {
+  margin: 0;
+  padding: 0;
+  border-radius: 9px;
+  background-color: #000000;
+  width: 100%;
+  text-align: center;
+  color:#ffffff;
+}
+
+/* Tweak repeating section buttons so they have a bottom margin and dont overflow when in edit mode. */
+div[class^="repcontrol"] {
+  margin: 0 0 0 0;
+}
+
+div[class="repcontainer editmode"]
+  ~ div[class^="repcontrol"]
+  button[class="btn repcontrol_add"] {
+  display: inline-block !important;
+  visibility: hidden;
+}
+
+.charsheet .repcontrol_add,
+.charsheet .repcontrol_edit,
+.charsheet .repcontrol_del {
+  display: block;
+  background: #7c746a;
+  color: white;
+  box-shadow: none;
+  font-size: 0.7em;
+  height: 1.5em;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.charsheet div.sheet-major-wound {
+  display: none;
+}
+
+.sheet-majorwound[value="1"]:checked ~ div.sheet-major-wound {
+  display: block;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.charsheet div.sheet-companions {
+  display: none;
+}
+
+.sheet-togglecompanions[value="1"]:checked ~ div.sheet-companions {
+  display: block;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+.charsheet div.sheet-downtime {
+  display: none;
+}
+
+.sheet-toggledowntime[value="1"]:checked ~ div.sheet-downtime {
+  display: block;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.charsheet div.sheet-dicerollsection {
+  display: none;
+}
+
+.sheet-toggledr[value="1"]:checked ~ div.sheet-dicerollsection {
+  display: block;
+}
+
+/* ------------------------------Options Config-------------------------------------------- */
+
+.sheet-HideConfig:checked ~ *.sheet-config {
+  display: none;
+}
+
+.charsheet span.sheet-is-config::after {
+  /*Close Config*/
+  content: "^";
+}
+
+.charsheet .sheet-HideConfig:checked + span.sheet-is-config::after {
+  /*Show Configuration*/
+  content: "v";
+}
+
+.charsheet span.sheet-is-config {
+  text-align: center;
+  display: inline-block;
+  width: 5%;
+  height: 16px;
+  font-size: 9px;
+  background: black;
+  color: white;
+  border-radius: 4px;
+  margin-left: -5%;
+}
+
+.charsheet input.sheet-HideConfig {
+  width: 5%;
+  height: 16px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-top: auto;
+  opacity: 0;
+  z-index: 9999;
+}
+
+.charsheet .sheet-HideConfig:checked + span.sheet-is-config {
+  background: black;
+  border-radius: 4px;
+  color: white;
+}
+
+.charsheet label.sheet-configitem {
+  margin-left: 10px;
+  width: 50px;
+  font-size: 0.9em;
+}
+
+/* ------------------------------Sheet Arrow-------------------------------------------- */
+
+input.sheet-arrow::after {
+  float: left;
+  font-family: pictos;
+  content: "E";
+  opacity: 1.5;
+}
+
+input.sheet-arrow {
+  float: left;
+  font-family: pictos;
+  content: "E";
+  opacity: 0.5;
+}
+
+.charsheet .sheet-arrow:checked ~ div.sheet-skills1 {
+  display: none;
+}
+
+/* -------------------------------헤드------------------------------------------- */
+h4 { padding-top: 2px;}
+h4.sheet-section-head1 {
+  background-color: #0c00ff;
+  color: #f0f0f0;
+  text-align: center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  font-weight: black;
+  font-size: 18px;
+  margin-top: 10px;
+
+font-family: briller, sans-serif;
+font-weight: 800;
+font-style: normal;
+}
+
+h4.sheet-section-head-HP {
+  background-color: #0c00ff;
+  color: #f0f0f0;
+  text-align: center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  font-weight: black;
+  font-size: 18px;
+  margin-top: 10px;
+
+  font-family: briller, sans-serif;
+font-weight: 800;
+font-style: normal;
+}
+
+h4.sheet-section-head-BACKSTORY,
+h4.sheet-section-head-GEAR,
+h4.sheet-section-head-POSS{
+  background-color: #0c00ff;
+  color: #f0f0f0;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  text-align: center;
+  font-weight: black;
+  font-size: 18px;
+  margin-top:3px;
+  font-family: briller, sans-serif;
+font-weight: 800;
+font-style: normal;
+}
+
+h4.sheet-section-head-LUK,
+h4.sheet-section-head-MP
+{
+  background-color: #0c00ff;
+  color: #f0f0f0;
+  text-align: center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  font-weight: black;
+  font-size: 18px;
+  margin-top: 5px;
+  font-family: briller, sans-serif;
+font-weight: 800;
+font-style: normal;
+}
+h4.sheet-section-head-DB
+{
+  background-color: #0c00ff;
+  color: #f0f0f0;
+  text-align: center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+
+  font-size: 18px;
+  margin-top: 10px;
+  font-family: briller, sans-serif;
+font-weight: 800;
+font-style: normal;
+}
+
+h4.sheet-section-head-MW,
+h4.sheet-section-head-COMBET,
+h4.sheet-section-head-TAL {
+  background-color: #0c00ff;
+  color: #f0f0f0;
+  text-align: center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+
+  font-size: 18px;
+  margin-top: -4px;
+  font-family: briller, sans-serif;
+font-weight: 800;
+font-style: normal;
+}
+
+h4.sheet-section-head-SAN {
+  background-color: #0c00ff;
+  color: #f0f0f0;
+  text-align: center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+
+  font-size: 18px;
+  margin-top: 10px;
+  font-family: briller, sans-serif;
+font-weight: 800;
+font-style: normal;
+
+}
+
+h4.sheet-section-head-DICE,
+h4.sheet-section-head-SKILL,
+h4.sheet-section-head-VEH,
+h4.sheet-section-head-COM,
+h4.sheet-section-head-DSPELL {
+  background-color: #0c00ff;
+  color: #f0f0f0;
+  text-align: center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+font-size: 18px;
+margin-top:5px;
+font-family: briller, sans-serif;
+font-weight: 800;
+font-style: normal;
+}
+
+hr {
+  display: block;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    #0c00ff,
+    rgba(0, 0, 0, 0)
+  );
+}
+/*-------------------------------------------------조력자 ------------------------------------------------ */
+
+div.sheet-NPC-STAT1-LEFT,
+div.sheet-FUNCNPC-CON1,
+div.sheet-NPC-STAT-ALL2,
+div.sheet-NPC-LEFT{
+  float:left;
+}
+
+
+div.sheet-NPC-STAT1-RIGHT,
+div.sheet-NPC-STAT2-RIGHT,
+div.sheet-NPC-STAT3-RIGHT,
+{
+  float:right;
+}
+
+div.sheet-FUNCNPC-CON2{
+  float:right;
+  margin-right:-8px;
+}
+
+div.sheet-NPC-STAT2-LEFT,
+div.sheet-NPC-STAT3-LEFT{
+  float:left;
+  margin-left:10px;
+}
+
+.sheet-NPC-SAN{
+background-color: #606060;
+border-radius: 4px;
+color: #e4e4e5;
+margin-bottom: 2px;
+text-align: center;
+font-weight: normal;
+width: 120px;
+height: 20px;
+font-size: 12px;
+margin-right: 2px;
+}
+
+.sheet-NPC-BIO{
+  background-color: #606060;
+  border-radius: 4px;
+  color: #e4e4e5;
+  margin-bottom: 2px;
+  text-align: center;
+  font-weight: normal;
+  width: 90px;
+  height: 20px;
+  font-size: 12px;
+  margin-right: 2px;
+}
+
+input[type="text"].sheet-narrow-input-FUNCNPC{
+margin-bottom: 2px; 
+height: 20px;
+text-align: center;
+border-radius: 4px;
+max-width:700px;
+
+}
+
+input[type="text"].sheet-narrow-input-NPC {
+  background-color: #e4e4e5;
+  color: rgb(85, 85, 85);
+  height: 20px;
+  text-align: center;
+  font-weight:400;
+  border-radius: 4px;
+  margin-bottom: 2px;
+  max-width:119px;
+}
+
+input[type="text"].sheet-narrow-input-NPC-SAN {
+  background-color: #e4e4e5;
+  color: rgb(85, 85, 85);
+  height: 20px;
+  text-align: center;
+  font-weight:400;
+  border-radius: 4px;
+  margin-bottom: 2px;
+  max-width:119px;
+}
+
+input[type="text"].sheet-narrow-input-NPCMOV {
+  background-color: #e4e4e5;
+  color: rgb(85, 85, 85);
+  height: 20px;
+  text-align: center;
+  font-weight:400;
+  border-radius: 4px;
+  margin-bottom: 2px;
+  width:249px;
+}
+
+div.sheet-sheet-col-NPC {
+float:left;
+margin:0%
+}
+
+
+.sheet-SKILL-NPC {
+  margin-top: 100px;
+  background-color: #606060;
+  border-radius: 4px;
+  color: #e4e4e5;
+  margin-bottom: 2px;
+  text-align:center;
+  font-weight: bold;
+  height: 20PX;
+}
+
+.sheet-NPC-STAT-TOP{float:right;}
+
+input[type="text"].sheet-namenpc{
+  float:left;
+  border-radius: 5px;
+  height: 40PX;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  font-size: 19px;
+}
+
+
+
+/*------------------------------------------------- 섹션 박스 ------------------------------------------------ */
+div.sheet-section-HP {
+  background-color: #000000;
+  color:#ffffff ;
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius: 2px;
+  padding-top: 4px;
+  padding-bottom: 5px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+div.sheet-section-DOWNTIME {
+  background-color: #000000;
+  color:#ffffff ;
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius: 2px;
+  margin: 0px;
+  padding-top: 4px;
+  padding-bottom: 7px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+div.sheet-section-LUK,
+div.sheet-section-MP {
+  background-color: #000000;
+  color:#ffffff ;
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius: 2px;
+  padding-top: 4px;
+  padding-bottom: 7px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+
+div.sheet-section-DICE,
+div.sheet-section-SPELL,
+div.sheet-section-COM,
+div.sheet-section-VEH 
+{
+  background-color: #000000;
+  color:#ffffff ;
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius: 2px;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  padding-left: 1%;
+  padding-right: 1%;
+
+}
+
+div.sheet-section-INFO{
+  background-color: #000000;
+  color:#ffffff ;
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius: 2px;
+  padding-top: 2px;
+  padding-bottom: 10px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+div.sheet-section-CHARIC
+{
+  background-color: #000000;
+  color:#ffffff ;
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius: 2px;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  padding-left: 4%;
+  padding-right: 1%;
+
+}
+
+div.sheet-section-SKILL {
+  background-color: #000000;
+  color:#ffffff ;
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius: 2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+div.sheet-section-SAN {
+  background-color: #000000;
+  color:#ffffff ;
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius: 2px;
+  padding-top: 4px;
+  padding: 1%;
+  padding-bottom: 5px;
+}
+
+div.sheet-section-COMBAT,
+div.sheet-section-POSS,
+div.sheet-section-BACKSTORY,
+div.sheet-section-DB,
+div.sheet-section-MW {
+  background-color: #000000;
+  color:#ffffff ;
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius: 2px;
+  padding-top: 4px;
+  padding-bottom: 5px;
+  padding: 1%;
+}
+
+div.sheet-section-POSS,
+div.sheet-section-BACKSTORY{
+  background-color: #000000;
+  color:#ffffff ;
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius: 2px;
+  padding-top: 4px;
+  padding-bottom: 5px;
+  padding: 1%;
+}
+
+div.sheet-section-GEAR {
+  background-color: #000000;
+  color:#ffffff ;
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius: 2px;
+  padding-bottom: 5px;
+  padding: 1%;
+}
+
+table div.sheet-attr {
+  width: 13.33%;
+  height: 58px;
+}
+
+table div.sheet-attr-label {
+  height: 56px;
+  font-size: 120%;
+  text-align: center;
+}
+
+
+
+
+
+
+table div.sheet-attr-roll {
+  height: 56px;
+  text-align: center;
+  background-color: #000000;
+}
+
+input[type="number"].sheet-secondary-attr-input {
+  width: 100%;
+  text-align: center;
+  background-color: #000000;
+}
+
+table div.sheet-skill-label {
+  width: 100%;
+  height: 23px;
+  padding-left: 2px;
+}
+
+input[type="text"].sheet-skill-input {
+  width: 30px;
+  height: 20px;
+  text-align: center;
+  background-color: #000000;
+  margin-bottom: 1px;
+color: white;
+border:none;
+}
+
+input[type="number"].sheet-skill-input {
+  width: 30px;
+  height: 21px;
+  text-align: center;
+  margin-bottom: 1px;
+  border:none;
+}
+
+input[type="text"].sheet-skill-name-input {
+  height: 20px;
+  text-align: left;
+  margin-bottom: 1px;
+  background-color: #000000;
+  BORDER-BOTTOM: #0c00ff 1px solid;
+BORDER-LEFT: medium none;
+BORDER-RIGHT: medium none;
+BORDER-TOP: medium none;
+border-radius:0px;
+border-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(12,0,255,1) 6%, rgba(12,0,255,1) 77%, rgba(0,0,0,1) 93%);
+border-image-slice: 1;
+color: white;
+}
+
+input[type="text"].sheet-skill-name-input::after{
+  height: 20px;
+  text-align: left;
+  margin-bottom: 1px;
+  background-color: #000000;
+
+color: white;
+}
+
+div.sheet-otherskill-reminder {
+  font-size: 80%;
+  border-radius: 10px;
+}
+
+input[type="text"].sheet-narrow-input {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  height: 20px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+textarea.sheet-backstory-box {
+  background-color: #000000;
+  height: 75px;
+
+}
+
+textarea {
+  resize: vertical;
+  margin: 0 0 0 0;
+}
+
+
+input {
+  background-color: #000000;
+}
+
+/* ------------------------------------------ */ /* Roll Templates */ /* --------------------------------------- */
+
+.sheet-otherclass_Con {
+  border: 0.3px solid rgb(170, 170, 170);
+  border-radius: 8px;
+}
+
+/* ------------------------------------------ */ /* Roll Templates */ /* --------------------------------------- */
+
+/* BD/PD defence rolltemplate */
+.sheet-rolltemplate-coc-defence table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #ffffff;
+}
+.sheet-rolltemplate-coc-defence caption {
+  text-align: center;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc-defence div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+}
+
+.sheet-rolltemplate-coc-defence div.sheet-template_label {
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-coc-defence div.sheet-template_value {
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc-defence .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-defence .inlinerollresult.fullcrit {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-defence .inlinerollresult.fullfail {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-defence .inlinerollresult.importantroll {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+/* simple defence rolltemplate */
+.sheet-rolltemplate-coc-defence-1 table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #ffffff;
+}
+
+.sheet-rolltemplate-coc-defence-1 caption {
+  text-align: center;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc-defence-1 div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+}
+
+.sheet-rolltemplate-coc-defence-1 div.sheet-template_label {
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-coc-defence-1 div.sheet-template_value {
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc-defence-1 .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-defence-1 .inlinerollresult.fullcrit {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-defence-1 .inlinerollresult.fullfail {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-defence-1 .inlinerollresult.importantroll {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+/* Vehicular Attack rolltemplate */
+.sheet-rolltemplate-coc-vehicleattack table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #ffffff;
+}
+.sheet-rolltemplate-coc-vehicleattack caption {
+  text-align: center;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc-vehicleattack div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+}
+
+.sheet-rolltemplate-coc-vehicleattack div.sheet-template_label {
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-coc-vehicleattack div.sheet-template_value {
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc-vehicleattack .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-vehicleattack .inlinerollresult.fullcrit {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-vehicleattack .inlinerollresult.fullfail {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-vehicleattack .inlinerollresult.importantroll {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+/* PD/BD rolltemplate */
+.sheet-rolltemplate-coc table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #ffffff;
+}
+
+.sheet-rolltemplate-coc caption {
+  text-align: center;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+}
+
+.sheet-rolltemplate-coc div.sheet-template_label {
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-coc div.sheet-template_value {
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc .inlinerollresult.fullcrit {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc .inlinerollresult.fullfail {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc .inlinerollresult.importantroll {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/*  PD/BD Attack rolltemplate */
+.sheet-rolltemplate-coc-attack table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #ffffff;
+}
+
+.sheet-rolltemplate-coc-attack caption {
+  text-align: center;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc-attack div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+}
+
+.sheet-rolltemplate-coc-attack div.sheet-template_label {
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-coc-attack div.sheet-template_value {
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc-attack .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-attack .inlinerollresult.fullcrit {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-attack .inlinerollresult.fullfail {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-attack .inlinerollresult.importantroll {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* simple (no PD/BD) rolltemplate */
+.sheet-rolltemplate-coc-1 table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #ffffff;
+}
+
+.sheet-rolltemplate-coc-1 caption {
+  text-align: center;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc-1 div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+}
+
+.sheet-rolltemplate-coc-1 div.sheet-template_label {
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-coc-1 div.sheet-template_value {
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc-1 .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-1 .inlinerollresult.fullcrit {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-1 .inlinerollresult.fullfail {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-1 .inlinerollresult.importantroll {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* simple (no PD/BD) Attack rolltemplate */
+
+.sheet-rolltemplate-coc-attack-1 table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #ffffff;
+}
+
+.sheet-rolltemplate-coc-attack-1 caption {
+  text-align: center;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc-attack-1 div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+}
+
+.sheet-rolltemplate-coc-attack-1 div.sheet-template_label {
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-coc-attack-1 div.sheet-template_value {
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc-attack-1 .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-attack-1 .inlinerollresult.fullcrit {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-attack-1 .inlinerollresult.fullfail {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-attack-1 .inlinerollresult.importantroll {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+/* -------------------------------------------------------------------------- */
+/* simple dice-roll rolltemplate */
+.sheet-rolltemplate-coc-dice-roll table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #ffffff;
+}
+
+.sheet-rolltemplate-coc-dice-roll caption {
+  text-align: center;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc-dice-roll div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+}
+
+.sheet-rolltemplate-coc-dice-roll div.sheet-template_label {
+  font-weight: Bold;
+}
+
+.sheet-rolltemplate-coc-dice-roll div.sheet-template_value {
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc-dice-roll .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-dice-roll .inlinerollresult.importantroll {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+/* Bout of Madness- Real Time */
+.sheet-rolltemplate-coc-bomadness-rt table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #ffffff;
+}
+
+.sheet-rolltemplate-coc-bomadness-rt caption {
+  text-align: center;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc-bomadness-rt div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+}
+.sheet-rolltemplate-coc-bomadness-rt div.sheet-template_label {
+  font-weight: Bold;
+}
+
+.sheet-rolltemplate-coc-bomadness-rt div.sheet-template_value {
+  text-align: center;
+  background: #ffffff;
+}
+
+.sheet-rolltemplate-coc-bomadness-rt .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-bomadness-rt .inlinerollresult.importantroll {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Bout of Madness- Summary */
+.sheet-rolltemplate-coc-bomadness-summ table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #ffffff;
+}
+
+.sheet-rolltemplate-coc-bomadness-summ caption {
+  text-align: center;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc-bomadness-summ div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+}
+
+.sheet-rolltemplate-coc-bomadness-summ div.sheet-template_label {
+  font-weight: Bold;
+}
+
+.sheet-rolltemplate-coc-bomadness-summ div.sheet-template_value {
+  text-align: center;
+  background: #ffffff;
+}
+
+.sheet-rolltemplate-coc-bomadness-summ .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-bomadness-summ .inlinerollresult.importantroll {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+/* -------------------------------------------------------------------------- */
+/* simple defence rolltemplate */
+.sheet-rolltemplate-coc-defence-2 table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #e3dedb;
+}
+
+.sheet-rolltemplate-coc-defence-2 caption {
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc-defence-2 div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+  background: #efefef;
+}
+
+.sheet-rolltemplate-coc-defence-2 div.sheet-template_label {
+  font-weight: Bold;
+  background: #efefef;
+}
+
+.sheet-rolltemplate-coc-defence-2 div.sheet-template_value {
+  text-align: center;
+  background: #efefef;
+}
+
+.sheet-rolltemplate-coc-defence-2 .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #c3c9bd;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Minion (no PD/BD) Attack rolltemplate */
+
+.sheet-rolltemplate-coc-minionattack table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #ffffff;
+}
+
+.sheet-rolltemplate-coc-minionattack caption {
+  text-align: center;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc-minionattack div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+}
+
+.sheet-rolltemplate-coc-minionattack div.sheet-template_label {
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-coc-minionattack div.sheet-template_value {
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc-minionattack .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-minionattack .inlinerollresult.fullcrit {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-minionattack .inlinerollresult.fullfail {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc-minionattack .inlinerollresult.importantroll {
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+/* -------------------------------------------------------------------------- */
+/* minion defence rolltemplate */
+.sheet-rolltemplate-coc-miniondef table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #e3dedb;
+}
+
+.sheet-rolltemplate-coc-miniondef caption {
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc-miniondef div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+  background: #efefef;
+}
+
+.sheet-rolltemplate-coc-miniondef div.sheet-template_label {
+  font-weight: Bold;
+  background: #efefef;
+}
+
+.sheet-rolltemplate-coc-miniondef div.sheet-template_value {
+  text-align: center;
+  background: #efefef;
+}
+
+.sheet-rolltemplate-coc-miniondef .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #c3c9bd;
+}
+
+/* -------------------------------------------------명중------------------------------------------------------ */
+/* Body hit Location */
+.sheet-rolltemplate-coc-body-hit-loc table {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  background: #ffffff;
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc-body-hit-loc caption {
+  text-align: center;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid black;
+  line-height: 1.6em;
+}
+
+.sheet-rolltemplate-coc-body-hit-loc div {
+  padding: 2px;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc-body-hit-loc div.sheet-template_label {
+  font-weight: Bold;
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc-body-hit-loc div.sheet-template_value {
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc-body-hit-loc .inlinerollresult {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid black;
+  background: #bebebe;
+}
+
+.sheet-rolltemplate-coc--body-hit-loc .inlinerollresult.importantroll {
+  border: 2px solid black;
+  background: #bebebe;
+  text-align: center;
+}
+
+/* ----------------------------------------------------체력---------------------------------------------------*/
+
+.sheet-HP-SECTION {
+  /* ----------체력 더미 -------------*/
+}
+.sheet-HP-SECTION-ROW1 {
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+
+}
+
+input[type="text"].sheet-secondary-attr-input-HP {
+  text-align: center;
+  border-radius: 5px;
+  background-color: #000000;
+  height: 22px;
+  color:#0c00ff;
+  width: 100%;
+  border:none;
+}
+.sheet-divider1{
+text-align:center;
+ }
+
+.sheet-divider2{
+text-align:center;
+margin-top:1px;
+}
+
+input[type="number"].sheet-secondary-attr-input-HP {
+  text-align: center;
+  border-radius: 5px;
+  background-color: #000000;
+  color:#ffffff;
+  height: 22px;
+  width: 100%;
+  border:none;
+}
+
+.sheet-HP_SECTION_ROW2 {
+  display: grid;
+  grid-template-columns: 5fr 5fr 1fr 5fr 5fr ;
+}
+
+.sheet-dying {width: 100%;  text-align:right;}
+input[type="checkbox"].sheet-dying {width: 100%;margin-top:4px;margin-left:-10px;}
+.sheet-majorwound {width: 100%;text-align:right;}
+input[type="checkbox"].sheet-majorwound {width: 100%;margin-top:4px; margin-left:-10px;}
+
+
+
+
+/* ----------------------------------------------------행운---------------------------------------------------*/
+
+.sheet-LUK-SECTION {
+  /* ----------행운 더미 -------------*/
+}
+
+input[type="number"].sheet-secondary-attr-input-LUK {
+  float: left;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #000000;
+  height: 22px;
+  width: 78%;
+  margin-right: 4px;
+  color:#0c00ff;
+  border:none;
+}
+button[type="roll"].sheet-LUK1:before{
+    content: ' ';
+}
+  
+  button[type="roll"].sheet-LUK1:hover{
+    background-position: 0;
+    background-image: url(https://i.imgur.com/h7R5xPD.png);
+    background-color:#f5f5f5;
+}
+
+button[type="roll"].sheet-LUK1 {
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/h7R5xPD.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow:none;
+border: none;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  padding: 0;
+}
+button[type="roll"].sheet-LUK2:before{
+    content: ' ';
+}
+
+  button[type="roll"].sheet-LUK2:hover{
+    background-position: 0;
+    background-color:#0c00ff;
+    background-image:url(https://i.imgur.com/xNL0PRt.png);
+}
+
+button[type="roll"].sheet-LUK2 {
+    background-color: transparent;
+  background: url(https://i.imgur.com/xNL0PRt.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow:none;
+border: none;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+}
+
+/* ---------------------------------------------------마력---------------------------------------------------*/
+.sheet-MP-SECTION-ROW1 {
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+}
+
+input[type="text"].sheet-secondary-attr-input-MP {
+  text-align: center;
+  border-radius: 5px;
+  background-color: #000000;
+  height: 22px;
+  color:#0c00ff;
+  width: 100%;
+  border:none;
+}
+
+input[type="number"].sheet-secondary-attr-input-MP {
+  text-align: center;
+  border-radius: 5px;
+  background-color: #000000;
+  color:#ffffff;
+  height: 22px;
+  width: 100%;
+  border:none;
+}
+
+/* ---------------------------------------------------피해보너스&체구---------------------------------------------------*/
+select {
+  margin: 0;
+  padding: 0;
+  border-radius: 9px;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  text-align: center;
+  border:none;
+}
+
+input[type="text"].sheet-secondary-attr-input-BD {
+  text-align: center;
+  width: 100%;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  border-radius: 9px;
+  border:none;
+}
+
+/* ---------------------------------------------------이성---------------------------------------------------*/
+
+input[type="text"].sheet-narrow-input-sanstart {
+  background-color: #000000;
+  border-radius: 2px;
+  color: #ffffff;
+  font-weight: 500;
+  height: 15px;
+  text-align: center;
+  font-size: 13px;
+  margin-bottom:2px;
+  border: 0px;
+}
+
+input[type="text"].sheet-narrow-input-sanstart::placeholder {
+  color: #ffffff;
+font-weight:bold;
+  font-size: 13px;
+}
+
+.sheet-SAN-ROW1 {
+  display:grid;
+  grid-template-columns: 5fr 1fr 5fr 1fr 5fr 1fr 1fr;
+}
+
+input[type="text"].sheet-secondary-attr-input-SAN {
+  text-align: center;
+  border-radius: 2px;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  height: 22px;
+  border:none;
+  width:100%
+}
+input[type="text"].sheet-secondary-attr-input-SAN2 {
+  text-align: center;
+  border-radius: 2px;
+  background-color: #000000;
+  color: #0c00ff;
+  height: 22px;
+  border:none;
+  width:100%
+}
+
+input[type="number"].sheet-secondary-attr-input-SAN {
+  text-align: center;
+  border-radius: 2px;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  height: 22px;
+  border:none;
+  width:100%
+}
+
+
+
+.sheet-BOM_TITLE {
+  color: #ffffff;
+  margin-bottom:3px;
+}
+
+.sheet-SAN-ROW2 {
+  display: grid;
+  grid-template-columns: 4fr 1fr 4fr 1fr;
+
+}
+input[type="checkbox"].sheet-sancon{
+margin-top:4px;
+margin-left:3px;}
+
+.sheet-SANC_TEMP {
+  width:100%;
+  text-align: center;
+}
+.sheet-SANC_LONG {
+  width:100%;
+  text-align: center;
+}
+
+.sheet-SAN-ROW3 {
+  display: grid;
+  grid-template-columns: 4fr 1fr 4fr 1fr;
+}
+
+.sheet-BUTTON_DESCRIPTION1
+{
+  width:100%;
+  text-align: center;
+}
+.sheet-BUTTON_DESCRIPTION2
+{
+  width:100%;
+  text-align: center;
+}
+
+
+button[type="roll"].sheet-dice-roll:before{
+    content: ' ';
+}
+
+button[type="roll"].sheet-dice-roll:hover{
+    background-position: 0;
+    background-color:#f1f1f1;
+    background-image: url(https://i.imgur.com/h7R5xPD.png);
+}
+button[type="roll"].sheet-dice-roll {
+  background-image: url(https://i.imgur.com/xNL0PRt.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: #ffffff solid 1.1px;
+  box-shadow: none;
+  background-color: #0c00ff;
+
+  border-radius: 2.5px;
+  height: 10.5px;
+  width: 10.5px;
+  padding: 0;
+}
+.sheet-NCMC_CONTAINTER {
+  /* Normal Current Mental Condition*/
+}
+
+.sheet-NCMC_TITLE {
+  color: #ffffff;
+}
+input[type="text"].sheet-current_mental_condition{
+  border:none;
+}
+/* -----------------------------------------------전투 ---------------------------------------- */
+input[type="text"].sheet-unarmed {
+  background-color: #eeeeee;
+  border-radius: 5px;
+  color: #606060;
+  height: 23px;
+  border: #cccccc solid 1px;
+  margin-bottom: 2px;
+}
+
+input[type="text"].sheet-ATK {
+  background-color: #eeeeee;
+  border-radius: 3px;
+  color: #606060;
+  height: 23px;
+  border: #cccccc solid 1px;
+  margin-bottom: 2px;
+}
+
+select.sheet-ATK {
+  background-color: #000000;
+  border-radius: 3px;
+  color: #ffffff;
+  height: 23px;
+  border: #cccccc solid 1px;
+  margin-bottom: 2px;
+}
+/* ------------------------------------------------장비---------------------------------------- */
+
+textarea.sheet-POSS1 {
+  background-color: #e4e4e5;
+  border-radius: 4px;
+  width: 95%;
+  margin-left:4px;
+  height: 120px;
+}
+textarea.sheet-POSS2 {
+  background-color: #e4e4e5;
+  border-radius: 4px;
+  width: 95%;
+  height: 120px;
+}
+
+textarea.sheet-ASSET {
+  background-color: #e4e4e5;
+  border-radius: 4px;
+  width: 97%;
+  height: 70px;
+}
+
+.sheet-SUB-TITLE-GEAR {
+  background-color: #606060;
+  border-radius: 4px;
+  color: #e4e4e5;
+  margin-bottom: 3px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  margin-left:4px;
+  margin-top: 10px;
+}
+.sheet-SUB-TITLE-POSESSI {
+  background-color: #606060;
+  border-radius: 4px;
+  color: #e4e4e5;
+  margin-bottom: 3px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.sheet-SUB-TITLE-ASSET {
+  background-color: #606060;
+  border-radius: 4px;
+  color: #e4e4e5;
+  margin-bottom: 3px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 10px;
+}
+
+input[type="text"].sheet-cash {
+  background-color: #eeeeee;
+  border-radius: 4px;
+  height: 23px;
+}
+input[type="text"].sheet-spend {
+  background-color: #eeeeee;
+  border-radius: 4px;
+  height: 23px;
+  margin-bottom: 3px;
+}
+
+/* ------------------------------------------------ */ /* 다이스 */ /* ---------------------------------------- */
+button[type="roll"].sheet-old-roll:before{
+    content: ' ';
+}
+  
+  button[type="roll"].sheet-old-roll:hover{
+    background-position: 0;
+    background-image: url(https://i.imgur.com/h7R5xPD.png);
+    background-color:#f5f5f5;
+}
+  
+
+/* 보너스 다이스  */
+button[type="roll"].sheet-old-roll {
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/h7R5xPD.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20px;
+  width: 20px;
+  margin-left: 10%;
+  padding: 0;
+  box-shadow:none;
+border: none;
+}
+
+button[type="roll"].sheet-SAN1:before{
+    content: ' ';
+}
+  
+  button[type="roll"].sheet-SAN1:hover{
+    background-position: 0;
+    background-image: url(https://i.imgur.com/h7R5xPD.png);
+    background-color:#f5f5f5;
+}
+
+button[type="roll"].sheet-SAN1 {
+   background-color: transparent;
+  background-image: url(https://i.imgur.com/h7R5xPD.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow:none;
+border: none;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  padding: 0;
+  box-shadow:none;
+  border: none;
+}
+
+button[type="roll"].sheet-ATK1:before{
+    content: ' ';
+}
+  
+  button[type="roll"].sheet-ATK1:hover{
+    background-position: 0;
+    background-image: url(https://i.imgur.com/h7R5xPD.png);
+    background-color:#f5f5f5;
+}
+
+button[type="roll"].sheet-ATK1 {
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/h7R5xPD.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow:none;
+border: none;
+  height: 17px;
+  width: 17px;
+  margin: 0;
+  padding: 0;
+  margin-left: 2px;
+}
+
+/* --------------------------------------------------기본 다이스-------------------------------------------------- */
+
+button[type="roll"].sheet-new-roll:before{
+    content: ' ';
+}
+  
+  button[type="roll"].sheet-new-roll:hover{
+    background-position: 0;
+    background-color:#0c00ff;
+    background-image:url(https://i.imgur.com/xNL0PRt.png);
+    
+}
+
+button[type="roll"].sheet-new-roll {
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/xNL0PRt.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow:none;
+ border: none;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  margin-left: 10%;
+}
+
+button[type="roll"].sheet-SAN2:before{
+    content: ' ';
+}
+  
+  button[type="roll"].sheet-SAN2:hover{
+    background-position: 0;
+    background-color:#0c00ff;
+    background-image:url(https://i.imgur.com/xNL0PRt.png);
+}
+button[type="roll"].sheet-SAN2 {
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/xNL0PRt.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow:none;
+border: none;
+
+  height: 20px;
+  width: 20px;
+  padding: 0;
+}
+
+button[type="roll"].sheet-ATK2:before{
+  content: ' ';
+}
+  
+  button[type="roll"].sheet-ATK2:hover{
+    background-position: 0;
+    background-color:#0c00ff;
+    background-image:url(https://i.imgur.com/xNL0PRt.png);
+}
+
+button[type="roll"].sheet-ATK2 {
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/xNL0PRt.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow:none;
+border: none;
+
+  height: 17px;
+  width: 17px;
+  padding: 0;
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+
+/* Button Smaller */
+button[type="roll"].sheet-smallbutton-roll {
+  color: #18650d;
+  background-color: #248c15;
+  font-weight: bolder;
+  font-size: 12px;
+  text-align: center;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  padding: 0em;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-size: auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/*명중 */
+button[type="roll"].sheet-smallnonskillbutton-roll {
+  color: #261c19;
+  background-color: #261c19261c19;
+  font-weight: bolder;
+  font-size: 12px;
+  text-align: center;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  padding: 0em;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Button Even Smaller */
+button[type="roll"].sheet-evensmallerbutton-roll {
+  color: #261c19;
+  background-color: #1a1a1a;
+  font-weight: bolder;
+  font-size: 1px;
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  padding: 0em;
+  border: 1px solid black;
+  border-radius: 5px;
+}
