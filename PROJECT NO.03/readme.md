@@ -3,7 +3,10 @@
 **작업자** : @MOBCA_D   
      
 **커미션 최종 전달 일자** : 2021 12 11  
-**커미션 최종 갱신 일자** : 2021 12 11 
+**커미션 최종 갱신 일자** : 2022 01 17
+
+**UPDATE**  
+2022년 01월 17일 오타 및 일부 코드의 수정이 완료되었습니다.
       
 **CONTACT** : @PARKMOB_PBL  / mobca0.5@gmail.com   
 **FAST CONTACT** : @PARKMOB_A0 / yeojinp0415@gmail.com      
