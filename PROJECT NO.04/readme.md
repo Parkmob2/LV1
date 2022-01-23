@@ -1,5 +1,5 @@
 # PROJECT NO4
-**신청자** : @go****** 
+**신청자** : @go******  
 **작업자** : @MOBCA_D   
      
 **커미션 최종 전달 일자** : 2021 01 21  
@@ -34,9 +34,3 @@
 
 ![PROJECT NO4](https://i.imgur.com/GGsXnZa.png "PROJECT NO2")
 다이스 지문 내부 캐릭터 이름 출력
-
-![PROJECT NO4](https://i.imgur.com/qHRTMns.png "PROJECT NO2")
-중상,광기 여부에 따른 이미지 변화
-
-![PROJECT NO4](https://i.imgur.com/fx8eW1Q.png. "PROJECT NO2")
-조력자 시트
