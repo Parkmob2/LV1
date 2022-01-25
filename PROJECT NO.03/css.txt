@@ -1,12 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:900&display=swap");
+
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500&display=swap");
+
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400&display=swap");
+
 @font-face {
   font-family: 'S-CoreDream-4Regular';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: '116watermelon';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/116watermelon.woff') format('woff');
@@ -31,6 +35,7 @@
   box-sizing: border-box;
   width: fit-content !important;
 }
+
 .charsheet {
   color: white;
   background-image: url("https://i.imgur.com/ddDigh4.png");
@@ -39,21 +44,26 @@
   border: solid #000000 1px;
   font-family: 'S-CoreDream-4Regular';
   background-color: #070119;
+
   width: 850px;
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
   font-size:11px;
 }
+
 img.sheet-DECO {
   margin-top: -13px;
 }
+
 img.sheet-DECO2 {
   margin-top: -13px;
 }
+
 img.sheet-DECO3 {
   margin-top: -13px;
 }
+
 hr {
   display: block;
   margin-top: 0.4em;
@@ -67,21 +77,27 @@ hr {
     rgba(0, 0, 0, 0)
   );
 }
+
 /* -------------옵션 접기--------------------------------------------- */
+
 .sheet-OPTION-HIDE:checked ~ *.sheet-OPTIONAL_ADDITION {
   display: none;
 }
+
 .sheet-OPTION-INDICATION::after {
   /*Close Config*/
   content: "HIDE OPTION";
 }
+
 .sheet-OPTION-HIDE:checked + .sheet-OPTION-INDICATION::after {
   /*Show Configuration*/
   content: "SEE OPTION";
 }
+
 .sheet-OPTION-INDICATION {
   text-align: center;
   display: inline-block;
+
   width: 150px;
   height: 16px;
   font-size: 9px;
@@ -91,6 +107,7 @@ hr {
   margin-top: -16px;
   margin-left: -150px;
 }
+
 input.sheet-OPTION-HIDE {
   width: 150px;
   height: 16px;
@@ -100,38 +117,51 @@ input.sheet-OPTION-HIDE {
   opacity: 0;
   z-index: 9999;
 }
+
 /* --------------옵션 디스플레이-------------------------------------------- */
+
+
 .sheet-BOX-OPTION {
   background-color: rgba(0, 0, 0, 0.603);
   color:white;
   border: none;
+
   padding: 10px;
 }
+
 select.sheet-THEME-SELECT {
   width: 100%;
 }
+
 /* ------------다운타임------------------------------------------------------------- */
+
 .sheet-DOWNTIME {
   display: none;
   
 }
+
 .sheet-toggledowntime[value="1"]:checked ~ .sheet-DOWNTIME {
   display: block;
   background-color: rgba(0, 0, 0, 0.603);
 }
+
 h4.sheet-HEAD-DOWNTIME {
   color: #e7385e;
   font-family: ;
   font-weight: 800;
   font-size: 18px;
+
   font-style: normal;
   text-align: center;
   padding:10px;
+
 }
+
 .sheet-BOX-DOWNTIME {
 margin-top:-15px;
   padding: 10px;
 }
+
 /* -------------기본--------------------------------------------- */
 .sheet-BASIC {
   display: grid;
@@ -147,6 +177,7 @@ margin-top:-15px;
   background-color: rgba(0, 0, 0, 0.603);
   padding: 10px;
 }
+
 h4.sheet-HEAD-BIO {
   font-family: 'Montserrat', sans-serif;
   color: #27c1be;
@@ -161,13 +192,16 @@ h4.sheet-HEAD-BIO {
   font-size: 22px;
   margin:0 auto;
 }
+
 .sheet-BOX-BIO {
   color: white;
   border: none;
+
   display: grid;
   grid-template-columns: 1fr 4fr;
   margin-top: -5px;
 }
+
 sheet-name,
 sheet-player,
 sheet-occupation,
@@ -178,16 +212,19 @@ sheet-birthplace {
   height: 20px;
   margin: 2px;
 }
+
 input[type="text"].sheet-INFO {
   background-color: transparent;
   color: white;
   font-family: ;
   border-radius: ;
+
   align-self: center;
   text-align: center;
   height: 20px;
   width: 100%;
   margin: 2px;
+
   border-bottom: 1px solid;
   border-left: medium none;
   border-right: medium none;
@@ -201,6 +238,7 @@ input[type="text"].sheet-INFO {
   );
   border-image-slice: 1;
 }
+
 /* -------------특성치--------------------------------------------- */
 .sheet-STATUS {
   border: solid 1.5px #e7385e;
@@ -214,32 +252,40 @@ h4.sheet-HEAD-STATUS {
   font-family: ;
   border-radius: ;
   font-weight: 800;
+
   padding: 12px;
   font-style: normal;
   text-align: center;
+
   letter-spacing: 10px;
   font-size: 22px;
 }
+
 .sheet-BOX-STATUS {
   color: white;
+
   margin-top: -5px;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   row-gap: 10px;
 }
+
 .sheet-STATUS-COL1,
 .sheet-STATUS-COL2,
 .sheet-STATUS-COL3 {
   display: grid;
 }
+
 .sheet-STATUS-GIVEN {
   color: white;
   background-color: #27c1be;
   border: solid 2px #27c1be;
+
   width: 51px;
   font-size: 16px;
   font-weight: bold;
   padding-top: 5px;
+
   grid-row-start: 1;
   grid-row-end: 3;
   align-self: center;
@@ -248,6 +294,7 @@ h4.sheet-HEAD-STATUS {
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
 }
+
 input[type="text"].sheet-STATUS-INPUT {
   color: #e7385e;
   background-color: transparent;
@@ -261,19 +308,23 @@ input[type="text"].sheet-STATUS-INPUT {
   border-top-left-radius: 0px;
   height: 37px;
   font-family: '116watermelon';
+
   text-align: center;
   place-self: center;
   grid-row-start: 1;
   grid-row-end: 3;
 }
+
 button[type="roll"].sheet-STATUS-ROLL:before {
   content: " ";
 }
+
 button[type="roll"].sheet-STATUS-ROLL:hover {
   background-position: 0;
   background-image: url(https://i.imgur.com/YM0nTTS.png);
   background-color: #27c1be
 }
+
 button[type="roll"].sheet-STATUS-ROLL {
   background-color: transparent;
   background-image: url(https://i.imgur.com/a28f76U.png);
@@ -281,6 +332,7 @@ button[type="roll"].sheet-STATUS-ROLL {
   background-size: cover;
   height: 20px;
   width: 20px;
+
   padding: 0;
   box-shadow: none;
   border: none;
@@ -289,14 +341,17 @@ button[type="roll"].sheet-STATUS-ROLL {
   margin-right: 5px;
   margin-left: 5px;
 }
+
 button[type="roll"].sheet-STATUS-ROLL2:before {
   content: " ";
 }
+
 button[type="roll"].sheet-STATUS-ROLL2:hover {
   background-position: 0;
   background-color: white;
   background-image: url(https://i.imgur.com/a28f76U.png);
 }
+
 button[type="roll"].sheet-STATUS-ROLL2 {
   background-color: transparent;
   background-image: url(https://i.imgur.com/YM0nTTS.png);
@@ -312,6 +367,7 @@ button[type="roll"].sheet-STATUS-ROLL2 {
   margin-left: 5px;
   margin-right: 5px;
 }
+
 .sheet-BUTTON-SPACE {
   grid-row-start: 1;
   width: 30px;
@@ -320,14 +376,19 @@ button[type="roll"].sheet-STATUS-ROLL2 {
   grid-row-start: 2;
   width: 30px;
 }
+
 /* -------------메인--------------------------------------------- */
 .sheet-MAIN {
   display: inline-grid;
   grid-template-columns: repeat(3, 1fr);
+
   column-gap: 10px;
+
   margin-top: 20px;
 }
+
 /* -------------체력--------------------------------------------- */
+
 .sheet-HP {
   border: solid 1.5px #27c1be;
   border-radius: 4px;
@@ -335,6 +396,7 @@ button[type="roll"].sheet-STATUS-ROLL2 {
   align-self: center;
   padding: 5px;
 }
+
 h4.sheet-HEAD-HP {
   font-family: 'Montserrat', sans-serif;
   color: #e7385e;
@@ -342,17 +404,21 @@ h4.sheet-HEAD-HP {
   font-weight: 800;
   letter-spacing: 18px;
   font-size: 22px;
+
   font-style: normal;
   text-align: center;
 }
+
 .sheet-BOX-HP {
   margin-top: -5px;
   color: white;
 }
+
 .sheet-HP-COL1 {
   display: grid;
   grid-template-columns: 3fr 1fr 3fr;
 }
+
 input[type="text"].sheet-secondary-attr-input-HP {
   text-align: center;
   border-radius: 5px;
@@ -365,25 +431,30 @@ input[type="text"].sheet-secondary-attr-input-HP {
 .sheet-divider1 {
   text-align: center;
 }
+
 .sheet-divider2 {
   text-align: center;
   margin-top: 1px;
   color: #e7385e;
 }
+
 input[type="number"].sheet-secondary-attr-input-HP {
   text-align: center;
   border-radius: 5px;
   background-color: transparent;
   color: white;
+
   height: 20px;
   width: 100%;
   border: none;
 }
+
 .sheet-HP-COL2 {
   display: grid;
   grid-template-columns: 5fr 5fr 1fr 5fr 5fr;
   margin-top: 7px;
 }
+
 .sheet-dyingT {
   width: 100%;
   text-align: right;
@@ -402,95 +473,117 @@ input[type="checkbox"].sheet-MAJORWOUNDT {
   margin-top: 4px;
   margin-left: -10px;
 }
+
 /* -------------로고--------------------------------------------- */
 .sheet-LOGO {
   align-self: center;
   grid-area: 1/ 2 / 4/ 2;
 }
+
 /* -------------이성--------------------------------------------- */
 .sheet-SAN {
   border: solid 1.5px #27c1be;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.603);
+
   align-self: center;
   grid-area: 1/3/4/3;
   padding: 5px;
   padding-top: 10px;
   padding-bottom: 20px;
 }
+
 h4.sheet-HEAD-SAN {
   font-family: 'Montserrat', sans-serif;
   color: #e7385e;
+
   font-family: ;
   border-radius: ;
   font-weight: 800;
   letter-spacing: 18px;
   font-size: 22px;
   border: solid 1px black;
+
   font-style: normal;
+
   text-align: center;
 }
+
 .sheet-BOX-SAN {
   color: white;
   display: grid;
 }
+
 /* -------------초기 이성치--------------------------------------------- */
 input[type="text"].sheet-SAN-START {
   color: #27c1be;
   background-color: transparent;
+
   font-size: 13px;
   font-weight: 500;
   border: none;
+
   height: 20px;
   width: 100%;
   text-align: center;
   margin-bottom: 2px;
 }
+
 input[type="text"].sheet-SAN-START::placeholder {
   border: none;
   color: #27c1be;
   font-weight: 500;
 }
+
 /* -------------이성치 기입--------------------------------------------- */
 .sheet-SAN-COL1 {
   display: grid;
   grid-template-columns: 5fr 1fr 5fr 1fr 5fr 1fr 1fr;
 }
+
 input[type="text"].sheet-secondary-attr-input-SAN {
   color: white;
   border: none;
   background-color: transparent;
+
   text-align: center;
   height: 22px;
   border: none;
   width: 100%;
 }
+
 input[type="text"].sheet-secondary-attr-input-SAN2 {
   color: white;
   border: none;
   background-color: transparent;
+
   text-align: center;
   height: 22px;
   border: none;
   width: 100%;
 }
+
 input[type="number"].sheet-secondary-attr-input-SAN {
   color: white;
   border: none;
   background-color: transparent;
+
   text-align: center;
   height: 22px;
   border: none;
   width: 100%;
 }
+
 button[type="roll"].sheet-SAN1:before {
   content: " ";
 }
+
 button[type="roll"].sheet-SAN1:hover {
   background-position: 0;
   background-image: url(https://i.imgur.com/gNiZpPs.png);
   background-color: white;
 }
+
 button[type="roll"].sheet-SAN1 {
   background-color: transparent;
   background-image: url(https://i.imgur.com/2gFxUZq.png);
@@ -505,14 +598,17 @@ button[type="roll"].sheet-SAN1 {
   box-shadow: none;
   border: none;
 }
+
 button[type="roll"].sheet-SAN2:before {
   content: " ";
 }
+
 button[type="roll"].sheet-SAN2:hover {
   background-position: 0;
   background-color: #e7385e;
   background-image: url(https://i.imgur.com/2gFxUZq.png);
 }
+
 button[type="roll"].sheet-SAN2 {
   background-color: transparent;
   background-image: url(https://i.imgur.com/gNiZpPs.png);
@@ -520,10 +616,12 @@ button[type="roll"].sheet-SAN2 {
   background-size: cover;
   box-shadow: none;
   border: none;
+
   height: 20px;
   width: 20px;
   padding: 0;
 }
+
 /* -------------광기의 발작--------------------------------------------- */
 .sheet-BOM {
   margin: 5px;
@@ -534,45 +632,56 @@ button[type="roll"].sheet-SAN2 {
   margin-bottom: 3px;
   font-weight: 500;
   font-size: 13px;
+
   height: 18px;
   text-align: center;
 }
+
 .sheet-BOM-COL1 {
   display: grid;
   grid-template-columns: 4fr 1fr 4fr 1fr;
 }
+
 input[type="checkbox"].sheet-sancon {
   margin-top: 4px;
   margin-left: 3px;
 }
+
 .sheet-SANC_TEMP {
   width: 100%;
   text-align: center;
 }
+
 .sheet-SANC_LONG {
   width: 100%;
   text-align: center;
 }
+
 .sheet-BOM-COL2 {
   display: grid;
   grid-template-columns: 4fr 1fr 4fr 1fr;
 }
+
 .sheet-BUTTON_DESCRIPTION1 {
   width: 100%;
   text-align: center;
 }
+
 .sheet-BUTTON_DESCRIPTION2 {
   width: 100%;
   text-align: center;
 }
+
 button[type="roll"].sheet-dice-roll:before {
   content: " ";
 }
+
 button[type="roll"].sheet-dice-roll:hover {
   background-position: 0;
   background-color: white;
   background-image: url(https://i.imgur.com/a28f76U.png);
 }
+
 button[type="roll"].sheet-dice-roll {
   background-image: url(https://i.imgur.com/YM0nTTS.png);
   background-repeat: no-repeat;
@@ -580,11 +689,13 @@ button[type="roll"].sheet-dice-roll {
   border: white solid 1.1px;
   box-shadow: none;
   background-color: #e7385e;
+
   border-radius: 2.5px;
   height: 11px;
   width: 11px;
   padding: 0;
 }
+
 /* -------------현재 정신 상태--------------------------------------------- */
 .sheet-CMT {
   margin-bottom: 5px;
@@ -595,9 +706,11 @@ button[type="roll"].sheet-dice-roll {
   margin-bottom: 3px;
   font-weight: 500;
   font-size: 13px;
+
   height: 18px;
   text-align: center;
 }
+
 input[type="text"].sheet-current_mental_condition {
   margin-top: 3px;
   border: none;
@@ -605,10 +718,12 @@ input[type="text"].sheet-current_mental_condition {
   background-color: #1b1b1b;
   border:1px solid black; 
 }
+
 /* -------------일시적 광기--------------------------------------------- */
 .sheet-attr_build {
   text-align: left;
 }
+
 /* -------------행운--------------------------------------------- */
 .sheet-LUK {
   font-family: 'Montserrat', sans-serif;
@@ -616,9 +731,11 @@ input[type="text"].sheet-current_mental_condition {
   border: solid 1.5px #27c1be;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.603);
+
   align-self: center;
   padding: 5px;
 }
+
 h4.sheet-HEAD-LUK {
   color: #e7385e;
   font-family: ;
@@ -628,27 +745,34 @@ h4.sheet-HEAD-LUK {
   font-style: normal;
   text-align: center;
 }
+
 .sheet-BOX-LUK {
   color: white;
+
   display: grid;
   grid-template-columns: 2fr 0.25fr 0.25fr;
 }
+
 input[type="number"].sheet-secondary-attr-input-LUK {
   color: white;
   background-color: transparent;
   border: none;
+
   text-align: center;
   height: 22px;
   width: 100%;
 }
+
 button[type="roll"].sheet-LUK1:before {
   content: " ";
 }
+
 button[type="roll"].sheet-LUK1:hover {
   background-position: 0;
   background-image: url(https://i.imgur.com/gNiZpPs.png);
   background-color: white;
 }
+
 button[type="roll"].sheet-LUK1 {
   background-color: transparent;
   background-image: url(https://i.imgur.com/2gFxUZq.png);
@@ -664,11 +788,13 @@ button[type="roll"].sheet-LUK1 {
 button[type="roll"].sheet-LUK2:before {
   content: " ";
 }
+
 button[type="roll"].sheet-LUK2:hover {
   background-position: 0;
   background-color: #e7385e;
   background-image: url(https://i.imgur.com/2gFxUZq.png);
 }
+
 button[type="roll"].sheet-LUK2 {
   background-color: black;
   background-image: url(https://i.imgur.com/gNiZpPs.png);
@@ -681,16 +807,19 @@ button[type="roll"].sheet-LUK2 {
   margin: 0;
   padding: 0;
 }
+
 /* -------------마력---------------------------------------------------*/
 .sheet-MP {
   border: solid 1.5px #27c1be;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.603);
+
   grid-area: 3/1/3/1;
   align-self: center;
   margin-top: 10px;
   padding: 5px;
 }
+
 h4.sheet-HEAD-MP {
   font-family: 'Montserrat', sans-serif;
   color: #e7385e;
@@ -698,17 +827,21 @@ h4.sheet-HEAD-MP {
   font-weight: 800;
   letter-spacing: 18px;
   font-size: 22px;
+
   font-style: normal;
   text-align: center;
 }
+
 .sheet-BOX-MP {
   color: white;
   display: grid;
 }
+
 .sheet-MP-COL {
   display: grid;
   grid-template-columns: 3fr 1fr 3fr;
 }
+
 input[type="text"].sheet-secondary-attr-input-MP {
   text-align: center;
   border-radius: 5px;
@@ -718,6 +851,7 @@ input[type="text"].sheet-secondary-attr-input-MP {
   width: 100%;
   border: none;
 }
+
 input[type="number"].sheet-secondary-attr-input-MP {
   text-align: center;
   border-radius: 5px;
@@ -727,17 +861,21 @@ input[type="number"].sheet-secondary-attr-input-MP {
   width: 100%;
   border: none;
 }
+
 /* -------------중상---------------------------------------------------*/
 .charsheet div.sheet-MAJORWOUND {
   display: none;
 }
+
 .sheet-MAJORWOUNDT[value="1"]:checked ~ div.sheet-MAJORWOUND {
   display: block;
 }
+
 .sheet-MAJORWOUND {
   grid-area: 3/2/3/2;
   align-self: center;
 }
+
 h4.sheet-HEAD-MAJORWOUND {
   color: #e7385e;
   font-family: ;
@@ -749,6 +887,7 @@ h4.sheet-HEAD-MAJORWOUND {
     rgba(0, 0, 0, 0.808) 0%,
     rgba(0, 0, 0, 0) 100%
   );
+
   padding: 10px;
   font-style: normal;
   text-align: center;
@@ -756,6 +895,7 @@ h4.sheet-HEAD-MAJORWOUND {
 .sheet-BOX-MAJORWOUND {
   display: grid;
 }
+
 input.sheet-MAJORWOUNDSTAT {
   width: 100%;
   background-color: #000000b2;
@@ -767,6 +907,7 @@ input.sheet-MAJORWOUNDSTAT {
 /* -------------다이스---------------------------------------------------*/
 .charsheet div.sheet-DICE {
   display: none;
+
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
@@ -778,6 +919,7 @@ input.sheet-MAJORWOUNDSTAT {
   align-self: center;
   margin-top: 20px;
   padding: 5px;
+
   border-bottom: 1px solid;
   border-left: medium none;
   border-right: medium none;
@@ -790,45 +932,57 @@ input.sheet-MAJORWOUNDSTAT {
     rgba(0, 0, 0, 0) 100%
   );
   border-image-slice: 1;
+
 }
+
 .sheet-toggledr[value="1"]:checked ~ div.sheet-DICE {
   display: block;
 }
+
 h4.sheet-HEAD-DICE {
   color: #e7385e;
   font-family: ;
   font-weight: 800;
   font-size: 18px;
+
   font-style: normal;
   text-align: center;
   padding:10px;
   font-family: 'S-CoreDream-6Bold';
 }
+
 .sheet-BOX-DICE {
   background-color: transparent;
   color: white;
   border: none;
+
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   row-gap:7px;
   margin-top:-15px;
   margin-bottom:8px;
 }
+
 .sheet-DICE-COL1,
 .sheet-DICE-COL2 {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   justify-items: center;
 }
+
 .sheet-DICE-IRREGULAR {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 3px;
 }
+
 input.sheet-dice-roll-input {
   height: 18px;
   width: 100%;
 }
+
+
+
 /* -------------피해보너스&체구---------------------------------------------------*/
 .sheet-DB {
   background: linear-gradient(
@@ -842,6 +996,7 @@ input.sheet-dice-roll-input {
   align-self: center;
   margin-top: 20px;
   padding: 5px;
+
   border-bottom: 1px solid;
   border-left: medium none;
   border-right: medium none;
@@ -855,41 +1010,50 @@ input.sheet-dice-roll-input {
   );
   border-image-slice: 1;
 }
+
 h4.sheet-HEAD-DB {
   font-family: 'S-CoreDream-6Bold';
   color: #27c1be;
   font-family: ;
   font-weight: 800;
   font-size: 18px;
+
   font-style: normal;
   text-align: center;
   padding:10px;
 }
+
 .sheet-BOX-DB {
   background-color: transparent;
   color: white;
   border: none;
+
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin-top:-15px;
 }
+
 select.sheet-damagebonus {
   background-color: transparent;
   color: white;
   border: none;
+
   width: 100%;
   height: 27px;
   padding: 0px;
   text-align: center;
 }
+
 input[type="text"].sheet-secondary-attr-input-BD {
   background-color: transparent;
   color: white;
   border: none;
+
   text-align: center;
   width: 100%;
   height: 27px;
 }
+
 /* ----------기능치--------------------------------------------- */
 .sheet-SKILL {
   background: linear-gradient(
@@ -903,6 +1067,7 @@ input[type="text"].sheet-secondary-attr-input-BD {
   align-self: center;
   margin-top: 10px;
   padding: 5px;
+
   border-bottom: 1.5px solid;
   border-left: medium none;
   border-right: medium none;
@@ -916,6 +1081,7 @@ input[type="text"].sheet-secondary-attr-input-BD {
   );
   border-image-slice: 1;
 }
+
 .sheet-BOX-SKILL {
   color: white;
   display: grid;
@@ -926,26 +1092,31 @@ input[type="text"].sheet-secondary-attr-input-BD {
   padding-top: 20px;
   padding-bottom: 35px;
 }
+
 .sheet-SKILL-COL1,
 .sheet-SKILL-COL2,
 .sheet-SKILL-COL3 {
   row-gap: 1px;
   display: grid;
 }
+
 .sheet-SKILL-COL1 {
   margin-left: 10px;
 }
+
 .sheet-skillset {
   display: grid;
   grid-template-columns: 15px 160px 30px 25px 25px;
   row-gap: 5px;
 }
+
 .sheet-skill-label {
   font-family: 'S-CoreDream-4Regular';
   width: 150px;
   text-align: left;
   border: none;
 }
+
 input.sheet-skill-input {
   width: 35px;
   height: 18px;
@@ -953,6 +1124,7 @@ input.sheet-skill-input {
   color: white;
   border: none;
 }
+
 input.sheet-skill-name-input {
   font-family: 'S-CoreDream-4Regular';
   height: 18px;
@@ -972,14 +1144,17 @@ input.sheet-skill-name-input {
   border-image-slice: 1;
   color: white;
 }
+
 button[type="roll"].sheet-old-roll:before {
   content: " ";
 }
+
 button[type="roll"].sheet-old-roll:hover {
   background-position: 0;
   background-image: url(https://i.imgur.com/2gFxUZq.png);
   background-color: #e7385e;
 }
+
 button[type="roll"].sheet-old-roll {
   background-color: transparent;
   background-image: url(https://i.imgur.com/gNiZpPs.png);
@@ -992,14 +1167,17 @@ button[type="roll"].sheet-old-roll {
   border: none;
   margin-left: 5px;
 }
+
 button[type="roll"].sheet-new-roll:before {
   content: " ";
 }
+
 button[type="roll"].sheet-new-roll:hover {
   background-position: 0;
   background-color: #27c1be;
   background-image: url(https://i.imgur.com/YM0nTTS.png);
 }
+
 button[type="roll"].sheet-new-roll {
   background-color: transparent;
   background-image: url(https://i.imgur.com/a28f76U.png);
@@ -1012,21 +1190,27 @@ button[type="roll"].sheet-new-roll {
   padding: 0;
 }
 /* -------------추가 기능치-------------------------------------------- */
+
 .sheet-SKILLREMINDER {
   margin-top: 10px;
 }
+
 h4.sheet-HEAD-SKILLREMINDER {
   font-weight: bold;
   color: #e7385e;
 }
+
 .sheet-BOX-SKILLREMINDER {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
 .sheet-otherskill-reminder {
   font-size: 10px;
 }
+
 /* -------------전투-------------------------------------------- */
+
 .sheet-COMBET {
   background: linear-gradient(
     90deg,
@@ -1036,10 +1220,12 @@ h4.sheet-HEAD-SKILLREMINDER {
     rgba(0, 0, 0, 0.6) 70%,
     rgba(255, 255, 255, 0) 100%
   );
+
   grid-area: 3/1/3/1;
   align-self: center;
   margin-top: 20px;
   padding: 5px;
+
   border-bottom: 1.5px solid;
   border-left: medium none;
   border-right: medium none;
@@ -1053,6 +1239,7 @@ h4.sheet-HEAD-SKILLREMINDER {
   );
   border-image-slice: 1;
 }
+
 h4.sheet-HEAD-COMBET {
   font-family: 'S-CoreDream-6Bold';
   color: #e7385e;
@@ -1060,33 +1247,41 @@ h4.sheet-HEAD-COMBET {
   border-radius: ;
   font-weight: 800;
   font-size: 18px;
+
   font-style: normal;
   text-align: center;
   padding:10px;
 }
+
 .sheet-BOX-COMBET {
   color: white;
+
   display: grid;
   margin-top:-5px;
 }
+
 .sheet-ATK-ACTION {
   display: grid;
   grid-template-columns: 230px 18px 25px 130px 65px 65px 65px 65px 80px 65px;
   column-gap: 1px;
   height: 29px;
 }
+
 .sheet-COMBET-INDICATION {
   display: grid;
   grid-template-columns: 230px 18px 25px 130px 65px 65px 65px 65px 80px 65px;
   column-gap: 1px;
   height: 20px;
 }
+
 .sheet-INDICATION-TEXT-COMBET2 {
   grid-column-start: 4;
 }
+
 .sheet-INDICATION-TEXT-COMBET4 {
   grid-column-start: 7;
 }
+
 input.sheet-unarmed {
   width: 230px;
   height: 27px;
@@ -1094,6 +1289,7 @@ input.sheet-unarmed {
   border:1px solid black; 
   color: #adadad;
 }
+
 select.sheet-ATK-M {
   width: 130px;
   height: 27px;
@@ -1102,6 +1298,7 @@ select.sheet-ATK-M {
   color: #adadad;
   
 }
+
 input.sheet-ATK-D {
   width: 65px;
   height: 27px;
@@ -1110,12 +1307,14 @@ input.sheet-ATK-D {
   color: #adadad;
   text-align:center;
 }
+
 select.sheet-ATK-DB {
   width: 65px;
   height: 27px;
   background-color: #1b1b1b;
 border:1px solid black;
 color: #adadad; }
+
 input.sheet-ATK {
   width: 65px;
   height: 27px;
@@ -1123,6 +1322,7 @@ input.sheet-ATK {
   border:1px solid black; 
   color: #adadad;
 }
+
 input.sheet-ATK-AMMO {
   width: 80px;
   height: 27px;
@@ -1130,26 +1330,31 @@ input.sheet-ATK-AMMO {
   border:1px solid black; 
   color: #adadad;
 }
+
 input {
   font-size: 11px;
   background-color: #1b1b1b;
   border:1px solid black; 
   color: #adadad;
 }
+
 select {
   font-size: 11px;
   background-color: #1b1b1b;
   border:1px solid black; 
   color: #adadad;
 }
+
 button[type="roll"].sheet-ATK1:before {
   content: " ";
 }
+
 button[type="roll"].sheet-ATK1:hover {
   background-position: 0;
   background-image: url(https://i.imgur.com/gNiZpPs.png);
   background-color: white;
 }
+
 button[type="roll"].sheet-ATK1 {
   background-color: transparent;
   background-image: url(https://i.imgur.com/2gFxUZq.png);
@@ -1162,14 +1367,17 @@ button[type="roll"].sheet-ATK1 {
   padding: 0;
   margin-top:4px;
 }
+
 button[type="roll"].sheet-ATK2:before {
   content: " ";
 }
+
 button[type="roll"].sheet-ATK2:hover {
   background-position: 0;
   background-color:#e7385e;
   background-image: url(https://i.imgur.com/2gFxUZq.png);
 }
+
 button[type="roll"].sheet-ATK2 {
   background-color: transparent;
   background-image: url(https://i.imgur.com/gNiZpPs.png);
@@ -1177,12 +1385,16 @@ button[type="roll"].sheet-ATK2 {
   background-size: cover;
   box-shadow: none;
   border: none;
+
   height: 18px;
   width: 18px;
   padding: 0;
   margin-top:4px;
 }
+
+
 /* ------장비와 소지품---------------------------------------- */
+
 .sheet-GEAR-POSS {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1190,6 +1402,7 @@ button[type="roll"].sheet-ATK2 {
   width: 100%;
   margin-top: 20px;
 }
+
 /* ------장비---------------------------------------- */
 .sheet-GEAR {
   border: solid 1px #e7385e;
@@ -1198,17 +1411,20 @@ button[type="roll"].sheet-ATK2 {
   padding: 5px;
   
 }
+
 h4.sheet-HEAD-GEAR {
   font-family: 'S-CoreDream-6Bold';
   color: #27c1be;
   font-family: ;
   font-weight: 800;
   font-size: 18px;
+
   padding: 10px;
   font-style: normal;
   text-align: center;
   padding-bottom:5px;
 }
+
 .sheet-BOX-GEAR {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1216,11 +1432,13 @@ h4.sheet-HEAD-GEAR {
   width: 97%;
   margin: 0 auto;
 }
+
 .sheet-SUB-TITLE-GEAR {
   font-weight: bold;
   color: white;
   font-weight: bold;
   text-align: center;
+
   margin-top: 4px;
   margin-bottom: 2px;
   background-color: #e7385e;
@@ -1228,6 +1446,7 @@ h4.sheet-HEAD-GEAR {
   width: 100%;
   
 }
+
 textarea.sheet-GEAR,
 textarea.sheet-BELONG {
   background-color: black;
@@ -1235,11 +1454,13 @@ textarea.sheet-BELONG {
   color: white;
   background-color: #1b1b1b;
   border:1px solid black; 
+
   text-align: left;
   height: 120px;
   width:100%;
   width: 94.5%;
 }
+
 /* -----소지품---------------------------------------- */
 .sheet-POSS {
   border: solid 1px #e7385e;
@@ -1247,27 +1468,32 @@ textarea.sheet-BELONG {
   background-color: rgba(0, 0, 0, 0.603);
   padding: 5px;
 }
+
 h4.sheet-HEAD-POSS {
   color: #27c1be;
   font-family: 'S-CoreDream-6Bold';
   font-family: ;
   font-weight: 800;
   font-size: 18px;
+
   padding: 10px;
   font-style: normal;
   text-align: center;
   padding-bottom:5px;
 }
+
 .sheet-BOX-POSS {
   color: white;
   display: grid;
   grid-template-columns: 1.8fr 2fr;
+
   column-gap: 8px;
   align-items: center;
   width: 97%;
   margin: 0 auto;
 }
 }
+
 .sheet-POSS-COL1 {
   display: grid;
   row-gap:10px;
@@ -1278,29 +1504,35 @@ h4.sheet-HEAD-POSS {
 }
 .sheet-POSS-COL2 {
 }
+
 input.sheet-CASH,
 input.sheet-SPEND {
   width: 100%;
   background-color: #1b1b1b;
   border:1px solid black; 
 }
+
 .sheet-SUB-TITLE-POSS {
   font-weight: bold;
   color: white;
   font-weight: bold;
   text-align: center;
+
   margin-top: 4px;
   margin-bottom: 2px;
   background-color: #e7385e;
   width:99%;
   border:1px solid black; 
   border-radius: 2px;
+
 }
+
 .sheet-SUB-TITLE-POSS2 {
   font-weight: bold;
   color: white;
   font-weight: bold;
   text-align: center;
+
   margin-top: 4px;
   margin-bottom: 2px;
   margin-bottom: 2px;
@@ -1308,6 +1540,7 @@ input.sheet-SPEND {
   border-radius: 2px;
   width:
 }
+
 textarea.sheet-ASSET {
   color: white;
   background-color: #1b1b1b;
@@ -1315,6 +1548,7 @@ textarea.sheet-ASSET {
   height: 120px;
   width:95%;
 }
+
 /* -----백스토리---------------------------------------- */
 .sheet-BACKSTORY{
   background: linear-gradient(
@@ -1325,12 +1559,15 @@ textarea.sheet-ASSET {
   rgba(0, 0, 0, 0.6) 70%,
   rgba(255, 255, 255, 0) 100%
 );
+
 align-self: center;
 margin-top: 20px;
 padding: 5px;
+
 border-radius: 4px;
 border:#27c1be 1px solid;
 }
+
 h4.sheet-HEAD-BACKSTORY {
   font-family: 'S-CoreDream-6Bold';
   color: #e7385e;
@@ -1338,10 +1575,12 @@ h4.sheet-HEAD-BACKSTORY {
   border-radius: ;
   font-weight: 800;
   font-size: 18px;
+
   font-style: normal;
   text-align: center;
   padding:10px;
 }
+
 .sheet-BOX-BACKSTORY {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1351,6 +1590,7 @@ h4.sheet-HEAD-BACKSTORY {
   width:97%;
   margin:0 auto;
 }
+
 .sheet-PERSONAL-DESCRIPTION-TEXT,
 .sheet-IDEALOGY-BELIEFS-TEXT,
 .sheet-SIGNIFICANT-PEOPLE-TEXT,
@@ -1368,11 +1608,14 @@ h4.sheet-HEAD-BACKSTORY {
   font-weight: bold;
   color:white;
 }
+
 textarea.sheet-backstory-box{
+
   color:white;
   background-color: #1b1b1b;
   border:1px solid black; 
 }
+
 /* -----시트 종료---------------------------------------- */
 .sheet-the-end{
   text-align:center;
@@ -1380,22 +1623,26 @@ textarea.sheet-backstory-box{
   margin:30px;
 }
 /* ----------------------------------- */
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
   background-color: rgba(255, 255, 255, 0.5);
 }
+
 /*----반복 버튼-------- */
 div[class^="repcontrol"] {
   margin: 0 0 0 0;
 }
+
 div[class="repcontainer editmode"]
   ~ div[class^="repcontrol"]
   button[class="btn repcontrol_add"] {
   display: inline-block !important;
   visibility: hidden;
 }
+
 .charsheet .repcontrol_add,
 .charsheet .repcontrol_edit,
 .charsheet .repcontrol_del {
@@ -1409,6 +1656,7 @@ div[class="repcontainer editmode"]
   text-shadow: none;
   padding: 0px 8px 3px !important;
 }
+
 /*-------------------조력자 ------------------------------ */
 .sheet-togglecompanions[value="1"]:checked ~ div.sheet-companions {
   display: block;
@@ -1425,48 +1673,60 @@ div[class="repcontainer editmode"]
   rgba(0, 0, 0, 0.6) 70%,
   rgba(255, 255, 255, 0) 100%
 );
+
 align-self: center;
 margin-top: 20px;
 padding: 5px;
+
 border-radius: 4px;
 border:#27c1be 1px solid;
 }
+
 h4.sheet-HEAD-COM {
   color: #e7385e;
   font-family: ;
   border-radius: ;
   font-weight: 800;
   font-size: 18px;
+
   font-style: normal;
   text-align: center;
   padding:10px;
   font-family: 'S-CoreDream-6Bold';
 }
+
 .sheet-BOX-COM  {
   margin-top:-5px;
   color:#e7385e;
   margin:0 auto;
 }
+
+
+
 div.sheet-NPC-STAT1-LEFT,
 div.sheet-FUNCNPC-CON1,
 div.sheet-NPC-STAT-ALL2,
 div.sheet-NPC-LEFT {
   float: left;
 }
+
 div.sheet-NPC-STAT1-RIGHT,
 div.sheet-NPC-STAT2-RIGHT,
 div.sheet-NPC-STAT3-RIGHT {
   float: right;
 }
+
 div.sheet-FUNCNPC-CON2 {
   float: right;
   margin-right: -8px;
 }
+
 div.sheet-NPC-STAT2-LEFT,
 div.sheet-NPC-STAT3-LEFT {
   float: left;
   margin-left: 10px;
 }
+
 .sheet-NPC-SAN {
   background-color: #27c1be;
   border-radius: 4px;
@@ -1479,6 +1739,7 @@ div.sheet-NPC-STAT3-LEFT {
   font-size: 12px;
   margin-right: 2px;
 }
+
 .sheet-NPC-BIO {
   background-color: #27c1be;
   border-radius: 4px;
@@ -1491,16 +1752,19 @@ div.sheet-NPC-STAT3-LEFT {
   font-size: 12px;
   margin-right: 2px;
 }
+
 input[type="text"].sheet-narrow-input-FUNCNPC {
   margin-bottom: 2px;
   height: 20px;
   text-align: center;
   border-radius: 4px;
   max-width: 700px;
+
   color:white;
   background-color: #1b1b1b;
   border:1px solid black; 
 }
+
 input[type="text"].sheet-narrow-input-NPC {
   background-color: #1b1b1b;
   border:1px solid black; 
@@ -1513,6 +1777,7 @@ input[type="text"].sheet-narrow-input-NPC {
   margin-bottom: 2px;
   max-width: 119px;
 }
+
 input[type="text"].sheet-narrow-input-NPC-SAN {
   background-color: #1b1b1b;
   border:1px solid black; 
@@ -1524,6 +1789,7 @@ input[type="text"].sheet-narrow-input-NPC-SAN {
   margin-bottom: 2px;
   max-width: 119px;
 }
+
 input[type="text"].sheet-narrow-input-NPCMOV {
   background-color: #1b1b1b;
   border:1px solid black; 
@@ -1535,10 +1801,12 @@ input[type="text"].sheet-narrow-input-NPCMOV {
   margin-bottom: 2px;
   width: 249px;
 }
+
 div.sheet-sheet-col-NPC {
   float: left;
   margin: 0%;
 }
+
 .sheet-SKILL-NPC {
   margin-top: 100px;
   background-color: #27c1be;
@@ -1549,9 +1817,11 @@ div.sheet-sheet-col-NPC {
   font-weight: bold;
   height: 20px;
 }
+
 .sheet-NPC-STAT-TOP {
   float: right;
 }
+
 input[type="text"].sheet-namenpc {
   float: left;
   border-radius: 5px;
@@ -1563,11 +1833,15 @@ input[type="text"].sheet-namenpc {
   background-color: #1b1b1b;
   border:1px solid black; 
 }
+
 /* ---------- 롤테이블 --------------------------------- */
+
 .sheet-otherclass_Con {
   border: 0.3px solid rgb(170, 170, 170);
   border-radius: 8px;
 }
+
+
 /* --------- 실시간 광기의 발작 테이블 ---------- */
 .sheet-rolltemplate-coc-bomadness-rt {
   font-family: 'S-CoreDream-4Regular';
@@ -1579,7 +1853,10 @@ input[type="text"].sheet-namenpc {
   background-image: url("https://i.imgur.com/vTPPVB3.png");
   background-repeat: no-repeat;
   background-size: 100%;
+
+
 }
+
 .sheet-rolltemplate-coc-bomadness-rt div.sheet-REAL-TIME-HEAD {
  padding-bottom:10px;
  border-bottom: #ffffff 1px solid;
@@ -1597,28 +1874,37 @@ input[type="text"].sheet-namenpc {
 }
 .sheet-rolltemplate-coc-bomadness-rt div.sheet-REAL-TIME-BOX {
   padding:10px;
+
 }
+
 .sheet-rolltemplate-coc-bomadness-rt div.sheet-REAL-TIME-TITLE {
   text-align: left;
   margin-top:15px;
   margin-bottom:5px;
   font-family: 'S-CoreDream-6Bold';
+
 }
+
 .sheet-rolltemplate-coc-bomadness-rt div.sheet-REAL-TIME-DESCRIPTION {
   text-align: left;
   margin-bottom:20px;
   font-size:0.8em
+
 }
+
 .sheet-rolltemplate-coc-bomadness-rt div.sheet-REAL-TIME-DURATION {
   text-align: center;
   margin: 5px;
   font-size:0.8em
 }
+
+
 .sheet-rolltemplate-coc-bomadness-rt .inlinerollresult {
   border:none;
   background-color:transparent;
 }
 /* --------- 요약 광기의 발작 테이블 ---------- */
+
 .sheet-rolltemplate-coc-bomadness-summ {
   font-family: 'S-CoreDream-4Regular';
   color:white;
@@ -1629,7 +1915,10 @@ input[type="text"].sheet-namenpc {
   background-image: url("https://i.imgur.com/vTPPVB3.png");
   background-repeat: no-repeat;
   background-size: 100%;
+
+
 }
+
 .sheet-rolltemplate-coc-bomadness-summ div.sheet-REAL-TIME-HEAD {
  padding-bottom:10px;
  border-bottom: #ffffff 1px solid;
@@ -1647,26 +1936,35 @@ input[type="text"].sheet-namenpc {
 }
 .sheet-rolltemplate-coc-bomadness-summ div.sheet-REAL-TIME-BOX {
   padding:10px;
+
 }
+
 .sheet-rolltemplate-coc-bomadness-summ div.sheet-REAL-TIME-TITLE {
   text-align: left;
   margin-top:15px;
   margin-bottom:5px;
   font-family: 'S-CoreDream-6Bold';
+
 }
+
 .sheet-rolltemplate-coc-bomadness-summ div.sheet-REAL-TIME-DESCRIPTION {
   text-align: left;
   margin-bottom:20px;
   font-size:0.8em
+
 }
+
 .sheet-rolltemplate-coc-bomadness-summ div.sheet-REAL-TIME-DURATION {
   text-align: center;
   margin: 5px;
   font-size:0.8em
 }
+
+
 .sheet-rolltemplate-coc-bomadness-summ .inlinerollresult {
   border:none;
   background-color:transparent;}
+
 /* --------- 보너스 다이스 롤테이블 ---------- */
 .sheet-rolltemplate-coc{
   color:white;
@@ -1687,8 +1985,10 @@ input[type="text"].sheet-namenpc {
   padding-bottom:10px;
   font-family: 'S-CoreDream-4Regular';
   margin-left:5px;
+
   display:grid;
   grid-template-columns: 1.2fr 1fr;
+
   border-bottom: #ffffff 1px solid;
   border-left: medium none;
   border-right: medium none;
@@ -1702,9 +2002,11 @@ input[type="text"].sheet-namenpc {
   );
   border-image-slice: 1;
 }
+
 .sheet-rolltemplate-coc div.sheet-name::before {
   content:"✦"
 }
+
 .sheet-rolltemplate-coc div.sheet-value{
   display:grid;
   grid-template-columns: 35px 65px;
@@ -1716,6 +2018,7 @@ input[type="text"].sheet-namenpc {
   justify-self: end;
   padding-top:1px;
 }
+
 .sheet-rolltemplate-coc div.sheet-value1 {
   text-align:right;
   align-self: center;
@@ -1725,6 +2028,7 @@ input[type="text"].sheet-namenpc {
   text-align:left;
   align-self: center;
 }
+
 .sheet-rolltemplate-coc .inlinerollresult,
 .sheet-rolltemplate-coc .inlinerollresult.fullcrit,
 .sheet-rolltemplate-coc .inlinerollresult.inlinerollresult.fullfail,
@@ -1736,16 +2040,21 @@ input[type="text"].sheet-namenpc {
 }
   
 .sheet-rolltemplate-coc div.sheet-rollprint-ROW2 {
+
   margin-bottom: 20px;
   margin-top: 15px;
+
   } 
+
   .sheet-rolltemplate-coc div.sheet-dice-place {
 display:grid;
 grid-template-columns: 1fr 1fr 1fr;
+
 padding-top:25px;
 width:150px;
 margin:0 auto;
     } 
+
     .sheet-rolltemplate-coc div.sheet-dicep {
   width: 50x;
     height: 50px;
@@ -1754,6 +2063,7 @@ margin:0 auto;
     border:1px solid white;
   
   } 
+
   .sheet-rolltemplate-coc div.sheet-dice {
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -1766,6 +2076,8 @@ margin:0 auto;
     margin-top:-35px;
     margin-bottom:40px;
    }    
+
+
    .sheet-rolltemplate-coc div.sheet-ROW3{
     margin-top:10px;
     padding-bottom:10px;
@@ -1788,10 +2100,12 @@ margin:0 auto;
     color:black;
     font-size:0.4em;
     padding-top:2px;
+
   }
     
   
 /* ---------------------보너스 공격------------------------ */
+
 .sheet-rolltemplate-coc-attack{
   color:white;
   width:100%;
@@ -1811,8 +2125,10 @@ margin:0 auto;
   padding-bottom:10px;
   font-family: 'S-CoreDream-4Regular';
   margin-left:5px;
+
   display:grid;
   grid-template-columns: 1.2fr 1fr;
+
   border-bottom: #ffffff 1px solid;
   border-left: medium none;
   border-right: medium none;
@@ -1826,9 +2142,11 @@ margin:0 auto;
   );
   border-image-slice: 1;
 }
+
 .sheet-rolltemplate-coc-attack div.sheet-name::before {
   content:"✦"
 }
+
 .sheet-rolltemplate-coc-attack div.sheet-value{
   display:grid;
   grid-template-columns: 35px 65px;
@@ -1840,6 +2158,7 @@ margin:0 auto;
   justify-self: end;
   padding-top:1px;
 }
+
 .sheet-rolltemplate-coc-attack div.sheet-value1 {
   text-align:right;
   align-self: center;
@@ -1849,6 +2168,7 @@ margin:0 auto;
   text-align:left;
   align-self: center;
 }
+
 .sheet-rolltemplate-coc-attack .inlinerollresult,
 .sheet-rolltemplate-coc-attack .inlinerollresult.fullcrit,
 .sheet-rolltemplate-coc-attack .inlinerollresult.inlinerollresult.fullfail,
@@ -1860,16 +2180,21 @@ margin:0 auto;
 }
   
 .sheet-rolltemplate-coc-attack div.sheet-rollprint-ROW2 {
+
   margin-bottom: 20px;
   margin-top: 15px;
+
   } 
+
   .sheet-rolltemplate-coc-attack div.sheet-dice-place {
 display:grid;
 grid-template-columns: 1fr 1fr 1fr;
+
 padding-top:25px;
 width:150px;
 margin:0 auto;
     } 
+
     .sheet-rolltemplate-coc-attack div.sheet-dicep {
   width: 50x;
     height: 50px;
@@ -1878,6 +2203,7 @@ margin:0 auto;
     border:1px solid white;
   
   } 
+
   .sheet-rolltemplate-coc-attack div.sheet-dice {
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -1890,12 +2216,15 @@ margin:0 auto;
     margin-top:-35px;
     margin-bottom:40px;
    }    
+
+
    .sheet-rolltemplate-coc-attack div.sheet-ROW3{
     margin-top:10px;
     padding-bottom:10px;
     display:grid;
     grid-template-columns: 0.4fr 0.8fr;
     row-gap:5px;
+
     border-bottom: #ffffff 1px solid;
     border-left: medium none;
     border-right: medium none;
@@ -1925,6 +2254,7 @@ margin:0 auto;
     color:black;
     font-size:0.4em;
     padding-top:2px;
+
   }
     
   .sheet-rolltemplate-coc-attack div.sheet-ROW4{
@@ -1933,7 +2263,14 @@ margin:0 auto;
  padding:10px;
  font-family: 'S-CoreDream-4Regular';}
   
+
+
+
+
 /* ------------------------------------------ */ /* Roll Templates */ /* --------------------------------------- */
+
+
+
 /* BD/PD defence rolltemplate */
 .sheet-rolltemplate-coc-defence table {
   width: 100%;
@@ -1950,17 +2287,21 @@ margin:0 auto;
   border: 1px solid black;
   line-height: 1.6em;
 }
+
 .sheet-rolltemplate-coc-defence div {
   padding: 2px;
   border-bottom: 1px solid black;
 }
+
 .sheet-rolltemplate-coc-defence div.sheet-template_label {
   font-weight: bold;
 }
+
 .sheet-rolltemplate-coc-defence div.sheet-template_value {
   text-align: center;
   display:grid;
 }
+
 .sheet-rolltemplate-coc-defence .inlinerollresult {
   display: inline-block;
   min-width: 1.5em;
@@ -1968,24 +2309,29 @@ margin:0 auto;
   border: 2px solid black;
   background: #bebebe;
 }
+
 .sheet-rolltemplate-coc-defence .inlinerollresult.fullcrit {
   border: 2px solid black;
   background: #bebebe;
 }
+
 .sheet-rolltemplate-coc-defence .inlinerollresult.fullfail {
   border: 2px solid black;
   background: #bebebe;
 }
+
 .sheet-rolltemplate-coc-defence .inlinerollresult.importantroll {
   border: 2px solid black;
   background: #bebebe;
 }
+
 /* simple defence rolltemplate */
 .sheet-rolltemplate-coc-defence-1 table {
   width: 100%;
   color: black;
   background: #ffffff;
 }
+
 .sheet-rolltemplate-coc-defence-1 caption {
   text-align: center;
   background: black;
@@ -1994,31 +2340,45 @@ margin:0 auto;
   padding: 2px;
   line-height: 1.6em;
 }
+
 .sheet-rolltemplate-coc-defence-1 div {
   padding: 2px;
 }
+
 .sheet-rolltemplate-coc-defence-1 div.sheet-template_label {
   font-weight: bold;
 }
+
 .sheet-rolltemplate-coc-defence-1 div.sheet-template_value {
   text-align: center;
 }
+
 .sheet-rolltemplate-coc-defence-1 .inlinerollresult {
   display: inline-block;
   min-width: 1.5em;
   text-align: center;
   background: #bebebe;
 }
+
 .sheet-rolltemplate-coc-defence-1 .inlinerollresult.fullcrit {
   background: #bebebe;
 }
+
 .sheet-rolltemplate-coc-defence-1 .inlinerollresult.fullfail {
   background: #bebebe;
 }
+
 .sheet-rolltemplate-coc-defence-1 .inlinerollresult.importantroll {
   background: #bebebe;
 }
+
+
+
 /* -------------------------------------------------------------------------- */
+
+
+
+
 /* ----------------기본 다이스 (보너스 없음)----------------  */
 .sheet-rolltemplate-coc-1{
 color:white;
@@ -2029,7 +2389,11 @@ background-color: #150b38;
 background-image: url("https://i.imgur.com/vTPPVB3.png");
 background-repeat: no-repeat;
 background-size: 100%;
+
+
+
 }
+
 .sheet-rolltemplate-coc-1 div.sheet-template-name{
   color: white;
   font-weight: bold;
@@ -2038,6 +2402,9 @@ background-size: 100%;
   padding-bottom:5px;
   font-family: 'S-CoreDream-4Regular';
   margin-left:5px;
+
+
+
   border-bottom: #ffffff 1px solid;
   border-left: medium none;
   border-right: medium none;
@@ -2052,30 +2419,42 @@ background-size: 100%;
   border-image-slice: 1;
   
 }
+
 .sheet-rolltemplate-coc-1 div.sheet-template-name::before {
 content:"✦"
 }
+
+
+
+
 .sheet-rolltemplate-coc-1 div.sheet-rollprint-ROW2 {
 display:grid;
 grid-template-columns: 1fr 0.5fr 1fr;
 margin-bottom: 20px;
 margin-top: 15px;
 } 
+
 .sheet-rolltemplate-coc-1 div.sheet-template_label {
   display:grid;
+
   text-align: center;
   color: white;
   font-family: 'S-CoreDream-4Regular';
 }
+
+
+
 .sheet-rolltemplate-coc-1 .inlinerollresult {
   background-color: transparent;
   border:none;
   font-weight:300;
 }
+
 .sheet-rolltemplate-coc-1 div.sheet-divider3{
 padding-top:10px;
 color:#27c1be;
 }
+
 .sheet-rolltemplate-coc-1 div.sheet-template-dice {
   display:grid;
   grid-template-rows: auto;
@@ -2083,24 +2462,29 @@ color:#27c1be;
   color: white;
   
 }
+
 .sheet-rolltemplate-coc-1 div.sheet-template_dice1{
 align-self: center;
 font-size:2.7em;
 font-family: '116watermelon';
 }
+
 .sheet-rolltemplate-coc-1 div.sheet-template_dice2{
   margin-top:8px;
   font-family: 'S-CoreDream-4Regular';
   font-size:0.8em;
 }
+
 .sheet-rolltemplate-coc-1 div.sheet-template_color{
   margin-top:10px;
   margin-bottom:10px;
   display:grid;
   grid-template-columns: 0.4fr 0.8fr;
 }
+
 .sheet-rolltemplate-coc-1 div.sheet-template_color1
 { font-family: 'S-CoreDream-4Regular';
+
   
 }
 .sheet-rolltemplate-coc-1 div.sheet-template_color2{
@@ -2110,6 +2494,8 @@ font-family: '116watermelon';
   border-bottom-left-radius: 10px;
 }
   
+
+
 /* ----------------기본 공격 다이스 (보너스 없음)----------------  */
 .sheet-rolltemplate-coc-attack-1{
   color:white;
@@ -2131,8 +2517,10 @@ font-family: '116watermelon';
   padding-bottom:10px;
   font-family: 'S-CoreDream-4Regular';
   margin-left:5px;
+
   display:grid;
   grid-template-columns: 1.2fr 1fr;
+
   border-bottom: #ffffff 1px solid;
   border-left: medium none;
   border-right: medium none;
@@ -2148,7 +2536,9 @@ font-family: '116watermelon';
 }
 .sheet-rolltemplate-coc-attack-1 div.sheet-template_name::before {
   content:"✦"
+
 }
+
 .sheet-rolltemplate-coc-attack-1 div.sheet-template_label {
   display:grid;
   grid-template-columns: 35px 65px;
@@ -2159,6 +2549,7 @@ font-family: '116watermelon';
   align-items: center;
   justify-self: end;
 }
+
 .sheet-rolltemplate-coc-attack-1 div.sheet-template_label1 {
   text-align:right;
   align-self: center;
@@ -2169,6 +2560,7 @@ font-family: '116watermelon';
   align-self: center;
 }
   
+
   
   
   .sheet-rolltemplate-coc-attack-1 div.sheet-rollprint-ROW2 {
@@ -2177,7 +2569,9 @@ font-family: '116watermelon';
   margin-bottom: 20px;
   margin-top: 15px;
   } 
+
   
+
   
   .sheet-rolltemplate-coc-attack-1 .inlinerollresult,
   .sheet-rolltemplate-coc-attack-1 .inlinerollresult.fullcrit,
@@ -2189,6 +2583,7 @@ font-family: '116watermelon';
     font-weight:300;
   }
   
+
   .sheet-rolltemplate-coc-attack-1 div.sheet-template_dice{
     display:grid;
     grid-template-rows: auto;
@@ -2224,11 +2619,13 @@ font-family: '116watermelon';
     .sheet-rolltemplate-coc-attack-1 div.sheet-template_damage:hover{
       text-shadow: 0 0 .1em, 0 0 .3em;
  }
+
     .sheet-rolltemplate-coc-attack-1 div.sheet-template_damage2{
     align-self: center;
     font-size:2.7em;
     font-family: '116watermelon';
     }
+
     .sheet-rolltemplate-coc-attack-1 div.sheet-template_damage1{
       margin-top:8px;
       font-family: 'S-CoreDream-4Regular';
@@ -2260,7 +2657,11 @@ font-family: '116watermelon';
 .sheet-rolltemplate-coc-dice-roll table {
   width: 100%;
 color:white;
+
+
+
 }
+
 .sheet-rolltemplate-coc-dice-roll caption {
   text-align: center;
   background: black;
@@ -2270,16 +2671,20 @@ color:white;
   border: 1px solid black;
   line-height: 1.6em;
 }
+
 .sheet-rolltemplate-coc-dice-roll div {
   padding: 2px;
   border-bottom: 1px solid black;
 }
+
 .sheet-rolltemplate-coc-dice-roll div.sheet-template_label {
   font-weight: Bold;
 }
+
 .sheet-rolltemplate-coc-dice-roll div.sheet-template_value {
   text-align: center;
 }
+
 .sheet-rolltemplate-coc-dice-roll .inlinerollresult {
   display: inline-block;
   min-width: 1.5em;
@@ -2287,10 +2692,12 @@ color:white;
   border: 2px solid black;
   background: #bebebe;
 }
+
 .sheet-rolltemplate-coc-dice-roll .inlinerollresult.importantroll {
   border: 2px solid black;
   background: #bebebe;
 }
+
 /* -------------------------------------------------------------------------- */
 /* simple defence rolltemplate */
 .sheet-rolltemplate-coc-defence-2 table {
@@ -2299,6 +2706,7 @@ color:white;
   color: black;
   background: #e3dedb;
 }
+
 .sheet-rolltemplate-coc-defence-2 caption {
   text-align: center;
   background-color: black;
@@ -2308,19 +2716,23 @@ color:white;
   border: 1px solid black;
   line-height: 1.6em;
 }
+
 .sheet-rolltemplate-coc-defence-2 div {
   padding: 2px;
   border-bottom: 1px solid black;
   background: #efefef;
 }
+
 .sheet-rolltemplate-coc-defence-2 div.sheet-template_label {
   font-weight: Bold;
   background: #efefef;
 }
+
 .sheet-rolltemplate-coc-defence-2 div.sheet-template_value {
   text-align: center;
   background: #efefef;
 }
+
 .sheet-rolltemplate-coc-defence-2 .inlinerollresult {
   display: inline-block;
   min-width: 1.5em;
@@ -2328,14 +2740,17 @@ color:white;
   border: 2px solid black;
   background: #c3c9bd;
 }
+
 /* -------------------------------------------------------------------------- */
 /* Minion (no PD/BD) Attack rolltemplate */
+
 .sheet-rolltemplate-coc-minionattack table {
   width: 100%;
   border: 1px solid black;
   color: black;
   background: #ffffff;
 }
+
 .sheet-rolltemplate-coc-minionattack caption {
   text-align: center;
   background: black;
@@ -2345,16 +2760,20 @@ color:white;
   border: 1px solid black;
   line-height: 1.6em;
 }
+
 .sheet-rolltemplate-coc-minionattack div {
   padding: 2px;
   border-bottom: 1px solid black;
 }
+
 .sheet-rolltemplate-coc-minionattack div.sheet-template_label {
   font-weight: bold;
 }
+
 .sheet-rolltemplate-coc-minionattack div.sheet-template_value {
   text-align: center;
 }
+
 .sheet-rolltemplate-coc-minionattack .inlinerollresult {
   display: inline-block;
   min-width: 1.5em;
@@ -2362,18 +2781,22 @@ color:white;
   border: 2px solid black;
   background: #bebebe;
 }
+
 .sheet-rolltemplate-coc-minionattack .inlinerollresult.fullcrit {
   border: 2px solid black;
   background: #bebebe;
 }
+
 .sheet-rolltemplate-coc-minionattack .inlinerollresult.fullfail {
   border: 2px solid black;
   background: #bebebe;
 }
+
 .sheet-rolltemplate-coc-minionattack .inlinerollresult.importantroll {
   border: 2px solid black;
   background: #bebebe;
 }
+
 /* -------------------------------------------------------------------------- */
 /* minion defence rolltemplate */
 .sheet-rolltemplate-coc-miniondef table {
@@ -2382,6 +2805,7 @@ color:white;
   color: black;
   background: #e3dedb;
 }
+
 .sheet-rolltemplate-coc-miniondef caption {
   text-align: center;
   background-color: black;
@@ -2391,19 +2815,23 @@ color:white;
   border: 1px solid black;
   line-height: 1.6em;
 }
+
 .sheet-rolltemplate-coc-miniondef div {
   padding: 2px;
   border-bottom: 1px solid black;
   background: #efefef;
 }
+
 .sheet-rolltemplate-coc-miniondef div.sheet-template_label {
   font-weight: Bold;
   background: #efefef;
 }
+
 .sheet-rolltemplate-coc-miniondef div.sheet-template_value {
   text-align: center;
   background: #efefef;
 }
+
 .sheet-rolltemplate-coc-miniondef .inlinerollresult {
   display: inline-block;
   min-width: 1.5em;
@@ -2411,6 +2839,7 @@ color:white;
   border: 2px solid black;
   background: #c3c9bd;
 }
+
 /* -------------------------------------------------명중------------------------------------------------------ */
 /* Body hit Location */
 .sheet-rolltemplate-coc-body-hit-loc table {
@@ -2420,6 +2849,7 @@ color:white;
   background: #ffffff;
   text-align: center;
 }
+
 .sheet-rolltemplate-coc-body-hit-loc caption {
   text-align: center;
   background: black;
@@ -2429,18 +2859,22 @@ color:white;
   border: 1px solid black;
   line-height: 1.6em;
 }
+
 .sheet-rolltemplate-coc-body-hit-loc div {
   padding: 2px;
   border-bottom: 1px solid black;
   text-align: center;
 }
+
 .sheet-rolltemplate-coc-body-hit-loc div.sheet-template_label {
   font-weight: Bold;
   text-align: center;
 }
+
 .sheet-rolltemplate-coc-body-hit-loc div.sheet-template_value {
   text-align: center;
 }
+
 .sheet-rolltemplate-coc-body-hit-loc .inlinerollresult {
   display: inline-block;
   min-width: 1.5em;
@@ -2448,12 +2882,15 @@ color:white;
   border: 2px solid black;
   background: #bebebe;
 }
+
 .sheet-rolltemplate-coc--body-hit-loc .inlinerollresult.importantroll {
   border: 2px solid black;
   background: #bebebe;
   text-align: center;
 }
+
 /* -------------------------------------------------------------------------- */
+
 /* Button Smaller */
 button[type="roll"].sheet-smallbutton-roll {
   color: #18650d;
@@ -2469,6 +2906,7 @@ button[type="roll"].sheet-smallbutton-roll {
   border-radius: 5px;
   background-size: auto;
 }
+
 /* -------------------------------------------------------------------------- */
 /*명중 */
 button[type="roll"].sheet-smallnonskillbutton-roll {
@@ -2484,6 +2922,7 @@ button[type="roll"].sheet-smallnonskillbutton-roll {
   border: 1px solid black;
   border-radius: 5px;
 }
+
 /* -------------------------------------------------------------------------- */
 /* Button Even Smaller */
 button[type="roll"].sheet-evensmallerbutton-roll {
