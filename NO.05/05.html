@@ -1,18 +1,18 @@
-<div class='COMMISION-NO5'>
-    <!---- 옵션 ---->
+<div class='bind'>
+    <!----옵션---->
     <input type="checkbox" class="sheet-togglefunction" name="attr_togglefunction" value="1"> 추가 옵션
     <input type="checkbox" style="display:none" class="sheet-function" name="attr_togglefunction" value="1" />
     <div class="function wrap">
         <div class="function title">기능</div>
         <div class="function box">
-            <div class="able">
+            <div class="function able">
                 <input type="checkbox" class="sheet-toggledowntime" name="attr_toggledowntime" value="1" /> 플레이 기록
                 <input type="checkbox" class="sheet-toggleNPC" name="attr_toggleNPC" value="1" /> 조력자
                 <input type="checkbox" class="sheet-toggledr" name="attr_toggledr" value="1"> 기본 주사위
             </div>
         </div>
     </div>
-    <!---- 플레이 기록 ---->
+    <!----플레이 기록---->
     <input type="checkbox" class="sheet-toggledowntime" style="display:none" name="attr_toggledowntime" value="1" />
     <div class="downtime wrap">
         <div class="downtime title"> 다운타임</div>
@@ -28,7 +28,7 @@
                 <textarea name="attr_scenario_rewards" class="attr_scenario_rewards"></textarea>
             </div>
         </div>
-        <!---- 반복 ------>
+        <!----반복---->
         <fieldset class="repeating_downtime">
             <hr />
             <div class="downtime box">
@@ -45,9 +45,9 @@
             </div>
         </fieldset>
     </div>
-    <!---- 상단 스테이터스 ------>
+    <!----상단 스테이터스---->
     <div class="topstatus wrap">
-        <div class="topstatus title"> 스테이터스</div>
+        <!--<div class="topstatus title"> 스테이터스</div>-->
         <div class="topstatus box">
             <div class="topstatus subtitle">이동력</div>
             <div class="topstatus subtitle">체구</div>
@@ -72,25 +72,29 @@
             </select>
         </div>
     </div>
-    <!------ 로고 -------->
-    <img src="https://park-mob.com/lv99/data/commission/04-cmhd.png" class="logo">
+    <!---- 로고 ---->
+    <div class="logo wrap">
+        <img src="https://park-mob.com/lv99/data/commission/04-cmhd.png" class="logo">
+    </div>
     <!---- 기본 ---->
     <div class="basic">
         <!---- 인장 ---->
         <div class="image wrap">
-            <img class="profileimg" name="attr_character_avatar">
-            <!---- 바이오 ---->
-            <div class="bio wrap">
-                <div class="bio line1">
-                    <input class="bio line1" type="text" name="attr_date" placeholder="0000.00.00" />
-                    <input class="bio line1" type="text" name="attr_age" placeholder="나이" />
+            <div class="avater wrap">
+                <img class="avater" name="attr_character_avatar">
+                <div class="bio wrap">
+                    <div class="bio line1">
+                        <input class="bio line1" type="text" name="attr_date" placeholder="20xx.xx.xx" />
+                        <input class="bio line1" type="text" name="attr_age" placeholder="나이" />
+                    </div>
+                    <div class="bio line2">
+                        <input class="bio line2" type="text" name="attr_name" attr_age" placeholder="- 캐릭터 이름" />
+                        <input class="bio line2" type="text" name="attr_birthplace" placeholder="출생지" />
+                    </div>
                 </div>
-                <div class="bio line2">
-                    <input class="bio line2" type="text" name="attr_name" attr_age" placeholder="- 캐릭터 이름" />
-                    <input class="bio line2" type="text" name="attr_birthplace" placeholder="출생지" />
-                </div>
-
             </div>
+            <!---- 바이오 ---->
+
         </div>
 
         <!---- 특성치 ---->
@@ -180,11 +184,11 @@
                 <input class="status" type="text" name="attr_luck" min="0" max="99" value="50">
             </div>
         </div>
-        <!------ 이성 -------->
+        <!---- 이성 ---->
         <div class="san wrap">
             <div class="san title"> 이성</div>
             <div class="san box">
-                <!------ 이성치 기입 -------->
+                <!---- 이성치 기입 ---->
                 <div class="san section1">
                     <input class="san start" placeholder="초기 이성치" type="text" min="0" name="attr_san_start">
                     <input class="san current" type="number" placeholder="4/5" min="0" name="attr_san_thresh"
@@ -199,7 +203,7 @@
                         value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{san_txt}}} {{success=[[@{san}]]}} {{hard=[[floor(@{san}/2)]]}} {{extreme=[[floor(@{san}/5)]]}} {{roll1=[[1d100]]}}'
                         name='roll_san_check'></button>
                 </div>
-                <!------ 광기의 발작 -------->
+                <!---- 광기의 발작 ---->
                 <div class="san section2">
                     <div class="san subtitle bom">광기의 발작</div>
                     <div class="san bom">
@@ -213,12 +217,12 @@
                             value='&{template:coc-bomadness-rt} {{roll1=[[1D4]]}} {{rounds=[[1d6]]}}{{name=@{character_name}}}'
                             name='roll_bomadness-20-rt'></button>
                         <div class="san bomindication"> 광기의 요약 </div>
-                        <button class='san bom2' type='roll'
+                        <button class='san bom1' type='roll'
                             value='&{template:coc-bomadness-summ} {{roll1=[[1D10]]}}{{name=@{character_name}}}'
                             name='roll_bomadness-20-summ'></button>
                     </div>
                 </div>
-                <!------- 정신 상태 -------->
+                <!----정신 상태---->
                 <div class="san section3">
                     <div class="san subtitle cmc"> 현재 정신 상태</div>
                     <input class="san cmc" type="text" name="attr_current_mental_condition"
@@ -226,7 +230,7 @@
                 </div>
             </div>
         </div>
-        <!------  체력 -------->
+        <!----체력---->
         <div class="hp wrap">
             <div class="hp title">체력 </div>
             <div class="hp box">
@@ -244,7 +248,7 @@
                 </div>
             </div>
         </div>
-        <!------- 마력 -------->
+        <!----마력---->
         <div class="mp wrap">
             <div class="mp title"> 마력 </div>
             <div class="mp box">
@@ -254,7 +258,7 @@
             </div>
         </div>
     </div>
-    <!------- 다이스 -------->
+    <!----다이스---->
     <input type="checkbox" style="display:none" class="sheet-toggledr" name="attr_toggledr" value="1">
     <div class="dice wrap">
         <div class="dice title">다이스</div>
@@ -326,16 +330,16 @@
             </div>
         </div>
     </div>
-    <!-----구분선------->
+    <!----구분선---->
     <img src="" class="sublogo">
-    <!---- 기능치------->
+    <!----기능치---->
     <div class="skill wrap">
-        <div class="skill title"> 기능치</div>
+        <div class="skill title">기능치</div>
         <div class="skill box">
-            <!---- 줄바꿈------->
+            <!----줄바꿈---->
             <div class="skill line1">
                 <div class="accounting skillset">
-                    <input type="checkbox" name="attr_accounting_mdr_checkbox" />
+                    <input type="checkbox" class="skill cb" name="attr_accounting_mdr_checkbox" />
                     <div class="skill subtitle">회계(05%)</div>
                     <input class="skill name" type="text" name="attr_accounting_mdr" value="05" />
                     <button class='skill' type='roll'
@@ -346,7 +350,7 @@
                         name='roll_accounting_mdr_check'></button>
                 </div>
                 <div class="anthropology skillset">
-                    <input type="checkbox" name="attr_anthropology_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_anthropology_mdr_checkbox">
                     <div class="skill subtitle">인류학(01%)</div>
                     <input class="skill name" type="text" name="attr_anthropology_mdr" value="01" />
                     <button class='skill' type='roll'
@@ -357,7 +361,7 @@
                         name='roll_anthropology_mdr_check'></button>
                 </div>
                 <div class="appraise skillset">
-                    <input type="checkbox" name="attr_appraise_mdr_checkbox" />
+                    <input type="checkbox" class="skill cb" name="attr_appraise_mdr_checkbox" />
                     <div class="skill subtitle">감정(05%)</div>
                     <input class="skill name" type="text" name="attr_appraise_mdr" value="05" />
                     <button class='skill' type='roll'
@@ -368,7 +372,7 @@
                         name='roll_appraise_mdr_check'></button>
                 </div>
                 <div class="archaeology skillset">
-                    <input type="checkbox" name="attr_archaeology_mdr_checkbox" />
+                    <input type="checkbox" class="skill cb" name="attr_archaeology_mdr_checkbox" />
                     <div class="skill subtitle">고고학(01%)</div>
                     <input class="skill name" type="text" name="attr_archaeology_mdr" value="01" />
                     <button class='skill' type='roll'
@@ -379,7 +383,7 @@
                         name='roll_archaeology_mdr_check'></button>
                 </div>
                 <div class="charm skillset">
-                    <input type="checkbox" name="attr_charm_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_charm_mdr_checkbox">
                     <div class="skill subtitle">매혹(15%)</div>
                     <input class="skill name" type="text" name="attr_charm_mdr" value="15" />
                     <button class='skill' type='roll'
@@ -390,7 +394,7 @@
                         name='roll_charm_mdr_check'></button>
                 </div>
                 <div class="climb skillset">
-                    <input type="checkbox" name="attr_climb_mdr_checkbox" />
+                    <input type="checkbox" class="skill cb" name="attr_climb_mdr_checkbox" />
                     <div class="skill subtitle">오르기(20%)</div>
                     <input class="skill name" type="text" name="attr_climb_mdr" value="20" />
                     <button class='skill' type='roll'
@@ -401,7 +405,7 @@
                         name='roll_climb_mdr_check'></button>
                 </div>
                 <div class="computeruse skillset">
-                    <input type="checkbox" name="attr_computer_use_mdr_checkbox" />
+                    <input type="checkbox" class="skill cb" name="attr_computer_use_mdr_checkbox" />
                     <div class="skill subtitle">컴퓨터사용(05%)</div>
                     <input class="skill name" type="text" name="attr_computer_use_mdr" value="05" />
                     <button class='skill' type='roll'
@@ -412,7 +416,7 @@
                         name='roll_computer_use_mdr_check'></button>
                 </div>
                 <div class="creditrating skillset">
-                    <input type="checkbox" name="attr_creditrating_mdr_checkbox" />
+                    <input type="checkbox" class="skill cb" name="attr_creditrating_mdr_checkbox" />
                     <div class="skill subtitle">재력(00%)</div>
                     <input class="skill name" type="text" name="attr_credit_rating_mdr" value="00" />
                     <button class='skill' type='roll'
@@ -423,7 +427,7 @@
                         name='roll_credit_rating_mdr_check'></button>
                 </div>
                 <div class="cthulhumythos skillset">
-                    <input type="checkbox" name="attr_cthulhumythos_mdr_checkbox" />
+                    <input type="checkbox" class="skill cb" name="attr_cthulhumythos_mdr_checkbox" />
                     <div class="skill subtitle">크툴루 신화(00%)</div>
                     <input class="skill name" type="text" name="attr_cthulhu_mythos_mdr" value="0" placeholder="00" />
                     <button class='skill' type='roll'
@@ -434,7 +438,7 @@
                         name='roll_cthulhu_mythos_mdr_check'></button>
                 </div>
                 <div class="disguise skillset">
-                    <input type="checkbox" name="attr_disguise_mdr_checkbox" />
+                    <input type="checkbox" class="skill cb" name="attr_disguise_mdr_checkbox" />
                     <div class="skill subtitle">변장(05%)</div>
                     <input class="skill name" type="text" name="attr_disguise_mdr" value="05" />
                     <button class='skill' type='roll'
@@ -445,7 +449,7 @@
                         name='roll_disguise_mdr_check'></button>
                 </div>
                 <div class="dodge skillset">
-                    <input type="checkbox" name="attr_dodge_mdr_checkbox" />
+                    <input type="checkbox" class="skill cb" name="attr_dodge_mdr_checkbox" />
                     <div class="skill subtitle">회피(민첩/2)</div>
                     <input class="skill name" type="text" name="attr_dodge_mdr" value="00" />
                     <button class='skill' type='roll'
@@ -456,7 +460,7 @@
                         name='roll_dodge_mdr_check'></button>
                 </div>
                 <div class="driveauto skillset">
-                    <input type="checkbox" name="attr_drive_auto_mdr_checkbox" />
+                    <input type="checkbox" class="skill cb" name="attr_drive_auto_mdr_checkbox" />
                     <div class="skill subtitle">자동차 운전(20%)</div>
                     <input class="skill name" type="text" name="attr_drive_auto_mdr" value="20" />
                     <button class='skill' type='roll'
@@ -467,7 +471,7 @@
                         name='roll_drive_auto_mdr_check'></button>
                 </div>
                 <div class="elecrepairn skillset">
-                    <input type="checkbox" name="attr_elec_repair_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_elec_repair_mdr_checkbox">
                     <div class="skill subtitle">전기수리(10%)</div>
                     <input class="skill name" type="text" name="attr_elec_repair_mdr" value="10" />
                     <button class='skill' type='roll'
@@ -478,7 +482,7 @@
                         name='roll_elec_repair_mdr_check'></button>
                 </div>
                 <div class="electronics skillset">
-                    <input type="checkbox" name="attr_electronics_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_electronics_mdr_checkbox">
                     <div class="skill subtitle">전자기기(01%)</div>
                     <input class="skill name" type="text" name="attr_electronics_mdr" value="01" />
                     <button class='skill' type='roll'
@@ -489,7 +493,7 @@
                         name='roll_electronics_mdr_check'></button>
                 </div>
                 <div class="fasttalk skillset">
-                    <input type="checkbox" name="attr_fast_talk_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_fast_talk_mdr_checkbox">
                     <div class="skill subtitle">말재주(05%)</div>
                     <input class="skill name" type="text" name="attr_fast_talk_mdr" value="05" />
                     <button class='skill' type='roll'
@@ -500,7 +504,7 @@
                         name='roll_fast_talk_mdr_check'></button>
                 </div>
                 <div class="fighting(brawl) skillset">
-                    <input type="checkbox" name="attr_fighting_brawl_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_fighting_brawl_mdr_checkbox">
                     <div class="skill subtitle">근접전(격투)(25%)</div>
                     <input class="skill name" type="text" name="attr_fighting_brawl_mdr" value="25" />
                     <button class='skill' type='roll'
@@ -511,7 +515,7 @@
                         name='roll_fighting_brawl_mdr_check'></button>
                 </div>
                 <div class="firearms(hg) skillset">
-                    <input type="checkbox" name="attr_firearms_handgun_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_firearms_handgun_mdr_checkbox">
                     <div class="skill subtitle">사격(권총)(20%)</div>
                     <input class="skill name" type="text" name="attr_firearms_handgun_mdr" value="20" />
                     <button class='skill' type='roll'
@@ -522,7 +526,7 @@
                         name='roll_firearms_handgun_mdr_check'></button>
                 </div>
                 <div class="firearms(r/s) skillset">
-                    <input type="checkbox" name="attr_firearms_rifle_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_firearms_rifle_mdr_checkbox">
                     <div class="skill subtitle">사격(라/산)(25%)</div>
                     <input class="skill name" type="text" name="attr_firearms_rifle_mdr" value="25" />
                     <button class='skill' type='roll'
@@ -533,7 +537,7 @@
                         name='roll_firearms_rifle_mdr_check'></button>
                 </div>
                 <div class="firearms_s_m_g skillset">
-                    <input type="checkbox" name="attr_firearms_smg_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_firearms_smg_mdr_checkbox">
                     <div class="skill subtitle">사격(SMG)(15%)</div>
                     <input class="skill name" type="text" name="attr_firearms_smg_mdr" value="15" />
                     <button class='skill' type='roll'
@@ -544,10 +548,10 @@
                         name='roll_firearms_smg_mdr_check'></button>
                 </div>
             </div>
-            <!--------줄바꿈--------->
+            <!----줄바꿈---->
             <div class="skill line2">
                 <div class="firstaid skillset">
-                    <input type="checkbox" name="attr_first_aid_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_first_aid_mdr_checkbox">
                     <div class="skill subtitle">응급처치(30%)</div>
                     <input class="skill name" type="text" name="attr_first_aid_mdr" value="30" />
                     <button class='skill' type='roll'
@@ -558,7 +562,7 @@
                         name='roll_first_aid_mdr_check'></button>
                 </div>
                 <div class="history skillset">
-                    <input type="checkbox" name="attr_history_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_history_mdr_checkbox">
                     <div class="skill subtitle">역사(05%)</div>
                     <input class="skill name" type="text" name="attr_history_mdr" value="05" />
                     <button class='skill' type='roll'
@@ -569,7 +573,7 @@
                         name='roll_history_mdr_check'></button>
                 </div>
                 <div class="intimidate skillset">
-                    <input type="checkbox" name="attr_intimidate_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_intimidate_mdr_checkbox">
                     <div class="skill subtitle">위협(15%)</div>
                     <input class="skill name" type="text" name="attr_intimidate_mdr" value="15" />
                     <button class='skill' type='roll'
@@ -580,7 +584,7 @@
                         name='roll_intimidate_mdr_check'></button>
                 </div>
                 <div class="jump skillset">
-                    <input type="checkbox" name="attr_jump_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_jump_mdr_checkbox">
                     <div class="skill subtitle">도약(20%)</div>
                     <input class="skill name" type="text" name="attr_jump_mdr" value="20" />
                     <button class='skill' type='roll'
@@ -591,7 +595,7 @@
                         name='roll_jump_mdr_check'></button>
                 </div>
                 <div class="language(own) skillset">
-                    <input type="checkbox" name="attr_language_own_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_language_own_mdr_checkbox">
                     <div class="skill subtitle"> 모국어(교육)</div>
                     <input class="skill name" type="text" name="attr_language_own_mdr" value="00" />
                     <button class='skill' type='roll'
@@ -602,7 +606,7 @@
                         name='roll_language_own_mdr_check'></button>
                 </div>
                 <div class="law skillset">
-                    <input type="checkbox" name="attr_law_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_law_mdr_checkbox">
                     <div class="skill subtitle">법률(05%)</div>
                     <input class="skill name" type="text" name="attr_law_mdr" value="05" />
                     <button class='skill' type='roll'
@@ -613,7 +617,7 @@
                         name='roll_law_mdr_check'></button>
                 </div>
                 <div class="libraryuse skillset">
-                    <input type="checkbox" name="attr_library_use_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_library_use_mdr_checkbox">
                     <div class="skill subtitle">자료조사(20%)</div>
                     <input class="skill name" type="text" name="attr_library_use_mdr" value="20" />
                     <button class='skill' type='roll'
@@ -624,7 +628,7 @@
                         name='roll_library_use_mdr_check'></button>
                 </div>
                 <div class="listen skillset">
-                    <input type="checkbox" name="attr_listen_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_listen_mdr_checkbox">
                     <div class="skill subtitle">듣기(25%)</div>
                     <input class="skill name" type="text" name="attr_listen_mdr" value="25" />
                     <button class='skill' type='roll'
@@ -635,7 +639,7 @@
                         name='roll_listen_mdr_check'></button>
                 </div>
                 <div class="locksmith skillset">
-                    <input type="checkbox" name="attr_locksmith_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_locksmith_mdr_checkbox">
                     <div class="skill subtitle">열쇠공(01%)</div>
                     <input class="skill name" type="text" name="attr_locksmith_mdr" value="01" />
                     <button class='skill' type='roll'
@@ -646,7 +650,7 @@
                         name='roll_locksmith_mdr_check'></button>
                 </div>
                 <div class="mechrepair skillset">
-                    <input type="checkbox" name="attr_mech_repair_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_mech_repair_mdr_checkbox">
                     <div class="skill subtitle">기계수리(10%)</div>
                     <input class="skill name" type="text" name="attr_mech_repair_mdr" value="10" />
                     <button class='skill' type='roll'
@@ -657,7 +661,7 @@
                         name='roll_mech_repair_mdr_check'></button>
                 </div>
                 <div class="medicine skillset">
-                    <input type="checkbox" name="attr_medicine_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_medicine_mdr_checkbox">
                     <div class="skill subtitle">의료(01%)</div>
                     <input class="skill name" type="text" name="attr_medicine_mdr" value="01" />
                     <button class='skill' type='roll'
@@ -668,7 +672,7 @@
                         name='roll_medicine_mdr_check'></button>
                 </div>
                 <div class="naturalworld skillset">
-                    <input type="checkbox" name="attr_natural_world_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_natural_world_mdr_checkbox">
                     <div class="skill subtitle">자연(10%)</div>
                     <input class="skill name" type="text" name="attr_natural_world_mdr" value="10" />
                     <button class='skill' type='roll'
@@ -679,7 +683,7 @@
                         name='roll_natural_world_mdr_check'> </button>
                 </div>
                 <div class="navigate skillset">
-                    <input type="checkbox" name="attr_navigate_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_navigate_mdr_checkbox">
                     <div class="skill subtitle" ">항법(10%)</div>
           <input class=" skill name" type="text" name="attr_navigate_mdr" value="10" />
                     <button class='skill' type='roll'
@@ -690,7 +694,7 @@
                         name='roll_navigate_mdr_check'></button>
                 </div>
                 <div class="occult skillset">
-                    <input type="checkbox" name="attr_occult_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_occult_mdr_checkbox">
                     <div class="skill subtitle">오컬트(05%)</div>
                     <input class="skill name" type="text" name="attr_occult_mdr" value="05" />
                     <button class='skill' type='roll'
@@ -701,7 +705,7 @@
                         name='roll_occult_mdr_check'></button>
                 </div>
                 <div class="ophvmachine skillset">
-                    <input type="checkbox" name="attr_op_hv_machine_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_op_hv_machine_mdr_checkbox">
                     <div class="skill subtitle">중장비 조작(01%)</div>
                     <input class="skill name" type="text" name="attr_op_hv_machine_mdr" value="01" />
                     <button class='skill' type='roll'
@@ -712,7 +716,7 @@
                         name='roll_op_hv_machine_mdr_check'></button>
                 </div>
                 <div class="persuade skillset">
-                    <input type="checkbox" name="attr_persuade_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_persuade_mdr_checkbox">
                     <div class="skill subtitle">설득(10%)</div>
                     <input class="skill name" type="text" name="attr_persuade_mdr" value="10" />
                     <button class='skill' type='roll'
@@ -723,7 +727,7 @@
                         name='roll_persuade_mdr_check'></button>
                 </div>
                 <div class="psychology skillset">
-                    <input type="checkbox" name="attr_psychology_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_psychology_mdr_checkbox">
                     <div class="skill subtitle">심리학(10%)</div>
                     <input class="skill name" type="text" name="attr_psychology_mdr" value="10" />
                     <button class='skill' type='roll'
@@ -734,7 +738,7 @@
                         name='roll_psychology_mdr_check'></button>
                 </div>
                 <div class="psychoanalysis skillset">
-                    <input type="checkbox" name="attr_psychoanalysis_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_psychoanalysis_mdr_checkbox">
                     <div class="skill subtitle">정신분석(01%)</div>
                     <input class="skill name" type="text" name="attr_psychoanalysis_mdr" value="01" />
                     <button class='skill' type='roll'
@@ -745,7 +749,7 @@
                         name='roll_psychoanalysis_mdr_check'></button>
                 </div>
                 <div class="ride skillset">
-                    <input type="checkbox" name="attr_ride_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_ride_mdr_checkbox">
                     <div class="skill subtitle">승마(05%)</div>
                     <input class="skill name" type="text" name="attr_ride_mdr" value="05" />
                     <button class='skill' type='roll'
@@ -756,10 +760,10 @@
                         name='roll_ride_mdr_check'></button>
                 </div>
             </div>
-            <!----줄바꿈------->
+            <!----줄바꿈---->
             <div class="skill line3">
                 <div class="sleightofhand skillset">
-                    <input type="checkbox" name="attr_sleight_of_hand_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_sleight_of_hand_mdr_checkbox">
                     <div class="skill subtitle">손놀림(10%)</div>
                     <input class="skill name" type="text" name="attr_sleight_of_hand_mdr" value="10" />
                     <button class='skill' type='roll'
@@ -770,7 +774,7 @@
                         name='roll_sleight_of_hand_mdr_check'></button>
                 </div>
                 <div class="spothidden skillset">
-                    <input type="checkbox" name="attr_spot_hidden_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_spot_hidden_mdr_checkbox">
                     <div class="skill subtitle">관찰력(25%)</div>
                     <input class="skill name" type="text" name="attr_spot_hidden_mdr" value="25" />
                     <button class='skill' type='roll'
@@ -781,7 +785,7 @@
                         name='roll_spot_hidden_mdr_check'></button>
                 </div>
                 <div class="stealth skillset">
-                    <input type="checkbox" name="attr_stealth_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_stealth_mdr_checkbox">
                     <div class="skill subtitle">은밀행동(20%)</div>
                     <input class="skill name" type="text" name="attr_stealth_mdr" value="20" />
                     <button class='skill' type='roll'
@@ -792,7 +796,7 @@
                         name='roll_stealth_mdr_check'></button>
                 </div>
                 <div class="swim skillset">
-                    <input type="checkbox" name="attr_swim_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_swim_mdr_checkbox">
                     <div class="skill subtitle">수영(20%)</div>
                     <input class="skill name" type="text" name="attr_swim_mdr" value="20" />
                     <button class='skill' type='roll'
@@ -803,7 +807,7 @@
                         name='roll_swim_mdr_check'></button>
                 </div>
                 <div class="throw skillset">
-                    <input type="checkbox" name="attr_throw_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_throw_mdr_checkbox">
                     <div class="skill subtitle">투척(20%)</div>
                     <input class="skill name" type="text" name="attr_throw_mdr" value="20" />
                     <button class='skill' type='roll'
@@ -814,7 +818,7 @@
                         name='roll_throw_mdr_check'></button>
                 </div>
                 <div class="track skillset">
-                    <input type="checkbox" name="attr_track_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_track_mdr_checkbox">
                     <div class="skill subtitle">추적(10%)</div>
                     <input class="skill name" type="text" name="attr_track_mdr" value="10" />
                     <button class='skill' type='roll'
@@ -825,7 +829,7 @@
                         name='roll_track_mdr_check'></button>
                 </div>
                 <div class="Art/Craft skillset">
-                    <input type="checkbox" name="attr_art/craft_mdr_checkbox">
+                    <input type="checkbox" class="skill cb" name="attr_art/craft_mdr_checkbox">
                     <div class="skill subtitle"> 예술/공예(05%)</div>
                     <input class="skill name" type="text" name="attr_art/craft_mdr" value="05" />
                     <button class='skill' type='roll'
@@ -835,10 +839,11 @@
                         value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{art/craft_txt}}} {{success=[[@{art/craft_mdr}]]}} {{hard=[[floor(@{art/craft_mdr}/2)]]}} {{extreme=[[floor(@{art/craft_mdr}/5)]]}} {{roll1=[[1d100]]}}'
                         name='roll_art/craft_mdr_check'></button>
                 </div>
-                <!--------임의스킬--------->
+                <!----임의 스킬---->
                 <div class="other-skills skillset">
-                    <input type="checkbox" name="attr_otherskill1_mdr_checkbox">
-                    <input class="skill-name-input" type="text" name="attr_otherskill1_mdr_name" placeholder="추가 기능치" />
+                    <input type="checkbox" class="skill cb" name="attr_otherskill1_mdr_checkbox">
+                    <input class="skill name additional" type="text" name="attr_otherskill1_mdr_name"
+                        placeholder="추가 기능치" />
                     <input class="skill name" type="text" name="attr_otherskill1_mdr" value="00" />
                     <button class='skill' type='roll'
                         value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=&#12304;@{otherskill1_mdr_name}&#12305;}} {{success=[[@{otherskill1_mdr}]]}} {{hard=[[floor(@{otherskill1_mdr}/2)]]}} {{extreme=[[floor(@{otherskill1_mdr}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
@@ -848,8 +853,9 @@
                         name='roll_otherskill1_mdr_check'></button>
                 </div>
                 <div class="other-skills skillset">
-                    <input type="checkbox" name="attr_otherskill2_mdr_checkbox">
-                    <input class="skill-name-input" type="text" name="attr_otherskill2_mdr_name" placeholder="추가 기능치" />
+                    <input type="checkbox" class="skill cb" name="attr_otherskill2_mdr_checkbox">
+                    <input class="skill name additional" type="text" name="attr_otherskill2_mdr_name"
+                        placeholder="추가 기능치" />
                     <input class="skill name" type="text" name="attr_otherskill2_mdr" value="00" />
                     <button class='skill' type='roll'
                         value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=&#12304;@{otherskill2_mdr_name}&#12305;}} {{success=[[@{otherskill2_mdr}]]}} {{hard=[[floor(@{otherskill2_mdr}/2)]]}} {{extreme=[[floor(@{otherskill2_mdr}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
@@ -859,8 +865,9 @@
                         name='roll_otherskill2_mdr_check'></button>
                 </div>
                 <div class="other-skills skillset">
-                    <input type="checkbox" name="attr_otherskill3_mdr_checkbox">
-                    <input class="skill-name-input" type="text" name="attr_otherskill3_mdr_name" placeholder="추가 기능치" />
+                    <input type="checkbox" class="skill cb" name="attr_otherskill3_mdr_checkbox">
+                    <input class="skill name additional" type="text" name="attr_otherskill3_mdr_name"
+                        placeholder="추가 기능치" />
                     <input class="skill name" type="text" name="attr_otherskill3_mdr" value="00" />
                     <button class='skill' type='roll'
                         value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=&#12304;@{otherskill3_mdr_name}&#12305;}} {{success=[[@{otherskill3_mdr}]]}} {{hard=[[floor(@{otherskill3_mdr}/2)]]}} {{extreme=[[floor(@{otherskill3_mdr}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
@@ -870,8 +877,9 @@
                         name='roll_otherskill3_mdr_check'></button>
                 </div>
                 <div class="other-skills skillset">
-                    <input type="checkbox" name="attr_otherskill4_mdr_checkbox">
-                    <input class="skill-name-input" type="text" name="attr_otherskill4_mdr_name" placeholder="추가 기능치" />
+                    <input type="checkbox" class="skill cb" name="attr_otherskill4_mdr_checkbox">
+                    <input class="skill name additional" type="text" name="attr_otherskill4_mdr_name"
+                        placeholder="추가 기능치" />
                     <input class="skill name" type="text" name="attr_otherskill4_mdr" value="00" />
                     <button class='skill' type='roll'
                         value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=&#12304;@{otherskill4_mdr_name}&#12305;}} {{success=[[@{otherskill4_mdr}]]}} {{hard=[[floor(@{otherskill4_mdr}/2)]]}} {{extreme=[[floor(@{otherskill4_mdr}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
@@ -882,8 +890,8 @@
                 </div>
                 <fieldset class="repeating_skillsmdr">
                     <div class="other-skills skillset">
-                        <input type="checkbox" name="attr_checkbox_mdr">
-                        <input class="skill-name-input" type="text" name="attr_skillname_mdr" placeholder="추가 기능치"
+                        <input type="checkbox" class="skill cb" name="attr_checkbox_mdr">
+                        <input class="skill name additional" type="text" name="attr_skillname_mdr" placeholder="추가 기능치"
                             style="margin-bottom:1px;" />
                         <input class="skill name" type="text" name="attr_skill_mdr" value="00" />
                         <button class='skill' type='roll'
@@ -894,34 +902,30 @@
                             name='roll_skill_mdr_check'></button>
                     </div>
                 </fieldset>
-                <!----다른 기능치------->
-                <div class="SKILL-REMINDER">
-                    <div class="subhead-SKILL-REMINDER">
-                        다른 기능
-                    </div>
-                    <div class="subbox-SKILLREMINDER">
-                        <div class="otherskill-reminder">동물 다루기(05%)</div>
-                        <div class="otherskill-reminder">최면술(01%)</div>
-                        <div class="otherskill-reminder">외국어(01%)</div>
-                        <div class="otherskill-reminder">포격(01%)</div>
-                        <div class="otherskill-reminder"> 조종(01%)</div>
-                        <div class="otherskill-reminder">폭파(01%)</div>
-                        <div class="otherskill-reminder">독순술(01%)</div>
-                        <div class=" otherskill-reminder">과학(01%)</div>
-                        <div class="otherskill-reminder">생존술(10%)</div>
+                <!----다른 기능치---->
+                <div class="skill reminder">
+                    <div class="skill reminder subtitle">다른 기능</div>
+                    <div class="skill reminder subbox">
+                        <div class="skill reminder otherskill">동물 다루기(05%)</div>
+                        <div class="skill reminder otherskill">최면술(01%)</div>
+                        <div class="skill reminder otherskill">외국어(01%)</div>
+                        <div class="skill reminder otherskill">포격(01%)</div>
+                        <div class="skill reminder otherskill"> 조종(01%)</div>
+                        <div class="skill reminder otherskill">폭파(01%)</div>
+                        <div class="skill reminder otherskill">독순술(01%)</div>
+                        <div class="skill reminder otherskill">과학(01%)</div>
+                        <div class="skill reminder otherskill">생존술(10%)</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!------- 전투 -------->
+    <!----전투---->
     <input type="checkbox" style="display:none" class="sheet-showskills" name="attr_showskills" value="1">
-    <div class=COMBET>
-        <h4 class="head-COMBET">
-            <img src="https://i.imgur.com/lIBp9qw.png" class="combet" alt="combet">
-        </h4>
-        <div class="box-COMBET">
-            <div class="COMBET-INDICATION">
+    <div class="combet wrap">
+        <div class="combet title">전투</div>
+        <div class="combet box">
+            <div class="combet line">
                 <div class="INDICATION-TEXT-COMBET1">무기</div>
                 <div class="INDICATION-TEXT-COMBET2">기능</div>
                 <div class="INDICATION-TEXT-COMBET3">피해</div>
@@ -930,15 +934,16 @@
                 <div class="INDICATION-TEXT-COMBET6">탄약</div>
                 <div class="INDICATION-TEXT-COMBET7">고장</div>
             </div>
-            <div class="ATK-ACTION">
-                <input class="unarmed" type="text" placeholder="비무장" disabled="true" />
+
+            <div class="combet line">
+                <input class="ATK dif" type="text" placeholder="비무장" disabled="true" />
                 <button class='ATK1' type='roll'
                     value='&{template:coc-attack} {{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}} {{weaponname=@{unarmed_txt}}}{{success=[[@{fighting_brawl_mdr}]]}} {{hard=[[floor(@{fighting_brawl_mdr}/2)]]}} {{extreme=[[floor(@{fighting_brawl_mdr}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}} {{damage=[[1d3+@{damage_bonus}]]}}'
                     name='roll_unarmed_mdr_check'></button>
                 <button class='ATK2' type='roll'
                     value='&{template:coc-attack-1}{{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}} {{weaponname=@{unarmed_txt}}} {{success=[[@{fighting_brawl_mdr}]]}} {{hard=[[floor(@{fighting_brawl_mdr}/2)]]}} {{extreme=[[floor(@{fighting_brawl_mdr}/5)]]}} {{roll1=[[1d100]]}} {{damage=[[1d3+@{damage_bonus}]]}}'
                     name='roll_unarmed_mdr_check'></button>
-                <input class="ATK" type="text" placeholder="근접전(격투)" disabled="true" />
+                <input class="ATK dif" type="text" placeholder="근접전(격투)" disabled="true" />
                 <input class="ATK" type="text" value="1d3" disabled="true" />
                 <input class="ATK" type="text" value="+db" disabled="true" />
                 <input class="ATK" type="text" value="-" disabled="true" />
@@ -946,16 +951,16 @@
                 <input class="ATK" type="text" value="-" disabled="true" />
                 <input class="ATK" type="text" value="-" disabled="true" />
             </div>
-            <div class="ATK-ACTION">
-                <input class="unarmed" type="text" name="attr_weapon1_mdr_name" />
+
+            <div class="combet line">
+                <input class="ATK dif" type="text" name="attr_weapon1_mdr_name" />
                 <button class='ATK1' type='roll'
                     value='&{template:coc-attack} {{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}}{{weaponname=@{weapon1_mdr_name}}} {{success=[[@{weapon1_mdr_skill}]]}} {{hard=[[floor(@{weapon1_mdr_skill}/2)]]}} {{extreme=[[floor(@{weapon1_mdr_skill}/5)]]}} {{malf=@{weapon1_mdr_malf}}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}} {{damage=[[@{weapon1_mdr_damage}@{weapon1_mdr_db}]]}}'
                     name='roll_weapon1_mdr_attack'></button>
                 <button class='ATK2' type='roll'
                     value='&{template:coc-attack-1}{{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}} {{weaponname=@{weapon1_mdr_name}}} {{success=[[@{weapon1_mdr_skill}]]}} {{hard=[[floor(@{weapon1_mdr_skill}/2)]]}} {{extreme=[[floor(@{weapon1_mdr_skill}/5)]]}} {{malf=@{weapon1_mdr_malf}}} {{roll1=[[1d100]]}} {{damage=[[@{weapon1_mdr_damage}@{weapon1_mdr_db}]]}}'
                     name='roll_weapon1_mdr_attack'></button>
-
-                <select style="width:100%" class="ATK-M" name="attr_weapon1_mdr_skill">
+                <select class="ATK" name="attr_weapon1_mdr_skill">
                     <option value="@{fighting_brawl_mdr}">근접전(격투)</option>
                     <option value="@{firearms_handgun_mdr}">사격(권총)</option>
                     <option value="@{firearms_rifle_mdr}">사격(라/산)</option>
@@ -969,26 +974,27 @@
                     <option value="@{otherskill5_mdr}">다른 기능 #5</option>
                     <option value="@{otherskill6_mdr}">다른 기능 #6</option>
                 </select>
-                <input class="ATK-D" type="text" name="attr_weapon1_mdr_damage" />
-                <select class="ATK-DB" name="attr_weapon1_mdr_db">
+                <input class="ATK" type="text" name="attr_weapon1_mdr_damage" />
+                <select class="ATK" name="attr_weapon1_mdr_db">
                     <option value="+0">+0</option>
                     <option value="+round((@{damage_bonus})/2)">+&#189;db</option>
                     <option value="+@{damage_bonus}">+db</option>
                 </select>
                 <input class="ATK" type="text" name="attr_weapon1_mdr_range" />
                 <input class="ATK" type="text" name="attr_weapon1_mdr_attacks" />
-                <input class="ATK-AMMO" type="text" name="attr_weapon1_mdr_ammo" />
+                <input class="ATK" type="text" name="attr_weapon1_mdr_ammo" />
                 <input class="ATK" type="text" name="attr_weapon1_mdr_malf" />
             </div>
-            <div class="ATK-ACTION">
-                <input class="unarmed" type="text" name="attr_weapon2_mdr_name" />
+
+            <div class="combet line">
+                <input class="ATK dif" type="text" name="attr_weapon2_mdr_name" />
                 <button class='ATK1' type='roll'
                     value='&{template:coc-attack} {{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}} {{weaponname=@{weapon2_mdr_name}}} {{success=[[@{weapon2_mdr_skill}]]}} {{hard=[[floor(@{weapon2_mdr_skill}/2)]]}} {{extreme=[[floor(@{weapon2_mdr_skill}/5)]]}} {{malf=@{weapon2_mdr_malf}}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}} {{damage=[[@{weapon2_mdr_damage}@{weapon2_mdr_db}]]}}'
                     name='roll_weapon2_mdr_attack'></button>
                 <button class='ATK2' type='roll'
                     value='&{template:coc-attack-1} {{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}}{{weaponname=@{weapon2_mdr_name}}} {{success=[[@{weapon2_mdr_skill}]]}} {{hard=[[floor(@{weapon2_mdr_skill}/2)]]}} {{extreme=[[floor(@{weapon2_mdr_skill}/5)]]}} {{malf=@{weapon2_mdr_malf}}} {{roll1=[[1d100]]}} {{damage=[[@{weapon2_mdr_damage}@{weapon2_mdr_db}]]}}'
                     name='roll_weapon2_mdr_attack'></button>
-                <select class="ATK-M" name="attr_weapon2_mdr_skill">
+                <select class="ATK" name="attr_weapon2_mdr_skill">
                     <option value="@{fighting_brawl_mdr}">근접전(격투)</option>
                     <option value="@{firearms_handgun_mdr}">사격(권총)</option>
                     <option value="@{firearms_rifle_mdr}">사격(라/산)</option>
@@ -1002,26 +1008,27 @@
                     <option value="@{otherskill5_mdr}">다른 기능 #5</option>
                     <option value="@{otherskill6_mdr}">다른 기능 #6</option>
                 </select>
-                <input class="ATK-D" type="text" name="attr_weapon2_mdr_damage" />
-                <select class="ATK-DB" name="attr_weapon2_mdr_db">
+                <input class="ATK" type="text" name="attr_weapon2_mdr_damage" />
+                <select class="ATK" name="attr_weapon2_mdr_db">
                     <option value="+0">+0</option>
                     <option value="+round((@{damage_bonus})/2)">+&#189;db</option>
                     <option value="+@{damage_bonus}">+db</option>
                 </select>
                 <input class="ATK" type="text" name="attr_weapon2_mdr_range" />
                 <input class="ATK" type="text" name="attr_weapon2_mdr_attacks" />
-                <input class="ATK-AMMO" type="text" name="attr_weapon2_mdr_ammo" />
+                <input class="ATK" type="text" name="attr_weapon2_mdr_ammo" />
                 <input class="ATK" type="text" name="attr_weapon2_mdr_malf" />
             </div>
-            <div class="ATK-ACTION">
-                <input class="unarmed" type="text" name="attr_weapon3_mdr_name" />
+
+            <div class="combet line">
+                <input class="ATK dif" type="text" name="attr_weapon3_mdr_name" />
                 <button class='ATK1' type='roll'
                     value='&{template:coc-attack}  {{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}} {{weaponname=@{weapon3_mdr_name}}} {{success=[[@{weapon3_mdr_skill}]]}} {{hard=[[floor(@{weapon3_mdr_skill}/2)]]}} {{extreme=[[floor(@{weapon3_mdr_skill}/5)]]}} {{malf=@{weapon3_mdr_malf}}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}} {{damage=[[@{weapon3_mdr_damage}@{weapon3_mdr_db}]]}}'
                     name='roll_weapon3_mdr_attack'></button>
                 <button class='ATK2' type='roll'
                     value='&{template:coc-attack-1} {{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}} {{weaponname=@{weapon3_mdr_name}}} {{success=[[@{weapon3_mdr_skill}]]}} {{hard=[[floor(@{weapon3_mdr_skill}/2)]]}} {{extreme=[[floor(@{weapon3_mdr_skill}/5)]]}} {{malf=@{weapon3_mdr_malf}}} {{roll1=[[1d100]]}} {{damage=[[@{weapon3_mdr_damage}@{weapon3_mdr_db}]]}}'
                     name='roll_weapon3_mdr_attack'></button>
-                <select class="ATK-M" name="attr_weapon3_mdr_skill">
+                <select class="ATK" name="attr_weapon3_mdr_skill">
                     <option value="@{fighting_brawl_mdr}">근접전(격투)</option>
                     <option value="@{firearms_handgun_mdr}">사격(권총)</option>
                     <option value="@{firearms_rifle_mdr}">사격(라/산)</option>
@@ -1035,27 +1042,27 @@
                     <option value="@{otherskill5_mdr}">다른 기능 #5</option>
                     <option value="@{otherskill6_mdr}">다른 기능 #6</option>
                 </select>
-                <input class="ATK-D" type="text" name="attr_weapon3_mdr_damage" />
-                <select class="ATK-DB" name="attr_weapon3_mdr_db">
+                <input class="ATK" type="text" name="attr_weapon3_mdr_damage" />
+                <select class="ATK" name="attr_weapon3_mdr_db">
                     <option value="+0">+0</option>
                     <option value="+round((@{damage_bonus})/2)">+&#189;db</option>
                     <option value="+@{damage_bonus}">+db</option>
                 </select>
                 <input class="ATK" type="text" name="attr_weapon3_mdr_range" />
                 <input class="ATK" type="text" name="attr_weapon3_mdr_attacks" />
-                <input class="ATK-AMMO" type="text" name="attr_weapon3_mdr_ammo" />
+                <input class="ATK" type="text" name="attr_weapon3_mdr_ammo" />
                 <input class="ATK" type="text" name="attr_weapon3_mdr_malf" />
             </div>
             <fieldset class="repeating_weaponsmdr">
-                <div class="ATK-ACTION">
-                    <input class="unarmed" type="text" name="attr_weaponname_mdr" />
+                <div class="combet line">
+                    <input class="ATK dif" type="text" name="attr_weaponname_mdr" />
                     <button class='ATK1' type='roll'
                         value='&{template:coc-attack} {{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}} {{weaponname=@{weaponname_mdr}}} {{success=[[@{weaponskill_mdr}]]}} {{hard=[[floor(@{weaponskill_mdr}/2)]]}} {{extreme=[[floor(@{weaponskill_mdr}/5)]]}} {{malf=@{weaponmalf_mdr}}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}} {{damage=[[@{weapondamage_mdr}@{weapondb_mdr}]]}}'
                         name='roll_weaponskill_mdr_check'></button>
                     <button class='ATK2' type='roll'
                         value='&{template:coc-attack-1} {{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}} {{weaponname=@{weaponname_mdr}}}{{success=[[@{weaponskill_mdr}]]}} {{hard=[[floor(@{weaponskill_mdr}/2)]]}} {{extreme=[[floor(@{weaponskill_mdr}/5)]]}} {{malf=@{weaponmalf_mdr}}} {{roll1=[[1d100]]}} {{damage=[[@{weapondamage_mdr}@{weapondb_mdr}]]}}'
                         name='roll_weaponskill_mdr_check'></button>
-                    <select name="attr_weaponskill_mdr" class="ATK-M">
+                    <select name="attr_weaponskill_mdr" class="ATK">
                         <option value="@{fighting_brawl_mdr}">근접전(격투)</option>
                         <option value="@{firearms_handgun_mdr}">사격(권총)</option>
                         <option value="@{firearms_rifle_mdr}">사격(라/산)</option>
@@ -1069,21 +1076,21 @@
                         <option value="@{otherskill5_mdr}">다른 기능 #5</option>
                         <option value="@{otherskill6_mdr}">다른 기능 #6</option>
                     </select>
-                    <input type="text" class="ATK-D" name="attr_weapondamage_mdr" />
-                    <select class="ATK-DB" name="attr_weapondb_mdr">
+                    <input type="text" class="ATK" name="attr_weapondamage_mdr" />
+                    <select class="ATK" name="attr_weapondb_mdr">
                         <option value="+0">+0</option>
                         <option value="+round((@{damage_bonus})/2)">+&#189;db</option>
                         <option value="+@{damage_bonus}">+db</option>
                     </select>
                     <input class="ATK" type="text" name="attr_weaponrange_mdr" />
                     <input class="ATK" type="text" name="attr_weaponattacks_mdr" />
-                    <input class="ATK-AMMO" type="text" name="attr_weaponammo_mdr" />
+                    <input class="ATK" type="text" name="attr_weaponammo_mdr" />
                     <input class="ATK" type="text" name="attr_weaponmalf_mdr" />
                 </div>
             </fieldset>
         </div>
     </div>
-    <!-------------------------NPC------------------------->
+    <!----NPC---->
     <input type="checkbox" class="sheet-toggleNPC" style="display:none" name="attr_toggleNPC" value="1">
     <div class="NPC">
         <div class="box-NPC">
@@ -1176,7 +1183,7 @@
                         name='roll_minionattr8_check'></button>
                 </div>
             </div>
-            <!----NPC기능치----->
+            <!----NPC기능치---->
             <div class="subhead-NPC">기능치</div>
             <div class="NPC-row3">
                 <div class="NPC-row3-vertical1">
@@ -1368,7 +1375,7 @@
                             name='roll_minionattr8_check'></button>
                     </div>
                 </div>
-                <!----NPC기능치----->
+                <!----NPC기능치---->
                 <div class="subhead-NPC">기능치</div>
                 <div class="NPC-row3">
                     <div class="NPC-row3-vertical1">
@@ -1480,7 +1487,7 @@
             </div>
         </fieldset>
     </div>
-    <!------------------------- 장비와 소지품 ------------------------->
+    <!----장비/소지품---->
     <div class="GEAR-POSS">
         <div class='GEAR'>
             <div class="box-GEAR">
@@ -1513,7 +1520,7 @@
             </div>
         </div>
     </div>
-    <!------------------------- 백스토리 ------------------------->
+    <!----백스토리---->
     <div class="BACKSTORY">
         <div class='box-BACKSTORY'>
             <div class='BACKSTORY-vertical1'>
@@ -1576,7 +1583,7 @@
         <img src="https://i.imgur.com/awBYfgz.png" class="end" alt="end">
     </div>
 </div>
-<!------------------------- 출력 ------------------------->
+<!----출력---->
 <input type="hidden" name="attr_str_txt" value="[근력](https://i.imgur.com/Oda0IDu.png)" />
 <input type="hidden" name="attr_dex_txt" value="[민첩](https://i.imgur.com/cCR6P3T.png)" />
 <input type="hidden" name="attr_pow_txt" value="[정신](https://i.imgur.com/gKVHAGk.png)" />
@@ -1633,7 +1640,7 @@
 <input type="hidden" name="attr_firearms_smg_txt" value="[사격(SMG)](https://i.imgur.com/ve7LPFO.png)" />
 <input type="hidden" name="attr_san_txt" value="[이성](https://i.imgur.com/DE3Irrn.png)" />
 <input type="hidden" name="attr_unarmed_txt" value="비무장" />
-<!------ 임의 다이스 ------------------------->
+<!----임의 다이스---->
 <rolltemplate class="sheet-rolltemplate-coc-dice-roll">
 
     <div class="head">
@@ -1645,7 +1652,7 @@
     </div>
 
 </rolltemplate>
-<!------ 명중 ------------------------->
+<!----명중---->
 <rolltemplate class="sheet-rolltemplate-coc-body-hit-loc">
 
     <div class="head">
@@ -1720,17 +1727,14 @@
             <div class="template_label">머리</div>
             {{/rollTotal() roll1 20}}
         </div>
-
     </div>
 </rolltemplate>
-<!------ 실시간 광기의 발작 ------------------------->
+<!----실시간 광기의 발작---->
 <rolltemplate class="sheet-rolltemplate-coc-bomadness-rt">
-
     <div class="head">
         <div class="INDICATER1">뮺 </div>
         <div class="INDICATER2"> 실시간 광기의 발작 </div>
     </div>
-
     <div class="BODY">
         <div class="san-REALTIME-RESULT">
             {{#rollTotal() roll1 1}}
@@ -1764,7 +1768,6 @@
             <div class="template_value">집착증</div>
             {{/rollTotal() roll1 10}}
         </div>
-
         <div class="san-REALTIME-description">
             {{#rollTotal() roll1 1}}
             <div class="template_value">
@@ -1830,14 +1833,13 @@
         </div>
     </div>
 </rolltemplate>
-<!------ 요약 광기의 발작 ------------------------->
+<!----요약 광기의 발작---->
 <rolltemplate class="sheet-rolltemplate-coc-bomadness-summ">
 
     <div class="head">
         <div class="INDICATER1">뮺</div>
         <div class="INDICATER2"> 광기의 발작 - 요약</div>
     </div>
-
     <div class="BODY">
         <div class="san-SUMM-RESULT">
             {{#rollTotal() roll1 1}}
@@ -1951,7 +1953,7 @@
         </div>
     </div>
 </rolltemplate>
-<!------ NPC공격 ------------------------->
+<!----NPC공격---->
 <rolltemplate class="sheet-rolltemplate-coc-minionattack">
     <div class="SKILL-TEM">
         <div class="head">
@@ -2011,7 +2013,7 @@
         <div class="SKILL-TEM-DAMAGE">{{damage}} 대미지</div>
     </div>
 </rolltemplate>
-<!------ 기능치/보너스 ------------------------->
+<!----기능치/보너스---->
 <rolltemplate class="sheet-rolltemplate-coc">
     <div class="SKILL-BONUS">
         <div class="SKILL-BONUS-head">
@@ -3005,7 +3007,7 @@
         </div>
     </div>
 </rolltemplate>
-<!------ 공격/보너스 ------------------------->
+<!----공격/보너스---->
 <rolltemplate class="sheet-rolltemplate-coc-attack">
     <div class="SKILL-BONUS">
         <div class="SKILL-BONUS-head">
@@ -3974,7 +3976,7 @@
         </div>
     </div>
 </rolltemplate>
-<!------ 기능치 ------------------------->
+<!----기능치---->
 <rolltemplate class="sheet-rolltemplate-coc-1">
     <div class="SKILL-TEM">
         <div class="head">
@@ -4033,7 +4035,7 @@
 
     </div>
 </rolltemplate>
-<!------ 공격 -------------------------->
+<!----공격---->
 <rolltemplate class="sheet-rolltemplate-coc-attack-1">
 
     <div class="SKILL-TEM">
@@ -4094,7 +4096,7 @@
         </div>
     </div>
 </rolltemplate>
-<!-- WORKERS  ------------------------->
+<!----WORKERS---->
 <script type="text/worker">
 on("add:dex add:siz add:str change:dex change:siz change:str", function() {
   getAttrs(["str", "siz", "dex", "age"], function(values) {
@@ -4214,6 +4216,5 @@ if (idex < isiz && istr < isiz) {
   }
   setAttrs({mov: imov});
   }); //end getAttrs
- 
 });
 </script>

@@ -24,24 +24,48 @@
 hr {
   margin: 0px;
 }
-
-textarea,
-input {
+.charsheet select,
+.charsheet div,
+.charsheet button,
+.charsheet textarea,
+.charsheet span,
+.charsheet img,
+.charsheet label {
   box-sizing: border-box;
-  width: 100%;
+  outline: 0;
 }
-
-input[type="text"]:focus,
-input[type="number"]:focus,
-textarea:focus {
-  outline: 1px solid;
+.charsheet .bind select,
+.charsheet .bind input[type="checkbox"],
+.charsheet .bind input[type="radio"],
+.charsheet .bind button {
+  cursor: pointer;
 }
-
-input[type="checkbox"] {
+.charsheet .bind input {
+  box-sizing: border-box;
+  outline: 0;
+  padding: 0px;
+  text-align: center;
+}
+.charsheet .bind input:focus,
+.charsheet .bind textarea:focus {
+  outline: none;
+}
+.charsheet .bind button.btn.ui-draggable::before {
+  content: " ";
+}
+.charsheet .bind button {
+  border: none;
+  margin: 0px !important;
+  padding: 0px !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: none;
 }
 
 /* ------------디폴트 값 ------------------------------------------- */
 .wrap {
+  background-color: #ffffffaf;
+  margin: 5px;
 }
 .title {
   text-align: center;
@@ -91,21 +115,67 @@ input.topstatus {
 select.topstatus {
 }
 /* -------------로고-------------------------------------------- */
+.logo.wrap {
+  text-align: center;
+  background-color: transparent;
+}
 img.logo {
+  width: 90%;
+  margin: 0 auto;
 }
 /* -------------그리드--------------------------------------------- */
 .basic {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr 1fr;
 }
 /* -------------인장--------------------------------------------- */
-.img.wrap {
+.image.wrap {
+  grid-area: 1 / 1 / 3 / 2;
+  background-color: transparent;
 }
-img.profileimg {
+
+.avater.wrap {
+  position: absolute;
+  width: 220px;
+  height: 300px;
+  transform: rotate(-5deg);
+  background-color: transparent;
 }
+
+.avater.wrap:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 220px;
+  height: 300px;
+  background: url("https://i.imgur.com/xs2cK34.png") no-repeat 50% 50%;
+}
+img.avater {
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: 10px;
+  left: 10px;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 0;
+  /*
+  background: url("https://i.imgur.com/RIlbHTQ.png") no-repeat 50% 50%;
+  */
+}
+
 /* -------------바이오--------------------------------------------- */
 .bio.wrap {
+  position: absolute;
+  z-index: 2;
 }
+
 input.bio {
   background-color: transparent;
   border: none;
@@ -114,11 +184,13 @@ input.bio {
   text-align: left;
 }
 input.bio.line1 {
+  text-align: left;
 }
 .bio.line2 {
   text-align: right;
 }
 input.bio.line2 {
+  text-align: right;
 }
 /* -------------특성치--------------------------------------------- */
 .status.wrap {
@@ -132,9 +204,32 @@ input.bio.line2 {
 input.status {
   width: fit-content;
 }
+button.status:hover {
+  background-position: 0;
+  background-color: #ffd000;
+  background-image: url(https://i.imgur.com/J3Vn29e.png);
+}
 button.status {
+  background-color: #242424;
+  background-image: url(https://i.imgur.com/mEikMj8.png);
+  height: 20px;
+  width: 20px;
+  border: none;
+  justify-self: end;
+}
+
+button.status1:hover {
+  background-position: 0;
+  background-color: #ffd000;
+  background-image: url(https://i.imgur.com/J3Vn29e.png);
 }
 button.status1 {
+  background-color: #242424;
+  background-image: url(https://i.imgur.com/mEikMj8.png);
+  height: 20px;
+  width: 20px;
+  border: none;
+  justify-self: end;
 }
 /* -------------이성-------------------------------------------- */
 .san.wrap {
@@ -165,12 +260,40 @@ button.san.current2 {
 }
 .san.bomindication {
 }
+
 input.san.bom {
 }
+
+button.san.bom:hover {
+  background-position: 0;
+  background-color: #ffd000;
+  background-image: url(https://i.imgur.com/J3Vn29e.png);
+}
 button.san.bom {
+  background-color: #242424;
+  background-image: url(https://i.imgur.com/mEikMj8.png);
+  height: 12px;
+  width: 12px;
+  border: none;
+  justify-self: end;
+  border-radius: 3px;
 }
-button.san.bom2 {
+
+button.san.bom1:hover {
+  background-position: 0;
+  background-color: #ffd000;
+  background-image: url(https://i.imgur.com/J3Vn29e.png);
 }
+button.san.bom1 {
+  background-color: #242424;
+  background-image: url(https://i.imgur.com/mEikMj8.png);
+  height: 12px;
+  width: 12px;
+  border: none;
+  justify-self: end;
+  border-radius: 3px;
+}
+
 /* ---3줄:현재 정신상태--- */
 .san.section3 {
 }
@@ -227,31 +350,30 @@ img.sublogo {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
+  padding: 10px 20px 10px 20px;
 }
-
 .skillset {
   display: grid;
-  align-items: center;
-  grid-template-columns: 15px 130px 40px 25px 25px;
-  row-gap: 5px;
+  grid-template-columns: 0.5fr 5fr 1fr 1fr 1fr;
 }
 .skill.subtitle {
-  width: 130px;
   text-align: left;
   border: none;
-  margin-left: 5px;
 }
 input.skill.name {
-  width: 40px;
-  height: 20.5px;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.747);
   border: 1px solid white;
+  width: 50px;
+}
+input.skill.name.additional {
+  border: none;
+  background-color: transparent;
+  font-size: 12px;
+  width: 100%;
+  text-align: left;
 }
 /* 버튼*/
-button.skill:before {
-  content: " ";
-}
 button.skill:hover {
   background-position: 0;
   background-image: url(https://i.imgur.com/mEikMj8.png);
@@ -260,18 +382,12 @@ button.skill:hover {
 button.skill {
   background-color: rgb(221, 221, 221);
   background-image: url(https://i.imgur.com/J3Vn29e.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 20px;
   width: 20px;
-  padding: 0;
-  box-shadow: none;
   border: none;
+  justify-self: end;
 }
 /* 기능치 버튼*/
-button.skill2:before {
-  content: " ";
-}
 button.skill2:hover {
   background-position: 0;
   background-color: #ffd000;
@@ -280,181 +396,97 @@ button.skill2:hover {
 button.skill2 {
   background-color: #242424;
   background-image: url(https://i.imgur.com/mEikMj8.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: none;
-  border: none;
   height: 20px;
   width: 20px;
-  padding: 0;
-}
-
-input.skill-name-input {
-  height: 20.5px;
-  width: 130px;
   border: none;
-  background-color: transparent;
-  font-size: 12px;
+  justify-self: end;
 }
-
-input.skill-name-input:focus {
-  outline: none;
-}
-
-input.skill-name-input::placeholder {
-  color: rgb(156, 156, 156);
-}
-.skill-spacehold2 {
-  width: 200px;
-}
-fieldset.repeating_skillsmdr {
-}
-
 /* 다른 기능치*/
-.SKILL-REMINDER {
-  margin-top: 110px;
+.skill.reminder {
 }
-.SUBhead-SKILLREMINDER {
+.skill.reminder.subtitle {
   font-size: 14px;
   font-weight: bold;
 }
-.SUBbox-SKILLREMINDER {
+.skill.reminder.subbox {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   font-size: 10px;
 }
+.skill.reminder.otherskill {
+}
+
+/*체크박스*/
+input.skill.cb {
+  display: block;
+  left: 0;
+  width: 24px;
+  height: 25px !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+  -webit-transform: translateY(-50%);
+  background: url(https://i.imgur.com/hpCVnIE.png) no-repeat left 5px top 50%;
+  opacity: 1 !important;
+  z-index: 1;
+  font-family: pictos;
+  content: "T";
+}
 /* -------------전투-------------------------------------------- */
-.COMBET {
-  width: 95%;
-  margin: 0 auto;
-  margin-top: 20px;
-  border: solid 1px white;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.747);
+.combet.wrap {
 }
-
-h4.head-COMBET {
-  color: black;
-  font-weight: 800;
-  font-size: 18px;
-  padding: 10px;
-  font-style: normal;
-  text-align: center;
+.combet.title {
 }
-.box-COMBET {
-  color: black;
-  display: grid;
-  padding: 10px;
+.combet.box {
+  padding: 0px 20px 0px 20px;
 }
-.ATK-ACTION {
-  display: grid;
-  grid-template-columns: 180px 25px 25px 120px 65px 65px 65px 65px 80px 65px;
-  column-gap: 1px;
-  height: 29px;
-  align-items: center;
-  width: 93%;
+.combet.line {
+  display: flex;
 }
-.COMBET-INDICATION {
-  display: grid;
-  grid-template-columns: 180px 25px 25px 120px 65px 65px 65px 65px 80px 65px;
-  column-gap: 1px;
+select.ATK {
+  width: 125px;
+  margin: 0px;
   height: 20px;
-}
-.INDICATION-TEXT-COMBET2 {
-  grid-column-start: 4;
-}
-.INDICATION-TEXT-COMBET4 {
-  grid-column-start: 7;
-}
-
-input.unarmed {
-  width: 180px;
-  height: 25px;
-  margin-bottom: 0px;
+  padding: 0px;
   text-align: center;
+  margin: 1px;
 }
-
-select.ATK-M {
-  width: 120px;
-  height: 25px;
-  margin-bottom: 0px;
-  text-align: center;
-}
-
-input.ATK-D {
-  width: 65px;
-  height: 25px;
-  margin-bottom: 0px;
-  text-align: center;
-}
-
-select.ATK-DB {
-  width: 65px;
-  height: 25px;
-  margin-bottom: 0px;
-  text-align: center;
-}
-
 input.ATK {
-  height: 25px;
-  margin-bottom: 0px;
-  text-align: center;
+  width: 70px;
+  margin: 1px;
+}
+input.ATK.dif {
+  width: 124px;
+  margin: 1px;
+}
+/* 버튼*/
+button.ATK1:hover {
+  background-position: 0;
+  background-color: #ffd000;
+  background-image: url(https://i.imgur.com/J3Vn29e.png);
+}
+button.ATK1 {
+  background-color: #242424;
+  background-image: url(https://i.imgur.com/mEikMj8.png);
+  height: 20px;
+  width: 20px;
+  border: none;
+  justify-self: end;
 }
 
-input.ATK-AMMO {
-  width: 80px;
-  height: 25px;
-  margin-bottom: 0px;
-  text-align: center;
-}
-
-/* 공격 보너스 버튼 */
-button[type="roll"].ATK1:before {
-  content: " ";
-}
-
-button[type="roll"].ATK1:hover {
+/* 버튼*/
+button.ATK2:hover {
   background-position: 0;
   background-image: url(https://i.imgur.com/mEikMj8.png);
   background-color: #00007a;
 }
-
-button[type="roll"].ATK1 {
-  background-color: rgb(199, 199, 199);
+button.ATK2 {
+  background-color: rgb(221, 221, 221);
   background-image: url(https://i.imgur.com/J3Vn29e.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: none;
+  height: 20px;
+  width: 20px;
   border: none;
-  height: 19px;
-  width: 19px;
-  margin: 0;
-  padding: 0;
-  margin-left: 2px;
 }
 
-/* 공격 버튼 */
-button[type="roll"].ATK2:before {
-  content: " ";
-}
-
-button[type="roll"].ATK2:hover {
-  background-position: 0;
-  background-color: #f8cb00;
-  background-image: url(https://i.imgur.com/J3Vn29e.png);
-}
-
-button[type="roll"].ATK2 {
-  background-color: black;
-  background-image: url(https://i.imgur.com/mEikMj8.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: none;
-  border: none;
-  height: 19px;
-  width: 19px;
-  padding: 0;
-}
 /* ------장비와 소지품---------------------------------------- */
 .GEAR-POSS {
   width: 95%;
