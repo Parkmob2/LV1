@@ -5,8 +5,14 @@
   font-weight: normal;
   font-style: normal;
 }
-
-/* ------------디폴트 설정 조정 ------------------------------------------- */
+@font-face {
+  font-family: "Syning_19";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_10@1.0/Syning_19.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* 디폴트 설정 조정 */
 .charsheet {
   color: black;
   background-color: #ffff;
@@ -20,8 +26,7 @@
   width: 830px;
   position: absolute;
 }
-
-hr {
+.charsheet.bind hr {
   margin: 0px;
 }
 .charsheet select,
@@ -53,16 +58,15 @@ hr {
 .charsheet .bind button.btn.ui-draggable::before {
   content: " ";
 }
-.charsheet .bind button {
+.charsheet .bind button[type="roll"] {
   border: none;
-  margin: 0px !important;
   padding: 0px !important;
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: none;
+  margin: auto;
 }
-
-/* ------------디폴트 값 ------------------------------------------- */
+/* 디폴트 값 */
 .wrap {
   background-color: #ffffffaf;
   margin: 5px;
@@ -75,18 +79,56 @@ hr {
 }
 .box {
 }
-/* ------------옵션------------------------------------------------------------ */
-.function.wrap {
+/* 옵션 */
+input.option.area:checked ~ *.function.wrap {
   display: none;
 }
-.sheet-togglefunction[value="1"]:checked ~ .function.wrap {
-  display: block;
+input.option.area {
+  width: 150px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-top: auto;
+  opacity: 0;
+  z-index: 9999;
+  border-radius: 4px;
 }
+input.option.area:checked + a.option.btn::after {
+  content: "SEE OPTION";
+}
+input.option.area:checked ~ *.function.wrap {
+  display: none;
+}
+a.option.btn {
+  padding: 0px 35px;
+  transition: 0.8s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid white;
+  background-image: linear-gradient(
+    to right,
+    #ffecd2 0%,
+    #fcb69f 51%,
+    #ffecd2 100%
+  );
+  margin-left: -150px;
+}
+a.option.btn:hover {
+  color: white;
+  transition: 0.8s;
+  background-position: right center;
+  text-decoration: none;
+}
+a.option.btn::after {
+  content: "HIDE OPTION";
+}
+
 .function.title {
 }
 .function.box {
 }
-/* ------------플레이 기록------------------------------------------------------------- */
+/* 플레이 기록 */
 .downtime.wrap {
   display: none;
 }
@@ -101,20 +143,34 @@ hr {
 }
 .downtime.line2 {
 }
-/* -------------상단 스테이터스--------------------------------------------- */
+/* 상단 스테이터스 */
 .topstatus.wrap {
+  background-color: transparent;
+  text-align: right;
 }
 .topstatus.title {
 }
 .topstatus.box {
 }
 .topstatus.subtitle {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.topstatus.index {
+  width: 60px;
+  margin: 1px;
 }
 input.topstatus {
+  width: 60px;
+  height: 40px !important;
+  margin: 0px !important;
 }
 select.topstatus {
+  width: 60px;
+  height: 40px !important;
+  margin: 0px !important;
 }
-/* -------------로고-------------------------------------------- */
+/*로고*/
 .logo.wrap {
   text-align: center;
   background-color: transparent;
@@ -123,12 +179,12 @@ img.logo {
   width: 90%;
   margin: 0 auto;
 }
-/* -------------그리드--------------------------------------------- */
+/*그리드*/
 .basic {
   display: grid;
   grid-template-columns: 1fr 1.5fr 1fr;
 }
-/* -------------인장--------------------------------------------- */
+/*인장*/
 .image.wrap {
   grid-area: 1 / 1 / 3 / 2;
   background-color: transparent;
@@ -140,6 +196,7 @@ img.logo {
   height: 300px;
   transform: rotate(-5deg);
   background-color: transparent;
+  margin: 20px 0px;
 }
 
 .avater.wrap:before {
@@ -170,15 +227,21 @@ img.avater {
   */
 }
 
-/* -------------바이오--------------------------------------------- */
+/* 바이오 */
 .bio.wrap {
   position: absolute;
   z-index: 2;
+  top: 215px;
+  font-family: "Syning_19";
+  background-color: transparent;
+  padding: 10px;
+  width: 210px;
 }
 
 input.bio {
   background-color: transparent;
   border: none;
+  font-size: 17px;
 }
 .bio.line1 {
   text-align: left;
@@ -188,75 +251,131 @@ input.bio.line1 {
 }
 .bio.line2 {
   text-align: right;
+  width: fit-content;
 }
 input.bio.line2 {
   text-align: right;
+  width: fit-content;
 }
-/* -------------특성치--------------------------------------------- */
+/* 특성치 */
 .status.wrap {
 }
 .status.title {
 }
 .status.box {
+  padding: 10px;
+  display: grid;
+  row-gap: 2px;
+}
+.status.section {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr 1fr 1fr);
+}
+.status.section1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 3px;
 }
 .status.subtitle {
+  text-align: right;
+  margin-right: 5px;
 }
 input.status {
   width: fit-content;
+  width: 75px;
+  height: 35px !important;
 }
-button.status:hover {
+button[type="roll"].status:hover {
   background-position: 0;
   background-color: #ffd000;
   background-image: url(https://i.imgur.com/J3Vn29e.png);
 }
-button.status {
+button[type="roll"].status {
   background-color: #242424;
   background-image: url(https://i.imgur.com/mEikMj8.png);
-  height: 20px;
-  width: 20px;
+  height: 19px;
+  width: 19px;
+  border-radius: 4px;
   border: none;
   justify-self: end;
 }
 
-button.status1:hover {
+button[type="roll"].status1:hover {
   background-position: 0;
   background-color: #ffd000;
   background-image: url(https://i.imgur.com/J3Vn29e.png);
 }
-button.status1 {
+button[type="roll"].status1 {
   background-color: #242424;
   background-image: url(https://i.imgur.com/mEikMj8.png);
-  height: 20px;
-  width: 20px;
+  height: 19px;
+  width: 19px;
+  border-radius: 4px;
   border: none;
   justify-self: end;
+  margin-right: 17px !important;
 }
-/* -------------이성-------------------------------------------- */
+/* 이성 */
 .san.wrap {
 }
 .san.title {
 }
 .san.box {
+  padding: 10px;
 }
 input.san {
 }
-/* ---1줄:이성치기입--- */
+/* 1줄:이성치기입 */
 .san.section1 {
+  margin: 5px 0px 5px 0px;
 }
 input.san.start {
+  margin-bottom: 0px 0px 5px 0px;
 }
-input.san.current {
+input[type="number"].san.current {
+  width: 4.08em;
 }
-button.san.current {
+button[type="roll"].san.current:hover {
+  background-position: 0;
+  background-color: #ffd000;
+  background-image: url(https://i.imgur.com/J3Vn29e.png);
 }
-button.san.current2 {
+button[type="roll"].san.current {
+  background-color: #242424;
+  background-image: url(https://i.imgur.com/mEikMj8.png);
+  height: 20px;
+  width: 20px;
+  border: none;
+  justify-self: end;
 }
-/* ---2줄:광기의 발작--- */
+button[type="roll"].san.current2:hover {
+  background-position: 0;
+  background-color: #ffd000;
+  background-image: url(https://i.imgur.com/J3Vn29e.png);
+}
+button[type="roll"].san.current2 {
+  background-color: #242424;
+  background-image: url(https://i.imgur.com/mEikMj8.png);
+  height: 20px;
+  width: 20px;
+  border: none;
+  justify-self: end;
+}
+/* 2줄:광기의 발작 */
 .san.section2 {
+  margin: 5px 0px 5px 0px;
 }
-.san.subtitle.bom {
+.san.subtitle {
+  margin-bottom: 5px;
 }
 .san.bom {
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr 1fr;
+
+  align-items: center;
+  justify-items: center;
 }
 .san.bomindication {
 }
@@ -264,12 +383,12 @@ button.san.current2 {
 input.san.bom {
 }
 
-button.san.bom:hover {
+button[type="roll"].san.bom:hover {
   background-position: 0;
   background-color: #ffd000;
   background-image: url(https://i.imgur.com/J3Vn29e.png);
 }
-button.san.bom {
+button[type="roll"].san.bom {
   background-color: #242424;
   background-image: url(https://i.imgur.com/mEikMj8.png);
   height: 12px;
@@ -279,12 +398,12 @@ button.san.bom {
   border-radius: 3px;
 }
 
-button.san.bom1:hover {
+button[type="roll"].san.bom1:hover {
   background-position: 0;
   background-color: #ffd000;
   background-image: url(https://i.imgur.com/J3Vn29e.png);
 }
-button.san.bom1 {
+button[type="roll"].san.bom1 {
   background-color: #242424;
   background-image: url(https://i.imgur.com/mEikMj8.png);
   height: 12px;
@@ -294,23 +413,34 @@ button.san.bom1 {
   border-radius: 3px;
 }
 
-/* ---3줄:현재 정신상태--- */
+/* 3줄:현재 정신상태 */
 .san.section3 {
-}
-.san.subtitle.cmc {
 }
 input.san.cmc {
 }
-/* -------------체력--------------------------------------------- */
+/* 체력 */
 .hp.wrap {
 }
 .hp.title {
 }
 .hp.box {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
 }
 .hp.line1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5px;
+}
+input.secondary-attr-input-HP {
+  width: 100% !important;
 }
 .hp.line2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr;
+  align-items: center;
+  justify-items: center;
 }
 /* -------------마력---------------------------------------------------*/
 .mp.wrap {
@@ -318,8 +448,13 @@ input.san.cmc {
 .mp.title {
 }
 .mp.box {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5px;
 }
 input.mp {
+  width: 100% !important;
 }
 /* -------------다이스---------------------------------------------------*/
 .dice.wrap {
@@ -333,10 +468,21 @@ input.mp {
 .dice.box {
 }
 .dice.line1 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+input.dice-roll-input {
+  background: transparent;
+  border: none;
+  width: 100%;
+}
+.dice.line2 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
 }
 .dice.subtitle {
 }
-button.smallnonskillbutton-roll {
+button[type="roll"].smallnonskillbutton-roll {
 }
 /* ----------구분선-------------------------------------------- */
 img.sublogo {
@@ -355,6 +501,7 @@ img.sublogo {
 .skillset {
   display: grid;
   grid-template-columns: 0.5fr 5fr 1fr 1fr 1fr;
+  margin: 1px;
 }
 .skill.subtitle {
   text-align: left;
@@ -374,12 +521,12 @@ input.skill.name.additional {
   text-align: left;
 }
 /* 버튼*/
-button.skill:hover {
+button[type="roll"].skill:hover {
   background-position: 0;
   background-image: url(https://i.imgur.com/mEikMj8.png);
   background-color: #00007a;
 }
-button.skill {
+button[type="roll"].skill {
   background-color: rgb(221, 221, 221);
   background-image: url(https://i.imgur.com/J3Vn29e.png);
   height: 20px;
@@ -388,12 +535,12 @@ button.skill {
   justify-self: end;
 }
 /* 기능치 버튼*/
-button.skill2:hover {
+button[type="roll"].skill2:hover {
   background-position: 0;
   background-color: #ffd000;
   background-image: url(https://i.imgur.com/J3Vn29e.png);
 }
-button.skill2 {
+button[type="roll"].skill2 {
   background-color: #242424;
   background-image: url(https://i.imgur.com/mEikMj8.png);
   height: 20px;
@@ -417,20 +564,11 @@ button.skill2 {
 }
 
 /*체크박스*/
-input.skill.cb {
+input[type="checkbox"].skill.cb {
   display: block;
-  left: 0;
-  width: 24px;
-  height: 25px !important;
-  top: 50% !important;
-  transform: translateY(-50%);
-  -webit-transform: translateY(-50%);
-  background: url(https://i.imgur.com/hpCVnIE.png) no-repeat left 5px top 50%;
-  opacity: 1 !important;
-  z-index: 1;
-  font-family: pictos;
-  content: "T";
+  margin: 0px 5px 0px 0px;
 }
+
 /* -------------전투-------------------------------------------- */
 .combet.wrap {
 }
@@ -443,7 +581,7 @@ input.skill.cb {
   display: flex;
 }
 select.ATK {
-  width: 125px;
+  width: 122.85px;
   margin: 0px;
   height: 20px;
   padding: 0px;
@@ -455,36 +593,38 @@ input.ATK {
   margin: 1px;
 }
 input.ATK.dif {
-  width: 124px;
+  width: 122.85px;
   margin: 1px;
 }
 /* 버튼*/
-button.ATK1:hover {
+button[type="roll"].ATK1:hover {
   background-position: 0;
   background-color: #ffd000;
   background-image: url(https://i.imgur.com/J3Vn29e.png);
 }
-button.ATK1 {
+button[type="roll"].ATK1 {
   background-color: #242424;
   background-image: url(https://i.imgur.com/mEikMj8.png);
   height: 20px;
   width: 20px;
   border: none;
   justify-self: end;
+  margin: 1px !important;
 }
 
 /* 버튼*/
-button.ATK2:hover {
+button[type="roll"].ATK2:hover {
   background-position: 0;
   background-image: url(https://i.imgur.com/mEikMj8.png);
   background-color: #00007a;
 }
-button.ATK2 {
+button[type="roll"].ATK2 {
   background-color: rgb(221, 221, 221);
   background-image: url(https://i.imgur.com/J3Vn29e.png);
   height: 20px;
   width: 20px;
   border: none;
+  margin: 1px !important;
 }
 
 /* ------장비와 소지품---------------------------------------- */
@@ -649,28 +789,37 @@ div[class="repcontainer editmode"]
   display: inline-block !important;
   visibility: hidden;
 }
+.charsheet .repcontainer .repitem .itemcontrol .repcontrol_move {
+  cursor: move;
+  text-shadow: none;
+  height: 16px;
+  width: 16px;
+  padding: 0px;
+
+  border: 1px solid white;
+  color: white;
+  background: #f8cb00;
+}
 .charsheet .repcontrol_edit,
 .charsheet .repcontrol_del {
   display: block;
   background: #f8cb00;
   color: white;
   box-shadow: none;
-  font-size: 0.7em;
-  height: 1.5em;
+  font-size: 8px;
   border: 1px solid white;
   text-shadow: none;
-  padding: 0px 8px 3px !important;
+  padding: 0px 10px !important;
 }
 .charsheet .repcontrol_add {
   display: block;
   background: #f8cb00;
   color: white;
   box-shadow: none;
-  font-size: 0.7em;
-  height: 1.5em;
+  font-size: 8px;
   border: 1px solid white;
   text-shadow: none;
-  padding: 0px 8px 3px !important;
+  padding: 0px 10px !important;
 }
 /*-------------------조력자 ------------------------------ */
 .sheet-toggleNPC[value="1"]:checked ~ div.NPC {
