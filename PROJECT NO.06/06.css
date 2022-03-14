@@ -305,7 +305,7 @@ img.avater {
   bottom: 0;
   z-index: 1;
   background-color: white;
-  background: url("https://i.imgur.com/FRppVWF.png") no-repeat 50% 50%;
+  background: url("https://i.imgur.com/Sr8nQTm.png") no-repeat 50% 50%;
 }
 
 input.MAJORWOUNDT[value="1"]:checked ~ img.avater {
