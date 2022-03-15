@@ -6,26 +6,37 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "Syning_19";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_10@1.0/Syning_19.woff")
+  font-family: "SpoqaHanSansNeo-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Medium.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
 }
-/* 디폴트 설정 조정 */
-.charsheet {
-  color: black;
-  background-color: #ffff;
-  border: solid #ffff 1px;
-  font-family: "SpoqaHanSansNeo-Regular";
-  font-size: 12px;
-  border-radius: 3px;
-  background-image: url("https://park-mob.com/lv99/data/commission/04-cmbg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 830px;
-  position: absolute;
+@font-face {
+  font-family: "Chosunilbo_myungjo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: "YUniverse-B";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GangwonEdu_OTFBoldA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 배경/기본 ---------------------------------------------------*/
 .charsheet.bind hr {
   margin: 0px;
 }
@@ -66,20 +77,66 @@
   box-shadow: none;
   margin: auto;
 }
-/* 디폴트 값 */
+/* 디폴트 스타일 값 ---------------------------------------------------*/
+.charsheet {
+  color: #6b6363;
+  background-color: #ffff;
+  border: solid #ffff 1px;
+  font-family: "SpoqaHanSansNeo-Regular";
+  font-size: 12px;
+  border-radius: 3px;
+  background-image: url("https://park-mob.com/lv99/data/commission/04-cmbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 830px;
+  position: absolute;
+}
 .wrap {
-  background-color: #ffffffaf;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  border-radius: 10px;
   margin: 5px;
+  padding: 10px;
 }
 .title {
+  letter-spacing: 6px;
+  color: transparent;
+  text-shadow: 0 0 1px rgb(255, 148, 148);
+  font-family: "Chosunilbo_myungjo";
+  font-size: 15px;
+
+  /* font-family: "GangwonEdu_OTFBoldA";
+  color: rgb(255, 148, 148);
+  letter-spacing: 5px;*/
   text-align: center;
+  margin: 10px;
+  /*text-shadow: #ffffff 1px 0px 0px, #ffffff 1px 1px 0px, #ffffff -1px -1px 0px,
+    #ffffff 0px -1px 0px, #ffffff 0px 1px 0px, #ffffff 1px 0px 0px,
+    #ffffff -1px 1px 0px;*/
 }
+.title::before,
+.title::after {
+  content: "";
+  font-family: "YUniverse-B";
+}
+
 .subtitle {
   text-align: center;
 }
 .box {
 }
-/* 옵션 */
+.charsheet input {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 189, 102);
+  border: 1px solid white;
+  text-align: center;
+}
+.charcheet textarea {
+}
+/* 옵션 ---------------------------------------------------*/
 input.option.area:checked ~ *.function.wrap {
   display: none;
 }
@@ -123,38 +180,73 @@ a.option.btn:hover {
 a.option.btn::after {
   content: "HIDE OPTION";
 }
-
 .function.title {
 }
 .function.box {
 }
-/* 플레이 기록 */
+/* 플레이 기록 ---------------------------------------------------*/
 .downtime.wrap {
   display: none;
+  padding: 20px;
 }
-.sheet-toggledowntime[value="1"]:checked ~ .downtime.wrap {
+input.add_function_downtime[value="1"]:checked ~ .downtime.wrap {
   display: block;
 }
 .downtime.title {
+  margin-top: 0px;
 }
 .downtime.box {
 }
 .downtime.line1 {
+  display: grid;
+  grid-template-columns: 0.4fr 3fr;
+  text-align: left;
+  margin-bottom: 10px;
+}
+input.senario-title {
+  width: 100%;
+  text-align: left !important;
+  font-family: "Chosunilbo_myungjo";
+  font-size: 11px;
 }
 .downtime.line2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
 }
-/* 상단 스테이터스 */
+textarea.attr_scenario_info,
+textarea.attr_scenario_rewards {
+  font-size: 11px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(88, 85, 85);
+  border: 1px solid white;
+  font-family: "Chosunilbo_myungjo";
+
+  height: 100px;
+  font-size: 11px;
+}
+/* 배경 헤더 이미지 ---------------------------------------------------*/
+.header {
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* 상단 스테이터스 ---------------------------------------------------*/
 .topstatus.wrap {
-  background-color: transparent;
+  background: transparent;
   text-align: right;
+  padding: 0px;
 }
 .topstatus.title {
+  margin: 0px;
 }
 .topstatus.box {
 }
 .topstatus.subtitle {
   display: flex;
   flex-direction: row-reverse;
+  color: rgb(255, 148, 148);
 }
 .topstatus.index {
   width: 60px;
@@ -163,44 +255,74 @@ a.option.btn::after {
 input.topstatus {
   width: 60px;
   height: 40px !important;
-  margin: 0px !important;
+  margin-top: -3px !important;
 }
 select.topstatus {
   width: 60px;
   height: 40px !important;
   margin: 0px !important;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 189, 102);
+  border: 1px solid white;
 }
-/*로고*/
+/*로고---------------------------------------------------*/
 .logo.wrap {
   text-align: center;
-  background-color: transparent;
+  background: transparent;
+  padding: 0px;
 }
 img.logo {
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
 }
-/*그리드*/
+/*그리드---------------------------------------------------*/
 .basic {
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-columns: 1.4fr 1.8fr 1fr;
+  margin-bottom: 20px;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 186, 186, 0.5312718837535014) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  padding-bottom: 0px;
+  border-radius: 10px;
 }
-/*인장*/
-.image.wrap {
+/*인장---------------------------------------------------*/
+.info.wrap {
   grid-area: 1 / 1 / 3 / 2;
-  background-color: transparent;
+  background: transparent;
+  padding: 0px;
+  margin-left: 20px;
 }
-
-.avater.wrap {
+.avater-frame2 {
   position: absolute;
-  width: 220px;
-  height: 300px;
-  transform: rotate(-5deg);
+  width: 230px;
+  height: 290px;
   background-color: transparent;
-  margin: 20px 0px;
+  transform: rotate(-10deg);
+}
+.avater-frame1 {
+  position: absolute;
+  width: 230px;
+  height: 290px;
+  background-color: transparent;
+  transform: rotate(3deg);
+  filter: brightness(0.95);
 }
 
-.avater.wrap:before {
-  content: "";
+img.avater {
+  display: block;
+  width: 150px;
+  height: 190px;
+  margin: 20px 40px;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 0;
+  background-color: #ffecd2;
+}
+.frame {
   display: block;
   position: absolute;
   top: 0;
@@ -208,62 +330,76 @@ img.logo {
   right: 0;
   bottom: 0;
   z-index: 1;
-  width: 220px;
-  height: 300px;
-  background: url("https://i.imgur.com/xs2cK34.png") no-repeat 50% 50%;
+  background-image: url(https://i.imgur.com/qzuIdLH.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
 }
-img.avater {
+input.MAJORWOUNDT[value="1"]:checked ~ img.avater {
   display: block;
-  position: absolute;
-  width: 200px;
-  height: 250px;
-  top: 10px;
-  left: 10px;
-  overflow: hidden;
-  object-fit: cover;
-  z-index: 0;
-  /*
-  background: url("https://i.imgur.com/RIlbHTQ.png") no-repeat 50% 50%;
-  */
+  opacity: 100%;
+  background-image: none;
+  background-color: rgba(27, 27, 27, 0.7);
+  filter: grayscale(55%);
 }
-
+input.DYINGT[value="2"]:checked ~ img.avater {
+  display: block;
+  background-image: none;
+  opacity: 100%;
+  background-color: rgba(27, 27, 27, 0.8);
+  filter: grayscale(100%);
+}
+input.MAJORWOUNDT[value="1"]:checked ~ div.frame {
+  background-image: url(https://i.imgur.com/arkN7wE.png);
+  background-repeat: no-repeat;
+  filter: brightness(0.9);
+}
+input.DYINGT[value="2"]:checked ~ div.frame {
+  background-image: url(https://i.imgur.com/arkN7wE.png);
+  background-repeat: no-repeat;
+  filter: brightness(0.8);
+}
 /* 바이오 */
 .bio.wrap {
   position: absolute;
   z-index: 2;
-  top: 215px;
-  font-family: "Syning_19";
+  padding: 0px;
+  top: 230px;
   background-color: transparent;
-  padding: 10px;
-  width: 210px;
+  font-family: "GangwonEdu_OTFBoldA";
+  width: 165px;
+  margin: 0px 32px;
 }
-
 input.bio {
   background-color: transparent;
   border: none;
-  font-size: 17px;
 }
 .bio.line1 {
   text-align: left;
 }
 input.bio.line1 {
   text-align: left;
+  margin-left: 5px;
+  width: 100%;
+  color: rgb(14, 14, 14);
 }
 .bio.line2 {
   text-align: right;
-  width: fit-content;
+  margin-right: 5px;
 }
 input.bio.line2 {
   text-align: right;
-  width: fit-content;
+  margin-right: 5px !important;
+  width: 100%;
+  color: rgb(14, 14, 14);
 }
-/* 특성치 */
+/* 특성치 ---------------------------------------------------*/
 .status.wrap {
 }
 .status.title {
+  margin-top: 0px;
 }
 .status.box {
-  padding: 10px;
   display: grid;
   row-gap: 2px;
 }
@@ -279,6 +415,7 @@ input.bio.line2 {
   margin-bottom: 3px;
 }
 .status.subtitle {
+  font-family: "SpoqaHanSansNeo-Medium";
   text-align: right;
   margin-right: 5px;
 }
@@ -286,30 +423,30 @@ input.status {
   width: fit-content;
   width: 75px;
   height: 35px !important;
+  font-size: 15px;
 }
 button[type="roll"].status:hover {
   background-position: 0;
-  background-color: #ffd000;
-  background-image: url(https://i.imgur.com/J3Vn29e.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/nzhBB3M.png);
 }
 button[type="roll"].status {
-  background-color: #242424;
-  background-image: url(https://i.imgur.com/mEikMj8.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/5CYx0uF.png);
   height: 19px;
   width: 19px;
   border-radius: 4px;
   border: none;
   justify-self: end;
 }
-
 button[type="roll"].status1:hover {
   background-position: 0;
-  background-color: #ffd000;
-  background-image: url(https://i.imgur.com/J3Vn29e.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/nzhBB3M.png);
 }
 button[type="roll"].status1 {
-  background-color: #242424;
-  background-image: url(https://i.imgur.com/mEikMj8.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/qy3jEYR.png);
   height: 19px;
   width: 19px;
   border-radius: 4px;
@@ -317,47 +454,57 @@ button[type="roll"].status1 {
   justify-self: end;
   margin-right: 17px !important;
 }
-/* 이성 */
+/* 이성 ---------------------------------------------------*/
 .san.wrap {
+  margin-left: 0px;
 }
 .san.title {
+  margin-top: 0px;
 }
 .san.box {
-  padding: 10px;
 }
-input.san {
+
+input.san::placeholder {
+  color: rgb(255, 189, 102);
 }
 /* 1줄:이성치기입 */
 .san.section1 {
-  margin: 5px 0px 5px 0px;
+  margin-bottom: 20px;
 }
 input.san.start {
-  margin-bottom: 0px 0px 5px 0px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgb(255, 148, 148);
+  border: 1px solid rgb(255, 169, 169);
+}
+input.san.start::placeholder {
+  color: rgb(255, 148, 148);
 }
 input[type="number"].san.current {
   width: 4.08em;
 }
 button[type="roll"].san.current:hover {
   background-position: 0;
-  background-color: #ffd000;
-  background-image: url(https://i.imgur.com/J3Vn29e.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/nzhBB3M.png);
 }
 button[type="roll"].san.current {
-  background-color: #242424;
-  background-image: url(https://i.imgur.com/mEikMj8.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/5CYx0uF.png);
   height: 20px;
   width: 20px;
   border: none;
   justify-self: end;
 }
-button[type="roll"].san.current2:hover {
+button.san.current2:hover {
   background-position: 0;
-  background-color: #ffd000;
-  background-image: url(https://i.imgur.com/J3Vn29e.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/nzhBB3M.png);
 }
 button[type="roll"].san.current2 {
-  background-color: #242424;
-  background-image: url(https://i.imgur.com/mEikMj8.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/qy3jEYR.png);
   height: 20px;
   width: 20px;
   border: none;
@@ -365,10 +512,15 @@ button[type="roll"].san.current2 {
 }
 /* 2줄:광기의 발작 */
 .san.section2 {
-  margin: 5px 0px 5px 0px;
+  margin-bottom: 20px;
 }
 .san.subtitle {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgb(255, 148, 148);
+  border: 1px solid rgb(255, 169, 169);
+
   margin-bottom: 5px;
+  border-radius: 3px;
 }
 .san.bom {
   display: grid;
@@ -378,55 +530,61 @@ button[type="roll"].san.current2 {
   justify-items: center;
 }
 .san.bomindication {
+  font-size: 9px;
 }
-
 input.san.bom {
 }
-
 button[type="roll"].san.bom:hover {
   background-position: 0;
-  background-color: #ffd000;
-  background-image: url(https://i.imgur.com/J3Vn29e.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/nzhBB3M.png);
 }
 button[type="roll"].san.bom {
-  background-color: #242424;
-  background-image: url(https://i.imgur.com/mEikMj8.png);
-  height: 12px;
-  width: 12px;
-  border: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/5CYx0uF.png);
+  height: 13px;
+  width: 13px;
+  border: 1px solid #ffffff;
   justify-self: end;
-  border-radius: 3px;
+  border-radius: 2.5px;
 }
 
 button[type="roll"].san.bom1:hover {
   background-position: 0;
-  background-color: #ffd000;
-  background-image: url(https://i.imgur.com/J3Vn29e.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/nzhBB3M.png);
 }
 button[type="roll"].san.bom1 {
-  background-color: #242424;
-  background-image: url(https://i.imgur.com/mEikMj8.png);
-  height: 12px;
-  width: 12px;
-  border: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-image: url(https://i.imgur.com/5CYx0uF.png);
+  height: 13px;
+  width: 13px;
+  border: 1px solid #ffffff;
   justify-self: end;
-  border-radius: 3px;
+  border-radius: 2.5px;
 }
 
 /* 3줄:현재 정신상태 */
 .san.section3 {
 }
 input.san.cmc {
+  color: rgb(255, 189, 102);
 }
-/* 체력 */
+input.san.cmc::placeholder {
+  color: rgb(255, 189, 102);
+}
+/* 체력---------------------------------------------------*/
 .hp.wrap {
+  margin-top: 0px;
 }
 .hp.title {
+  margin-top: 0px;
 }
 .hp.box {
-  padding: 10px;
   display: grid;
   grid-template-columns: 3fr 1fr;
+  margin-bottom: 5px;
 }
 .hp.line1 {
   display: grid;
@@ -436,36 +594,48 @@ input.san.cmc {
 input.secondary-attr-input-HP {
   width: 100% !important;
 }
+input.secondary-attr-input-HP::placeholder {
+  color: rgb(255, 189, 102);
+}
 .hp.line2 {
   display: grid;
   grid-template-columns: 2fr 1fr 2fr 1fr;
   align-items: center;
   justify-items: center;
 }
-/* -------------마력---------------------------------------------------*/
+/*마력---------------------------------------------------*/
 .mp.wrap {
+  margin-left: 0px;
+  margin-top: 0px;
 }
 .mp.title {
+  margin-top: 0px;
 }
 .mp.box {
-  padding: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 5px;
+  margin-top: 4px;
+  margin-bottom: 5px;
 }
 input.mp {
   width: 100% !important;
 }
-/* -------------다이스---------------------------------------------------*/
+input.mp::placeholder {
+  color: rgb(255, 189, 102);
+}
+/*다이스---------------------------------------------------*/
 .dice.wrap {
   display: none;
+  background: rgba(255, 255, 255, 0.6);
 }
-.sheet-toggledr[value="1"]:checked ~ .dice.wrap {
+input.add_function_dice[value="1"]:checked ~ .dice.wrap {
   display: block;
 }
 .dice.title {
 }
 .dice.box {
+  padding: 0px 10px;
 }
 .dice.line1 {
   display: grid;
@@ -476,6 +646,9 @@ input.dice-roll-input {
   border: none;
   width: 100%;
 }
+input.dice-roll-input::placeholder {
+  color: rgb(255, 169, 169);
+}
 .dice.line2 {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -483,12 +656,30 @@ input.dice-roll-input {
 .dice.subtitle {
 }
 button[type="roll"].smallnonskillbutton-roll {
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/wyOUw0G.png);
+  border: 1px solid #767676;
+  justify-self: end;
+  border-radius: 2.5px;
+  width: 18px;
+  height: 18px;
 }
-/* ----------구분선-------------------------------------------- */
-img.sublogo {
+button[type="roll"].smallnonskillbutton-roll:hover {
+  background-position: 0;
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/SlJN9T9.png);
 }
-/* ----------기능치--------------------------------------------- */
+/*구분선-------------------------------------------- */
+
+/*접기*/
+.sub-logo.wrap {
+  background: transparent;
+}
+
+/* 기능치--------------------------------------------- */
 .skill.wrap {
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.6);
 }
 .skill.title {
 }
@@ -504,14 +695,15 @@ img.sublogo {
   margin: 1px;
 }
 .skill.subtitle {
+  color: #6b6363;
   text-align: left;
   border: none;
+  margin-left: 5px;
 }
 input.skill.name {
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.747);
-  border: 1px solid white;
+  background: rgba(255, 255, 255, 0.6);
   width: 50px;
+  margin-right: 5px !important;
 }
 input.skill.name.additional {
   border: none;
@@ -519,16 +711,42 @@ input.skill.name.additional {
   font-size: 12px;
   width: 100%;
   text-align: left;
+  margin-left: 5px;
+  color: #6b6363;
 }
+
+input.skill.name.additional::placeholder {
+  color: #9e9696;
+}
+
+/*체크박스*/
+input.skill.cb {
+  cursor: pointer !important;
+  margin-left: auto;
+  margin-top: auto;
+  position: absolute;
+  z-index: 9999 !important;
+  opacity: 0;
+}
+.fake.cb {
+  width: 13px;
+  height: 13px;
+  background-image: url(https://i.imgur.com/tZi4N9n.png);
+  background-size: contain;
+}
+input.skill.cb.cb[value="1"]:checked ~ .fake.cb {
+  background-image: url(https://i.imgur.com/91NOSJT.png);
+}
+
 /* 버튼*/
 button[type="roll"].skill:hover {
   background-position: 0;
-  background-image: url(https://i.imgur.com/mEikMj8.png);
-  background-color: #00007a;
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/nzhBB3M.png);
 }
 button[type="roll"].skill {
-  background-color: rgb(221, 221, 221);
-  background-image: url(https://i.imgur.com/J3Vn29e.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/5CYx0uF.png);
   height: 20px;
   width: 20px;
   border: none;
@@ -537,241 +755,211 @@ button[type="roll"].skill {
 /* 기능치 버튼*/
 button[type="roll"].skill2:hover {
   background-position: 0;
-  background-color: #ffd000;
-  background-image: url(https://i.imgur.com/J3Vn29e.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/nzhBB3M.png);
 }
 button[type="roll"].skill2 {
-  background-color: #242424;
-  background-image: url(https://i.imgur.com/mEikMj8.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/qy3jEYR.png);
   height: 20px;
   width: 20px;
   border: none;
   justify-self: end;
 }
 /* 다른 기능치*/
-.skill.reminder {
+.skill-reminder.wrap {
+  padding: 0px;
+  background: transparent;
+  position: absolute;
+  color: #9e9696;
+  margin-top: 20px;
 }
-.skill.reminder.subtitle {
+.skill-reminder.subtitle {
   font-size: 14px;
   font-weight: bold;
+  text-align: left;
 }
-.skill.reminder.subbox {
+.skill-reminder.subbox {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   font-size: 10px;
 }
-.skill.reminder.otherskill {
+.skill-reminder.otherskill {
 }
 
-/*체크박스*/
 input[type="checkbox"].skill.cb {
   display: block;
   margin: 0px 5px 0px 0px;
 }
-
-/* -------------전투-------------------------------------------- */
+/* 전투-------------------------------------------- */
 .combet.wrap {
+  background: rgba(255, 255, 255, 0.6);
 }
 .combet.title {
 }
 .combet.box {
   padding: 0px 20px 0px 20px;
 }
-.combet.line {
+.combet.line,
+.combet.line1 {
   display: flex;
 }
+.combet.line1 > input.ATK,
+.combet.line1 > select.ATK {
+  color: #6b6363;
+}
 select.ATK {
-  width: 122.85px;
+  width: 114.89px;
   margin: 0px;
   height: 20px;
   padding: 0px;
   text-align: center;
   margin: 1px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #6b6363;
+  border: 1px solid white;
+  font-size: 11px;
 }
 input.ATK {
   width: 70px;
   margin: 1px;
+  font-size: 11px;
+  color: #6b6363;
+}
+input.ATK::placeholder {
+  color: #6b6363;
 }
 input.ATK.dif {
-  width: 122.85px;
+  width: 121.85px;
+  margin: 1px;
+  color: #6b6363;
+}
+input.ATK.dif1 {
+  width: 114.2px;
+  margin: 1px;
+  color: #6b6363;
+}
+input.ATK.dif2 {
+  width: 121.85px;
   margin: 1px;
 }
 /* 버튼*/
 button[type="roll"].ATK1:hover {
   background-position: 0;
-  background-color: #ffd000;
-  background-image: url(https://i.imgur.com/J3Vn29e.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/nzhBB3M.png);
 }
 button[type="roll"].ATK1 {
-  background-color: #242424;
-  background-image: url(https://i.imgur.com/mEikMj8.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/5CYx0uF.png);
   height: 20px;
   width: 20px;
   border: none;
   justify-self: end;
   margin: 1px !important;
 }
-
 /* 버튼*/
 button[type="roll"].ATK2:hover {
   background-position: 0;
-  background-image: url(https://i.imgur.com/mEikMj8.png);
-  background-color: #00007a;
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/5CYx0uF.png);
 }
 button[type="roll"].ATK2 {
-  background-color: rgb(221, 221, 221);
-  background-image: url(https://i.imgur.com/J3Vn29e.png);
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/qy3jEYR.png);
   height: 20px;
   width: 20px;
   border: none;
   margin: 1px !important;
 }
-
-/* ------장비와 소지품---------------------------------------- */
-.GEAR-POSS {
-  width: 95%;
-  margin: 0 auto;
+/* 장비와 소지품-------------------------------------------- */
+.gear_poss.wrap {
+  background: transparent;
+  padding: 0px;
+  margin: 0px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 10px;
-  margin-top: 20px;
+  grid-template-columns: 1.5fr 1fr;
 }
-/* ----장비---- */
-.GEAR {
-  border: solid 1px white;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.747);
-  padding: 15px;
+/* 장비 */
+.gear.wrap,
+.poss.wrap {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 10px;
 }
-
-h4.head-GEAR {
-  padding: 5px;
-}
-.box-GEAR {
+.gear.box {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 8px;
-  margin: 0 auto;
 }
-.SUB-TITLE-GEAR {
+.gear.subtitle {
   font-weight: bold;
-  color: white;
-  font-weight: bold;
-  text-align: center;
   margin-top: 4px;
   margin-bottom: 2px;
-  background-color: black;
-  border-radius: 2px;
   width: 100%;
 }
-
+textarea.EQUIP,
+textarea.BELONG,
+textarea.ASSET {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(88, 85, 85);
+  border: 1px solid white;
+  font-family: "Chosunilbo_myungjo";
+  font-size: 11px;
+}
 textarea.EQUIP,
 textarea.BELONG {
-  height: 120px;
 }
-/* ----소지품---- */
-.POSS {
-  border: solid 1px white;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.747);
-  padding: 15px;
+/* 현금과 자산 */
+.poss.title {
 }
-
-h4.head-POSS {
-  padding: 5px;
-}
-.box-POSS {
+.poss.box {
   display: grid;
-  grid-template-columns: 1.8fr 2fr;
-  column-gap: 8px;
-  align-items: center;
-  margin: 0 auto;
+  row-gap: 3px;
 }
-.POSS-COL1 {
+.poss.section1 {
   display: grid;
-  row-gap: 10px;
+  grid-template-columns: 1fr 3fr;
 }
-.POSS-row1 {
+.poss.section1 > .poss.subtitle {
+  text-align: left;
 }
-.POSS-row2 {
+.poss.section2 {
+  display: grid;
 }
-.POSS-COL2 {
+.poss.section2 > .poss.subtitle {
+  margin-top: 10px;
 }
-
 input.CASH,
 input.SPEND {
   width: 100%;
+  font-family: "Chosunilbo_myungjo";
+  font-size: 11px;
 }
-.SUB-TITLE-POSS {
-  font-weight: bold;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 4px;
-  margin-bottom: 2px;
-  background-color: black;
-  border-radius: 2px;
-}
-.SUB-TITLE-POSS2 {
-  font-weight: bold;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 4px;
-  margin-bottom: 2px;
-  margin-bottom: 2px;
-  background-color: black;
-  border-radius: 2px;
-  width: ;
-}
-
 textarea.ASSET {
-  height: 120px;
+  height: 100px;
 }
-/* -----백스토리---------------------------------------- */
-.BACKSTORY {
-  border: solid 1px white;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.747);
-  margin: 0 auto;
-  margin-top: 20px;
-  width: 95%;
+/* 백스토리---------------------------------------- */
+.backstory.wrap {
+  background: rgba(255, 255, 255, 0.6);
 }
-
-h4.head-BACKSTORY {
-  color: black;
-  font-family: ;
-  border-radius: ;
-  font-weight: 800;
-  font-size: 18px;
-  padding: 10px;
-  font-style: normal;
-  text-align: center;
+.backstory.title {
 }
-
-img.BCKST {
-  object-fit: cover;
-  justify-self: center;
-  width: 220px;
-  border: none;
-}
-
-img.BCKST-INDENT {
-  border: none;
-  opacity: 74%;
-  width: 15px;
-}
-
-.box-BACKSTORY {
-  color: black;
+.backstory.box {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 10px;
   column-gap: 20px;
 }
+textarea.backstory-box {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(88, 85, 85);
+  border: 1px solid white;
+  font-family: "Chosunilbo_myungjo";
 
-/*----반복 버튼-------------------------------------------- */
-
+  height: 120px;
+  font-size: 11px;
+}
+/*반복 버튼-------------------------------------------- */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -780,7 +968,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 div[class^="repcontrol"] {
-  margin: 0 0 0 0;
+  margin: 0 0 0;
 }
 
 div[class="repcontainer editmode"]
@@ -795,80 +983,72 @@ div[class="repcontainer editmode"]
   height: 16px;
   width: 16px;
   padding: 0px;
-
-  border: 1px solid white;
   color: white;
-  background: #f8cb00;
+  border: 1px solid white;
+  background: rgb(255, 189, 102);
 }
 .charsheet .repcontrol_edit,
 .charsheet .repcontrol_del {
   display: block;
-  background: #f8cb00;
+  border: 1px solid white;
+  background: rgb(255, 189, 102);
   color: white;
   box-shadow: none;
   font-size: 8px;
-  border: 1px solid white;
   text-shadow: none;
   padding: 0px 10px !important;
 }
 .charsheet .repcontrol_add {
   display: block;
-  background: #f8cb00;
+  border: 1px solid white;
+  background: rgb(255, 189, 102);
   color: white;
   box-shadow: none;
   font-size: 8px;
-  border: 1px solid white;
   text-shadow: none;
   padding: 0px 10px !important;
 }
-/*-------------------조력자 ------------------------------ */
-.sheet-toggleNPC[value="1"]:checked ~ div.NPC {
+/*조력자 ---------------------------------------------------*/
+input.add_function_npcsheet[value="1"]:checked ~ div.npc.wrap {
   display: block;
 }
-.charsheet div.NPC {
+.charsheet div.npc.wrap {
   display: none;
 }
-.NPC {
-  width: 95%;
+.npc.wrap {
   margin: 0 auto;
 }
-.box-NPC {
-  margin: 0 auto;
-  color: black;
-  margin: 0 auto;
-  margin-top: 40px;
-  border: solid 1px white;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.747);
-  padding: 0px 10px 35px 10px;
+.npc.box {
+  margin: 0px 10px;
 }
-
-h4.head-NPC {
-  padding: 10px;
-  text-align: center;
+.npc.title {
+  letter-spacing: 8px;
+  font-family: "Chosunilbo_myungjo";
+  font-size: 15px;
+  margin: 0px 0px 10px 0px;
+  color: #dcdee4;
 }
-.NPC-row1 {
+.npc-section1 {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  column-gap: 2px;
+  column-gap: 5px;
 }
-
-input[type="text"].namenpc {
+input.namenpc {
   border-radius: 5px;
-  height: 40px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  height: 41px !important;
   font-size: 19px;
-  color: white;
-  background-color: #1b1b1b;
-  border: 1px solid black;
+
   width: 100%;
   text-align: center;
 }
+input.namenpc::placeholder {
+  color: rgb(255, 169, 169);
+}
 .NPC-san1 {
-  background-color: #27c1be;
+  background-color: transparent;
+  color: white;
+
   border-radius: 4px;
-  color: #e4e4e5;
   margin-bottom: 2px;
   text-align: center;
   font-weight: normal;
@@ -881,7 +1061,6 @@ input[type="text"].namenpc {
   grid-template-columns: 6fr 1fr;
   justify-items: end;
 }
-
 input[type="text"].narrow-input-NPC-san {
   height: 20px;
   text-align: center;
@@ -889,982 +1068,721 @@ input[type="text"].narrow-input-NPC-san {
   border-radius: 4px;
   width: 100%;
 }
-.NPC-row2 {
+textarea.npc {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 148, 148);
+  border: 1px solid white;
+  font-family: "Chosunilbo_myungjo";
+
+  margin-bottom: 10px;
+  font-size: 11px;
+}
+.NPC-section2 {
   display: grid;
   grid-template-columns: 3fr 2fr 2fr;
-  column-gap: 5px;
+  column-gap: 10px;
 }
-.NPC-COL1 {
-  display: grid;
-  grid-template-columns: 1fr 2.5fr;
-}
-.NPC-STAT1 {
-  background-color: #4942b4;
+.npc.subtitle {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 4px;
-  color: #e4e4e5;
   margin-bottom: 2px;
   text-align: center;
   font-weight: normal;
   height: 20px;
   font-size: 12px;
-  width: 90px;
 }
-.NPC-STAT2 {
+.npc-statbox {
   display: flex;
-}
-
-input[type="text"].narrow-input-NPC1 {
-  background-color: #1b1b1b;
-  border: 1px solid black;
-  color: WHITE;
-  height: 20px;
-  text-align: center;
-  font-weight: 400;
-  border-radius: 4px;
-  width: fit-content;
-  width: 115px;
-  margin-bottom: 2px;
-  margin-right: 2px;
-  margin-left: 2px;
-}
-
-input[type="text"].narrow-input-NPCMOV {
-  background-color: #1b1b1b;
-  border: 1px solid black;
-  color: WHITE;
-  height: 20px;
-  text-align: center;
-  font-weight: 400;
-  border-radius: 4px;
-  width: 99%;
-  margin-bottom: 2px;
-  margin-left: 2px;
-}
-.NPC-COL2,
-.NPC-COL3 {
-  display: grid;
-  grid-template-columns: 1fr 2.5fr 0.5fr;
-  column-gap: 2px;
-}
-.NPC-STAT {
-  background-color: #4942b4;
-  border-radius: 4px;
-  color: #e4e4e5;
-  margin-bottom: 2px;
-  text-align: center;
-  font-weight: normal;
-  height: 20px;
-  font-size: 12px;
-}
-
-input[type="text"].narrow-input-NPC {
-  background-color: #1b1b1b;
-  border: 1px solid black;
-  color: white;
-  height: 20px;
-  text-align: center;
-  font-weight: 400;
-  border-radius: 4px;
-  margin-bottom: 2px;
-  width: fit-content;
-}
-
-/* 조력자 버튼 */
-button[type="roll"].smallbutton-roll {
-  color: #261c19;
-  font-weight: bolder;
-  font-size: 1px;
-  width: 18px;
-  height: 18px;
-  margin: 0;
-  padding: 0em;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
-input[type="text"].narrow-input-FUNCNPC {
-  margin-bottom: 2px;
-  height: 20px;
-  text-align: center;
-  border-radius: 4px;
-  color: white;
-  background-color: #1b1b1b;
-  border: 1px solid black;
-}
-.SUBhead-NPC {
-  margin-top: 20px;
   margin-bottom: 10px;
-  background-color: #27c1be;
-  border-radius: 4px;
-  color: WHITE;
-  margin-bottom: 2px;
-  text-align: center;
-  font-weight: bold;
-  height: 20px;
-  width: 99.5%;
 }
-.NPC-row3 {
+input.npc-stat {
+  background-color: #ffffff2d;
+  border: none;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+input.npc-stat::placeholder {
+  color: rgb(255, 169, 169);
+}
+input.npc-stat1 {
+  background-color: #ffffff2d;
+  border: none;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+input.npc-stat1::placeholder {
+}
+
+.NPC-section3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 8px;
+  column-gap: 10px;
 }
-
-button[type="roll"].smallnonskillbutton-roll {
-  color: #261c19;
-  font-weight: bolder;
-  font-size: 1px;
+.npc-statbox1 {
+  display: grid;
+  grid-template-columns: 3fr 1fr 0.1fr;
+  column-gap: 2px;
+  margin-bottom: 2px;
+}
+/* 조력자 버튼 */
+button[type="roll"].smallbutton-roll:hover {
+  background-position: 0;
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/SlJN9T9.png);
+}
+button[type="roll"].smallbutton-roll {
+  background-color: transparent;
+  background-image: url(https://i.imgur.com/wyOUw0G.png);
+  border: 1px solid #767676;
+  justify-self: end;
+  border-radius: 2.5px;
   width: 18px;
   height: 18px;
-  margin: 0;
-  padding: 0em;
-  border: 1px solid black;
-  border-radius: 5px;
 }
-
-/* ------------ 롤테이블------------------------------------------------------ */
-/* ---- 기본 다이스 ----*/
-.rolltemplate-coc-dice-roll {
-  width: 100%;
-}
-
-.rolltemplate-coc-dice-roll div.head {
-  background-color: #222222;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 2px;
-  width: 100%;
-  padding: 5px 0px 5px 0px;
-  color: white;
-  background-image: url("https://i.imgur.com/288UeF3.png");
-  background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: right;
-  text-align: left;
-  display: flex;
-}
-
-.rolltemplate-coc-dice-roll div.INDICATER1 {
-  font-family: "YUniverse-B";
-  margin-left: 5px;
-}
-
-.rolltemplate-coc-dice-roll div.SIMPLE-roll {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  border-radius: 2px;
-  width: 100%;
-  padding: 10px 0px 10px 0px;
-  margin-top: 4px;
+/*하단 장식----------------------------------------------------- */
+.footer {
   text-align: center;
-  background-image: url("");
-  background-size: cover;
+  margin: 20px;
 }
-
-.rolltemplate-coc-dice-roll .inlinerollresult,
-.rolltemplate-coc-dice-roll .inlinerollresult.fullcrit,
-.rolltemplate-coc-dice-roll .inlinerollresult.fullfail,
-.rolltemplate-coc-dice-roll .inlinerollresult.importantroll {
+.type2 {
+  font-family: "Chosunilbo_myungjo";
+  font-size: 8px;
+  margin: 0 auto;
+  text-align: center;
+  letter-spacing: 3px;
+  color: transparent;
+  text-shadow: 0 0 1px rgb(255 179 89);
+}
+/* ------------ 롤테이블------------------------------------------------------ */
+/*기본 다이스---------------------------------------------------*/
+.sheet-rolltemplate-coc-dice-roll {
+  width: 100%;
+  text-align: center;
+  font-family: "SpoqaHanSansNeo-Regular";
+  color: white;
+}
+.sheet-rolltemplate-coc-dice-roll div.sheet-top {
+  font-weight: bold;
+  background-color: rgb(255, 148, 148);
+  border-radius: 4px;
+  padding: 1px 10px;
+  margin-bottom: 2px;
+  text-align: left;
+  letter-spacing: 3px;
+  color: transparent;
+  text-shadow: 0 0 1px white;
+  font-family: "Chosunilbo_myungjo";
+  font-size: 10px;
+}
+.sheet-rolltemplate-coc-dice-roll div.sheet-body {
+background: rgba(255, 255, 255, 0.5);
+  border: 1px solid white;
+}
+.sheet-rolltemplate-coc-dice-roll div.sheet-result{
+font-size:18px;
+color:rgb(255, 189, 102);
+margin:20px;
+}
+.sheet-rolltemplate-coc-dice-roll .inlinerollresult,
+.sheet-rolltemplate-coc-dice-roll .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc-dice-roll .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc-dice-roll .inlinerollresult.importantroll {
   background-color: transparent;
   border: none;
 }
 /* ---- 명중 ----*/
-.rolltemplate-coc-body-hit-loc {
+.sheet-rolltemplate-coc-body-hit-loc {
   width: 100%;
-}
-
-.rolltemplate-coc-body-hit-loc div.head {
-  background-color: #222222;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 2px;
-  width: 100%;
-  padding: 5px 0px 5px 0px;
-  color: white;
-  background-image: url("https://i.imgur.com/288UeF3.png");
-  background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: right;
-  text-align: left;
-  display: flex;
-}
-.rolltemplate-coc-body-hit-loc div.INDICATER1 {
-  font-family: "YUniverse-B";
-  margin-left: 5px;
-}
-
-.rolltemplate-coc-body-hit-loc div.INDICATER2 {
-  font-family: "SpoqaHanSansNeo-Regular";
-  margin-left: 3px;
-}
-
-.rolltemplate-coc-body-hit-loc div.BODY-HIT {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  border-radius: 2px;
-  width: 100%;
-  padding: 10px 0px 10px 0px;
-  margin-top: 4px;
   text-align: center;
-  background-image: url("");
-  background-size: cover;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.rolltemplate-coc-body-hit-loc div.BODY-HIT-TITLE {
-}
-.rolltemplate-coc-body-hit-loc div.BODY-HIT-RESULT {
-  border-radius: 4px;
-  width: 90%;
-  margin: 0 auto;
-  border: black 1px solid;
-  border-radius: 4px;
   font-family: "SpoqaHanSansNeo-Regular";
+  color: white;
 }
+.sheet-rolltemplate-coc-body-hit-loc  div.sheet-top {
+  font-weight: bold;
+  background-color: rgb(255, 148, 148);
+  border-radius: 4px;
+  padding: 1px 10px;
+  margin-bottom: 2px;
+  text-align: left;
+  letter-spacing: 3px;
+  color: transparent;
+  text-shadow: 0 0 1px white;
+  font-family: "Chosunilbo_myungjo";
+  font}
+  .sheet-rolltemplate-coc-body-hit-loc div.sheet-body {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid white;
+  }
+  .sheet-rolltemplate-coc-body-hit-loc div.sheet-section1{
+    font-size: 12px;
+    color: #c4c4c4;
+    margin-top:20px;
 
-.rolltemplate-coc-body-hit-loc .inlinerollresult,
-.rolltemplate-coc-body-hit-loc .inlinerollresult.fullcrit,
-.rolltemplate-coc-body-hit-loc .inlinerollresult.fullfail,
-.rolltemplate-coc-body-hit-loc .inlinerollresult.importantroll {
+  }
+    .sheet-rolltemplate-coc-body-hit-loc div.sheet-section2{
+      font-size:18px;
+      color:rgb(255, 189, 102);
+      margin-bottom:20px;
+  }
+  .sheet-rolltemplate-coc-body-hit-loc .inlinerollresult,
+  .sheet-rolltemplate-coc-body-hit-loc .inlinerollresult.fullcrit,
+  .sheet-rolltemplate-coc-body-hit-loc.inlinerollresult.fullfail,
+  .sheet-rolltemplate-coc-body-hit-loc .inlinerollresult.importantroll {
   background-color: transparent;
   border: none;
 }
-/* ---- 실시간 광기의 발작 롤테이블 ----*/
-.rolltemplate-coc-bomadness-rt {
+/* 실시간 광기의 발작 롤테이블 ---------------------------------------------------*/
+.sheet-rolltemplate-coc-bomadness-rt {
   width: 100%;
-}
-/* 상단 */
-.rolltemplate-coc-bomadness-rt div.head {
-  background-color: #222222;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 2px;
-  width: 100%;
-  padding: 5px 0px 5px 0px;
-  color: white;
-  background-image: url("https://i.imgur.com/288UeF3.png");
-  background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: right;
-  text-align: left;
-  display: flex;
-}
-
-.rolltemplate-coc-bomadness-rt div.INDICATER1 {
-  font-family: "YUniverse-B";
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-/* 메인 */
-.rolltemplate-coc-bomadness-rt div.BODY {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  width: 100%;
-  border-radius: 2px;
-  padding: 10px 0px 10px 0px;
-  margin-top: 4px;
-  text-align: left;
-  background-image: url(" ");
-  background-size: cover;
-}
-
-.rolltemplate-coc-bomadness-rt div.san-REALTIME-RESULT {
-  width: 95%;
-  margin: 0 auto;
-  font-weight: bold;
-}
-
-.rolltemplate-coc-bomadness-rt div.san-REALTIME-description {
-  width: 95%;
-  margin: 0 auto;
-}
-
-/* 하단 */
-.rolltemplate-coc-bomadness-rt div.FOOT {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  border-radius: 2px;
-  width: 100%;
-  padding: 3px 0px 3px 0px;
-  margin-top: 4px;
   text-align: center;
-  background-image: url("");
-  background-size: cover;
-}
-
-.rolltemplate-coc-bomadness-rt .inlinerollresult,
-.rolltemplate-coc-bomadness-rt .inlinerollresult .fullcrit,
-.rolltemplate-coc-bomadness-rt .inlinerollresult .fullfail,
-.rolltemplate-coc-bomadness-rt .inlinerollresult .importantroll {
-  background-color: transparent;
-  border: none;
-}
-
-/*이미지*/
-.rolltemplate-coc-bomadness-rt img.TEMBG-T {
-  width: 96%;
-  margin-bottom: -50px;
-}
-.rolltemplate-coc-bomadness-rt img.TEMBG-B {
-  margin-top: -50px;
-  width: 96%;
-}
-
-/* ---- 요약 광기의 발작 테이블 ---- */
-.rolltemplate-coc-bomadness-summ {
-  width: 100%;
-}
-.rolltemplate-coc-bomadness-summ div.san-SUMM {
-}
-
-/* 상단 */
-.rolltemplate-coc-bomadness-summ div.head {
-  background-color: #222222;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 2px;
-  width: 100%;
-  padding: 5px 0px 5px 0px;
-  color: white;
-  background-image: url("https://i.imgur.com/288UeF3.png");
-  background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: right;
-  text-align: left;
-  display: flex;
-}
-
-.rolltemplate-coc-bomadness-summ div.INDICATER1 {
-  font-family: "YUniverse-B";
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-/* 메인 */
-.rolltemplate-coc-bomadness-summ div.BODY {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  width: 100%;
-  border-radius: 2px;
-  padding: 10px 0px 10px 0px;
-  margin-top: 4px;
-  text-align: left;
-  background-image: url(" ");
-  background-size: cover;
-}
-
-.rolltemplate-coc-bomadness-summ div.san-SUMM-RESULT {
-  width: 95%;
-  margin: 0 auto;
-  font-weight: bold;
-}
-
-.rolltemplate-coc-bomadness-summ div.san-SUMM-description {
-  width: 95%;
-  margin: 0 auto;
-}
-.rolltemplate-coc-bomadness-summ .inlinerollresult,
-.rolltemplate-coc-bomadness-summ .inlinerollresult.fullcrit,
-.rolltemplate-coc-bomadness-summ .inlinerollresult.fullfail,
-.rolltemplate-coc-bomadness-summ .inlinerollresult.importantroll {
-  background-color: transparent;
-  border: none;
-}
-
-/*이미지*/
-.rolltemplate-coc-bomadness-summ img.TEMBG-T {
-  width: 96%;
-  margin-bottom: -50px;
-}
-.rolltemplate-coc-bomadness-summ img.TEMBG-B {
-  margin-top: -50px;
-  width: 96%;
-}
-
-/* --------- 기능치/보너스 롤테이블 ---------- */
-.rolltemplate-coc {
-  width: 100%;
-}
-
-.rolltemplate-coc div.SKILL-BONUS {
-  color: black;
-}
-
-/*상단*/
-.rolltemplate-coc div.SKILL-BONUS-head {
-  background-color: #222222;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 2px;
-  width: 100%;
-  padding: 5px 0px 5px 0px;
-  color: white;
-  background-image: url("https://i.imgur.com/288UeF3.png");
-  background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: right;
-  text-align: left;
-  display: flex;
-}
-.rolltemplate-coc div.SKILL-BONUS-INDICATER1 {
-  font-family: "YUniverse-B";
-  margin-left: 5px;
-}
-
-.rolltemplate-coc div.SKILL-BONUS-INDICATER2 {
   font-family: "SpoqaHanSansNeo-Regular";
-  margin-left: 2px;
+  color: white;
 }
 
 /*메인*/
-.rolltemplate-coc div.SKILL-BONUS-BODY {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  border-radius: 2px;
-  width: 100%;
-  padding: 10px 0px 10px 0px;
-  margin-top: 4px;
-  text-align: center;
-  background-image: url(" ");
+.sheet-rolltemplate-coc-bomadness-rt div.sheet-body {
+  margin-bottom: 2px;
+  background-image: url(https://i.imgur.com/gX8l7qm.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
-}
-.rolltemplate-coc div.SKILL-BONUS-LABELING {
-  font-weight: bolder;
+  padding: 15px 0px;
+  border-radius: 4px;
+  border: 1px solid white;
 }
 
-/*메인 줄1*/
-.rolltemplate-coc div.SKILL-BONUS-rollED {
-  margin: 0 auto;
+.sheet-rolltemplate-coc-bomadness-rt div.sheet-section1 {
+  margin-bottom: 10px;
+}
+.sheet-rolltemplate-coc-bomadness-rt div.sheet-lable {
+  font-size: 10px;
+  text-align: left;
+  margin-left: 5px;
+  color: rgb(255, 189, 102);
+}
+.sheet-rolltemplate-coc-bomadness-rt div.sheet-section2 {
+}
+.sheet-rolltemplate-coc-bomadness-rt div.sheet-lable1 {
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 1px 1px 8px rgb(255 94 94), 1px 1px 10px #ccc;
+  text-align: center;
+  margin: 10px;
+}
+.sheet-rolltemplate-coc-bomadness-rt div.sheet-description {
+  text-align: left;
+  font-size: 12px;
+  margin: 10px;
+  background: #ffffffb3;
+  border-radius: 10px;
+  border: 1px solid white;
+  color: #fe9494;
+  padding: 5px;
+}
+.sheet-rolltemplate-coc-bomadness-rt div.sheet-foot {
+  text-align: left;
+  font-size: 12px;
+  background-color: rgb(255, 189, 102);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 2px 10px;
+}
+/*디폴트*/
+.sheet-rolltemplate-coc-bomadness-rt .inlinerollresult,
+.sheet-rolltemplate-coc-bomadness-rt .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc-bomadness-rt.inlinerollresult.fullfail,
+.sheet-rolltemplate-coc-bomadness-rt .inlinerollresult.importantroll {
+  background-color: transparent;
+  border: none;
+}
+/* 요약 광기의 발작 테이블 ---------------------------------------------------*/
+.sheet-rolltemplate-coc-bomadness-summ {
+  width: 100%;
   text-align: center;
   font-family: "SpoqaHanSansNeo-Regular";
+  color: white;
 }
-
-.rolltemplate-coc div.SKILL-BONUS-STANDERD {
-  color: #919191;
-  font-weight: bold;
-  font-size: 12px;
+/*메인*/
+.sheet-rolltemplate-coc-bomadness-summ div.sheet-body {
+  margin-bottom: 2px;
+  background-image: url(https://i.imgur.com/gX8l7qm.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px 0px;
+  border-radius: 4px;
+  border: 1px solid white;
 }
-
-.rolltemplate-coc div.SKILL-BONUS-DICE {
-  color: black;
-  font-weight: bold;
-  font-size: 12px;
-  margin-top: -4px;
+.sheet-rolltemplate-coc-1 div.sheet-section1 {
+  margin-bottom: 10px;
 }
-
-/*메인 줄2*/
-
-.rolltemplate-coc div.SKILL-BONUS-RESULT {
+.sheet-rolltemplate-coc-bomadness-summ div.sheet-lable {
+  font-size: 10px;
+  text-align: left;
+  margin-left: 5px;
+  color: rgb(255, 189, 102);
+}
+.sheet-rolltemplate-coc-1 div.sheet-section2 {
+}
+.sheet-rolltemplate-coc-bomadness-summ div.sheet-lable1 {
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 1px 1px 8px rgb(255 94 94), 1px 1px 10px #ccc;
+  text-align: center;
   margin: 10px;
-  display: grid;
-  width: 90%;
-  row-gap: 4px;
 }
-
-.rolltemplate-coc div.SKILL-BONUS-PAIR1,
-.rolltemplate-coc div.SKILL-BONUS-PAIR2,
-.rolltemplate-coc div.SKILL-BONUS-PAIR3,
-.rolltemplate-coc div.SKILL-BONUS-PAIR4,
-.rolltemplate-coc div.SKILL-BONUS-PAIR5 {
+.sheet-rolltemplate-coc-bomadness-summ div.sheet-description {
+  text-align: left;
+  font-size: 12px;
+  margin: 10px;
+  background: #ffffffb3;
+  border-radius: 10px;
+  border: 1px solid white;
+  color: #fe9494;
+  padding: 5px;
+}
+/*디폴트*/
+.sheet-rolltemplate-coc-bomadness-summ .inlinerollresult,
+.sheet-rolltemplate-coc-bomadness-summ .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc-bomadness-summ .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc-bomadness-summ .inlinerollresult.importantroll {
+  background-color: transparent;
+  border: none;
+}
+/* 기능치/보너스 롤테이블 ---------------------------------------------------*/
+.sheet-rolltemplate-coc {
+  width: 100%;
+}
+.sheet-rolltemplate-coc {
+  width: 100%;
+  text-align: center;
+  font-family: "SpoqaHanSansNeo-Regular";
+  color: white;
+}
+/*상단*/
+.sheet-rolltemplate-coc div.sheet-top {
+  font-weight: bold;
+  background-color: rgb(255, 148, 148);
+  border-radius: 4px;
+  padding: 1px 10px;
+  margin-bottom: 2px;
+  text-align: left;
+  letter-spacing: 3px;
+  color: transparent;
+  text-shadow: 0 0 1px white;
+  font-family: "Chosunilbo_myungjo";
+  font-size: 10px;
+}
+/*메인*/
+.sheet-rolltemplate-coc div.sheet-body {
+  margin-bottom: 2px;
+  background-image: url(https://i.imgur.com/gX8l7qm.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px 0px;
+  border-radius: 4px;
+  border: 1px solid white;
+}
+/*메인 줄1*/
+.sheet-rolltemplate-coc div.sheet-section {
+  letter-spacing: 6px;
+  color: rgb(255 148 148);
+  text-shadow: 0 0 1px rgb(255 148 148);
+  font-family: "Chosunilbo_myungjo";
+  font-size: 15px;
+}
+.sheet-rolltemplate-coc div.sheet-section1 {
+  margin: 10px 0px;
+}
+.sheet-rolltemplate-coc div.sheet-guide {
+  font-size: 12px;
+  color: #c4c4c4;
+  background: white;
+  border-radius: 10px;
+  margin: 2px 20px;
+}
+.sheet-rolltemplate-coc div.sheet-rolled {
+  color: #ff7b7b;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 0px 20px;
+}
+.sheet-rolltemplate-coc div.sheet-section2 {
+  padding: 10px 20px;
+}
+.sheet-rolltemplate-coc div.sheet-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 10px;
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid white;
   border-radius: 10px;
+  margin: 1px;
+  background-color: #ffffff8f;
 }
-
-.rolltemplate-coc div.SKILL-BONUS-LABELING1,
-.rolltemplate-coc div.SKILL-BONUS-LABELING2,
-.rolltemplate-coc div.SKILL-BONUS-LABELING3,
-.rolltemplate-coc div.SKILL-BONUS-LABELING4,
-.rolltemplate-coc div.SKILL-BONUS-LABELING5 {
+.sheet-rolltemplate-coc div.sheet-pair-lable {
+  color: #ffaeae;
 }
-.rolltemplate-coc div.SKILL-BONUS-RESULT1,
-.rolltemplate-coc div.SKILL-BONUS-RESULT2,
-.rolltemplate-coc div.SKILL-BONUS-RESULT3,
-.rolltemplate-coc div.SKILL-BONUS-RESULT4,
-.rolltemplate-coc div.SKILL-BONUS-RESULT5 {
+.sheet-rolltemplate-coc div.sheet-pair-result {
+  font-size: 12px;
+  color: rgb(255, 148, 148);
+  text-shadow: 1px 1px 10px #ffffff, 1px 1px 10px #ccc;
+  text-align: center;
+}
+/* 하단 */
+.sheet-rolltemplate-coc div.sheet-foot {
+  text-align: left;
+  font-size: 12px;
+  background-color: rgb(255, 189, 102);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 2px 10px;
 }
 /*디폴트*/
-.rolltemplate-coc .inlinerollresult,
-.rolltemplate-coc .inlinerollresult.fullcrit,
-.rolltemplate-coc .inlinerollresult.fullfail,
-.rolltemplate-coc .inlinerollresult.importantroll {
+.sheet-rolltemplate-coc .inlinerollresult,
+.sheet-rolltemplate-coc .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc .inlinerollresult.importantroll {
   background-color: transparent;
   border: none;
 }
-
 /*이미지*/
-.rolltemplate-coc img.TEMBG-T {
+.sheet-rolltemplate-coc img.TEMBG-T {
   width: 96%;
   margin-bottom: -50px;
 }
-.rolltemplate-coc img.TEMBG-B {
+.sheet-rolltemplate-coc img.TEMBG-B {
   margin-top: -50px;
   width: 96%;
 }
-/* --------- 공격/보너스 롤테이블 ---------- */
-.rolltemplate-coc-attack {
+/*공격/보너스 롤테이블 ---------------------------------------------------*/
+.sheet-rolltemplate-coc-attack {
   width: 100%;
-}
-
-.rolltemplate-coc-attack div.SKILL-BONUS {
-  color: black;
-}
-
-/*상단*/
-.rolltemplate-coc-attack div.SKILL-BONUS-head {
-  background-color: #222222;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 2px;
-  width: 100%;
-  padding: 5px 0px 5px 0px;
+  text-align: center;
+  font-family: "SpoqaHanSansNeo-Regular";
   color: white;
-  background-image: url("https://i.imgur.com/288UeF3.png");
-  background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: right;
+}
+/*상단*/
+.sheet-rolltemplate-coc-attack div.sheet-top {
+  font-weight: bold;
+  background-color: rgb(255, 148, 148);
+  border-radius: 4px;
+  padding: 1px 10px;
+  margin-bottom: 2px;
   text-align: left;
-  display: flex;
+  letter-spacing: 3px;
+  color: transparent;
+  text-shadow: 0 0 1px white;
+  font-family: "Chosunilbo_myungjo";
+  font-size: 10px;
 }
-.rolltemplate-coc-attack div.SKILL-BONUS-INDICATER1 {
-  font-family: "YUniverse-B";
-  margin-left: 5px;
-}
-
-.rolltemplate-coc-attack div.SKILL-BONUS-INDICATER2 {
-  font-family: "SpoqaHanSansNeo-Regular";
-  margin-left: 2px;
-}
-
 /*메인*/
-.rolltemplate-coc-attack div.SKILL-BONUS-BODY {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  border-radius: 2px;
-  width: 100%;
-  padding: 10px 0px 10px 0px;
-  margin-top: 4px;
-  text-align: center;
-  background-image: url(" ");
+.sheet-rolltemplate-coc-attack div.sheet-body {
+  margin-bottom: 2px;
+  background-image: url(https://i.imgur.com/gX8l7qm.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
+  padding: 15px 0px;
+  border-radius: 4px;
+  border: 1px solid white;
 }
-.rolltemplate-coc-attack div.SKILL-BONUS-LABELING {
-  font-weight: bolder;
-}
-
 /*메인 줄1*/
-.rolltemplate-coc-attack div.SKILL-BONUS-rollED {
-  margin: 0 auto;
-  text-align: center;
-  font-family: "SpoqaHanSansNeo-Regular";
+.sheet-rolltemplate-coc-attack div.sheet-section {
+  letter-spacing: 6px;
+  color: rgb(255 148 148);
+  text-shadow: 0 0 1px rgb(255 148 148);
+  font-family: "Chosunilbo_myungjo";
+  font-size: 15px;
 }
-
-.rolltemplate-coc-attack div.SKILL-BONUS-STANDERD {
-  color: #919191;
-  font-weight: bold;
+.sheet-rolltemplate-coc-attack div.sheet-section1 {
+  margin: 10px 0px;
+}
+.sheet-rolltemplate-coc-attack div.sheet-guide {
   font-size: 12px;
+  color: #c4c4c4;
+  background: white;
+  border-radius: 10px;
+  margin: 2px 20px;
 }
-
-.rolltemplate-coc-attack div.SKILL-BONUS-DICE {
-  color: black;
-  font-weight: bold;
-  font-size: 12px;
-  margin-top: -4px;
-  row-gap: 4px;
+.sheet-rolltemplate-coc-attack div.sheet-rolled {
+  color: #ff7b7b;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 0px 20px;
 }
-
-/*메인 줄2*/
-
-.rolltemplate-coc-attack div.SKILL-BONUS-RESULT {
-  margin: 10px;
-  display: grid;
-  width: 90%;
-  row-gap: 4px;
+.sheet-rolltemplate-coc-attack div.sheet-section2 {
+  padding: 10px 20px;
 }
-
-/* 하단 */
-.rolltemplate-coc-attack div.FOOT {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  border-radius: 2px;
-  width: 100%;
-  padding: 3px 0px 3px 0px;
-  margin-top: 4px;
-  text-align: center;
-  background-image: url("");
-  background-size: cover;
-}
-
-.rolltemplate-coc-attack div.SKILL-BONUS-PAIR1,
-.rolltemplate-coc-attack div.SKILL-BONUS-PAIR2,
-.rolltemplate-coc-attack div.SKILL-BONUS-PAIR3,
-.rolltemplate-coc-attack div.SKILL-BONUS-PAIR4,
-.rolltemplate-coc-attack div.SKILL-BONUS-PAIR5 {
+.sheet-rolltemplate-coc-attack div.sheet-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 10px;
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid white;
   border-radius: 10px;
+  margin: 1px;
+  background-color: #ffffff8f;
 }
-
-.rolltemplate-coc-attack div.SKILL-BONUS-LABELING1,
-.rolltemplate-coc-attack div.SKILL-BONUS-LABELING2,
-.rolltemplate-coc-attack div.SKILL-BONUS-LABELING3,
-.rolltemplate-coc-attack div.SKILL-BONUS-LABELING4,
-.rolltemplate-coc-attack div.SKILL-BONUS-LABELING5 {
+.sheet-rolltemplate-coc-attack div.sheet-pair-lable {
+  color: #ffaeae;
 }
-.rolltemplate-coc-attackdiv.SKILL-BONUS-RESULT1,
-.rolltemplate-coc-attack div.SKILL-BONUS-RESULT2,
-.rolltemplate-coc-attack div.SKILL-BONUS-RESULT3,
-.rolltemplate-coc-attack div.SKILL-BONUS-RESULT4,
-.rolltemplate-coc-attack div.SKILL-BONUS-RESULT5 {
+.sheet-rolltemplate-coc-attack div.sheet-pair-result {
+  font-size: 12px;
+  font-size: 12px;
+  color: #ff7b7b;
+  text-shadow: 1px 1px 10px #ffffff, 1px 1px 10px #ccc;
+  text-align: center;
+}
+/* 하단 */
+.sheet-rolltemplate-coc-attack div.sheet-foot {
+  text-align: left;
+  font-size: 12px;
+  background-color: rgb(255, 189, 102);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 2px 10px;
 }
 /*디폴트*/
-.rolltemplate-coc-attack .inlinerollresult,
-.rolltemplate-coc-attack .inlinerollresult.fullcrit,
-.rolltemplate-coc-attack .inlinerollresult.fullfail,
-.rolltemplate-coc-attack .inlinerollresult.importantroll {
+.sheet-rolltemplate-coc-attack .inlinerollresult,
+.sheet-rolltemplate-coc-attack .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc-attack .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc-attack .inlinerollresult.importantroll {
   background-color: transparent;
   border: none;
 }
 /*이미지*/
-.rolltemplate-coc-attack img.TEMBG-T {
+.sheet-rolltemplate-coc-attack img.TEMBG-T {
   width: 96%;
   margin-bottom: -50px;
 }
-.rolltemplate-coc-attack img.TEMBG-B {
+.sheet-rolltemplate-coc-attack img.TEMBG-B {
   margin-top: -50px;
   width: 96%;
 }
-/* --------- 기능치 롤테이블 ---------- */
-.rolltemplate-coc-1 {
+/* 기능치 롤테이블 ---------------------------------------------------*/
+.sheet-rolltemplate-coc-1 {
   width: 100%;
-}
-.rolltemplate-coc-1 div.SKILL-TEM {
-  color: black;
-}
-
-/*상단*/
-.rolltemplate-coc-1 div.head {
-  background-color: #222222;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 2px;
-  width: 100%;
-  padding: 5px 0px 5px 0px;
-  color: white;
-  background-image: url("https://i.imgur.com/288UeF3.png");
-  background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: right;
-  text-align: left;
-  display: flex;
-}
-.rolltemplate-coc-1 div.INDICATER1 {
-  font-family: "YUniverse-B";
-  margin-left: 5px;
-}
-
-.rolltemplate-coc-1 div.INDICATER2 {
+  text-align: center;
   font-family: "SpoqaHanSansNeo-Regular";
-  margin-left: 2px;
+  color: white;
 }
-
+/*상단*/
+.sheet-rolltemplate-coc-1 div.sheet-top {
+  font-weight: bold;
+  background-color: rgb(255, 148, 148);
+  border-radius: 4px;
+  padding: 1px 10px;
+  margin-bottom: 2px;
+  text-align: left;
+  letter-spacing: 3px;
+  color: transparent;
+  text-shadow: 0 0 1px white;
+  font-family: "Chosunilbo_myungjo";
+  font-size: 10px;
+}
 /*메인*/
-.rolltemplate-coc-1 div.BODY {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  border-radius: 2px;
-  width: 100%;
-  padding: 5px 0px 5px 0px;
-  margin-top: 4px;
-  text-align: center;
-  background-image: url(" ");
+.sheet-rolltemplate-coc-1 div.sheet-body {
+  margin-bottom: 2px;
+  background-image: url(https://i.imgur.com/gX8l7qm.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
+  padding: 15px 0px;
+  border-radius: 4px;
+  border: 1px solid white;
 }
-
-.rolltemplate-coc-1 div.SKILL-TEM-LABELING {
-  font-weight: bolder;
+.sheet-rolltemplate-coc-1 div.sheet-skill {
+  letter-spacing: 6px;
+  color: rgb(255 148 148);
+  text-shadow: 0 0 1px rgb(255 148 148);
+  font-family: "Chosunilbo_myungjo";
+  font-size: 15px;
 }
-
-/*메인 줄1*/
-.rolltemplate-coc-1 div.SKILL-TEM-rollED {
-  margin: 0 auto;
-  text-align: center;
+.sheet-rolltemplate-coc-1 div.sheet-section1 {
+  margin: 10px 0px;
 }
-
-.rolltemplate-coc-1 div.SKILL-TEM-STANDARD {
-  color: #919191;
-  font-weight: bold;
+.sheet-rolltemplate-coc-1 div.sheet-divet-guide {
   font-size: 12px;
+  color: #c4c4c4;
+  background: white;
+  border-radius: 10px;
+  margin: 2px 20px;
 }
-.rolltemplate-coc-1 div.SKILL-TEM-DICE {
-  color: black;
-  font-weight: bold;
-  font-size: 12px;
-  margin-top: -4px;
+.sheet-rolltemplate-coc-1 div.sheet-rolled {
+  color: #ff7b7b;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 0px 20px;
 }
-
-/*메인 줄2*/
-
-.rolltemplate-coc-1 div.SKILL-TEM-RESULT {
-  margin: 10px;
-  text-align: center;
-  font-size: 20px;
-  color: #7c7c7c;
-}
-
-.rolltemplate-coc-1 div.template_value2 {
-  font-family: "S-CoreDream-4Regular";
-}
-
-/*하단*/
-.rolltemplate-coc-1 div.SKILL-TEM-END {
+.sheet-rolltemplate-coc-1 div.sheet-section2 {
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 1px 1px 8px rgb(255 94 94), 1px 1px 10px #ccc;
   text-align: center;
 }
-
-img.TEM-END {
-}
-
-/*디폴트*/
-.rolltemplate-coc-1 .inlinerollresult,
-.rolltemplate-coc-1 .inlinerollresult.fullcrit,
-.rolltemplate-coc-1 .inlinerollresult.fullfail,
-.rolltemplate-coc-1 .inlinerollresult.importantroll {
-  background-color: transparent;
-  border: none;
-}
-
 /*이미지*/
-.rolltemplate-coc-1 img.TEMBG-T {
-  width: 96%;
-  margin-bottom: -50px;
-}
-.rolltemplate-coc-1 img.TEMBG-B {
-  margin-top: -50px;
-  width: 96%;
-}
-
-/* --------- 공격 롤테이블 ---------- */
-.rolltemplate-coc-attack-1 {
-  width: 100%;
-}
-
-/*상단*/
-.rolltemplate-coc-attack-1 div.head {
-  background-color: #222222;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 2px;
-  width: 100%;
-  padding: 5px 0px 5px 0px;
-  color: white;
-  background-image: url("https://i.imgur.com/288UeF3.png");
-  background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: right;
-  text-align: left;
-  display: flex;
-}
-.rolltemplate-coc-attack-1 div.INDICATER1 {
-  font-family: "YUniverse-B";
-  margin-left: 5px;
-}
-
-.rolltemplate-coc-attack-1 div.INDICATER2 {
-  font-family: "SpoqaHanSansNeo-Regular";
-  margin-left: 2px;
-}
-
-/*메인*/
-.rolltemplate-coc-attack-1 div.BODY {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  border-radius: 2px;
-  width: 100%;
-  padding: 10px 0px 10px 0px;
-  margin-top: 4px;
-  text-align: center;
-  background-image: url(" ");
-  background-size: cover;
-}
-/*메인 줄1*/
-
-.rolltemplate-coc-attack-1 div.SKILL-TEM-LABELING {
-  font-weight: bolder;
-}
-
-.rolltemplate-coc-attack-1 div.SKILL-TEM-rollED {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.rolltemplate-coc-attack-1 div.SKILL-TEM-STANDARD {
-  color: #919191;
-  font-weight: bold;
-  font-size: 12px;
-}
-.rolltemplate-coc-attack-1 div.SKILL-TEM-DICE {
-  color: black;
-  font-weight: bold;
-  font-size: 12px;
-  margin-top: -4px;
-}
-
-/*메인 줄2*/
-
-.rolltemplate-coc-attack-1 div.SKILL-TEM-RESULT {
-  margin: 10px;
-  text-align: center;
-  font-size: 20px;
-  color: #7c7c7c;
-}
-
-.rolltemplate-coc-attack-1 div.template_value2 {
-  font-family: "S-CoreDream-4Regular";
-}
-
-/*하단*/
-.rolltemplate-coc-attack-1 div.FOOT {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  border-radius: 2px;
-  width: 100%;
-  padding: 3px 0px 3px 0px;
-  margin-top: 4px;
-  text-align: center;
-  background-image: url("");
-  background-size: cover;
-}
 
 /*디폴트*/
-.rolltemplate-coc-attack-1 .inlinerollresult,
-.rolltemplate-coc-attack-1 .inlinerollresult.fullcrit,
-.rolltemplate-coc-attack-1 .inlinerollresult.fullfail,
-.rolltemplate-coc-attack-1 .inlinerollresult.importantroll {
+.sheet-rolltemplate-coc-1 .inlinerollresult,
+.sheet-rolltemplate-coc-1 .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc-1 .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc-1 .inlinerollresult.importantroll {
   background-color: transparent;
   border: none;
 }
-
+/* 공격 롤테이블---------------------------------------------------*/
+.sheet-rolltemplate-coc-attack-1 {
+  width: 100%;
+  text-align: center;
+  font-family: "SpoqaHanSansNeo-Regular";
+  color: white;
+}
+/*상단*/
+.sheet-rolltemplate-coc-attack-1 div.sheet-top {
+  font-weight: bold;
+  background-color: rgb(255, 148, 148);
+  border-radius: 4px;
+  padding: 1px 10px;
+  margin-bottom: 2px;
+  text-align: left;
+  letter-spacing: 3px;
+  color: transparent;
+  text-shadow: 0 0 1px white;
+  font-family: "Chosunilbo_myungjo";
+  font-size: 10px;
+}
+/*메인*/
+.sheet-rolltemplate-coc-attack-1 div.sheet-body {
+  margin-bottom: 2px;
+  background-image: url(https://i.imgur.com/gX8l7qm.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px 0px;
+  border-radius: 4px;
+  border: 1px solid white;
+}
+.sheet-rolltemplate-coc-attack-1 div.sheet-skill {
+  letter-spacing: 6px;
+  color: rgb(255 148 148);
+  text-shadow: 0 0 1px rgb(255 148 148);
+  font-family: "Chosunilbo_myungjo";
+  font-size: 15px;
+}
+.sheet-rolltemplate-coc-attack-1 div.sheet-section1 {
+  margin: 10px 0px;
+}
+.sheet-rolltemplate-coc-attack-1 div.sheet-divet-guide {
+  font-size: 12px;
+  color: #c4c4c4;
+  background: white;
+  border-radius: 10px;
+  margin: 2px 20px;
+}
+.sheet-rolltemplate-coc-attack-1 div.sheet-rolled {
+  color: #ff7b7b;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 0px 20px;
+}
+.sheet-rolltemplate-coc-attack-1 div.sheet-section2 {
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 1px 1px 8px rgb(255 94 94), 1px 1px 10px #ccc;
+  text-align: center;
+}
 /*이미지*/
-.rolltemplate-coc-attack-1 img.TEMBG-T {
-  width: 96%;
-  margin-bottom: -50px;
-}
-.rolltemplate-coc-attack-1 img.TEMBG-B {
-  margin-top: -50px;
-  width: 96%;
-}
-
-/* --------- NPC 공격 롤테이블 ---------- */
-.rolltemplate-coc-minionattack {
-  width: 100%;
-}
-
-/*상단*/
-.rolltemplate-coc-minionattack div.head {
-  background-color: #222222;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 2px;
-  width: 100%;
-  padding: 5px 0px 5px 0px;
-  color: white;
-  background-image: url("https://i.imgur.com/288UeF3.png");
-  background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: right;
-  text-align: left;
-  display: flex;
-}
-
-.rolltemplate-coc-minionattack div.INDICATER1 {
-  font-family: "YUniverse-B";
-  margin-left: 5px;
-}
-
-.rolltemplate-coc-minionattack div.INDICATER2 {
-  font-family: "SpoqaHanSansNeo-Regular";
-  margin-left: 2px;
-}
-
-/*메인*/
-.rolltemplate-coc-minionattack div.BODY {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  border-radius: 2px;
-  width: 100%;
-  padding: 10px 0px 10px 0px;
-  margin-top: 4px;
-  text-align: center;
-  background-image: url(" ");
-  background-size: cover;
-}
-/*메인 줄1*/
-
-.rolltemplate-coc-minionattack div.SKILL-TEM-LABELING {
-  font-weight: bolder;
-}
-
-.rolltemplate-coc-minionattack div.SKILL-TEM-rollED {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.rolltemplate-coc-minionattack div.SKILL-TEM-STANDARD {
-  color: #919191;
-  font-weight: bold;
-  font-size: 12px;
-}
-
-.rolltemplate-coc-minionattack div.SKILL-TEM-DICE {
-  color: black;
-  font-weight: bold;
-  font-size: 12px;
-  margin-top: -4px;
-}
-
-/*메인 줄2*/
-.rolltemplate-coc-minionattack div.SKILL-TEM-RESULT {
-  margin: 17px;
-  text-align: center;
-  font-size: 20px;
-  color: #7c7c7c;
-}
-
-.rolltemplate-coc-minionattack div.template_value2 {
-  font-family: "S-CoreDream-4Regular";
-}
 
 /*하단*/
-.rolltemplate-coc-minionattack div.FOOT {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  border-radius: 2px;
-  width: 100%;
-  padding: 3px 0px 3px 0px;
-  margin-top: 4px;
-  text-align: center;
-  background-image: url("");
-  background-size: cover;
+.sheet-rolltemplate-coc-attack-1 div.sheet-foot {
+  text-align: left;
+  font-size: 12px;
+  background-color: rgb(255, 189, 102);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 2px 10px;
 }
-
 /*디폴트*/
-.rolltemplate-coc-minionattack .inlinerollresult,
-.rolltemplate-coc-minionattack .inlinerollresult.fullcrit,
-.rolltemplate-coc-minionattack .inlinerollresult.fullfail,
-.rolltemplate-coc-minionattack .inlinerollresult.importantroll {
+.sheet-rolltemplate-coc-attack-1 .inlinerollresult,
+.sheet-rolltemplate-coc-attack-1 .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc-attack-1 .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc-attack-1 .inlinerollresult.importantroll {
   background-color: transparent;
   border: none;
 }
+/* NPC 공격 롤테이블 ---------------------------------------------------*/
+.sheet-rolltemplate-coc-minionattack {
+  width: 100%;
+  text-align: center;
+  font-family: "SpoqaHanSansNeo-Regular";
+  color: white;
+}
+/*상단*/
+.sheet-rolltemplate-coc-minionattack div.sheet-top {
+  font-weight: bold;
+  background-color: rgb(255, 148, 148);
+  border-radius: 4px;
+  padding: 1px 10px;
+  margin-bottom: 2px;
+  text-align: left;
+  letter-spacing: 3px;
+  color: transparent;
+  text-shadow: 0 0 1px white;
+  font-family: "Chosunilbo_myungjo";
+  font-size: 10px;
+}
+/*메인*/
+.sheet-rolltemplate-coc-minionattack div.sheet-body {
+  margin-bottom: 2px;
+  background-image: url(https://i.imgur.com/gX8l7qm.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px 0px;
+  border-radius: 4px;
+  border: 1px solid white;
+}
+.sheet-rolltemplate-coc-minionattack div.sheet-skill {
+  letter-spacing: 6px;
+  color: rgb(255 148 148);
+  text-shadow: 0 0 1px rgb(255 148 148);
+  font-family: "Chosunilbo_myungjo";
+  font-size: 15px;
+}
+.sheet-rolltemplate-coc-minionattack div.sheet-section1 {
+  margin: 10px 0px;
+}
+.sheet-rolltemplate-coc-minionattack div.sheet-guid {
+  font-size: 12px;
+  color: #c4c4c4;
+  background: white;
+  border-radius: 10px;
+  margin: 2px 20px;
+}
+.sheet-rolltemplate-coc-minionattack div.sheet-rolled {
+  color: #ff7b7b;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 0px 20px;
+}
+.sheet-rolltemplate-coc-minionattack div.sheet-section2 {
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 1px 1px 8px rgb(255 94 94), 1px 1px 10px #ccc;
+  text-align: center;
+}
+/*이미지*/
 
-/* -------------
-
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-/* Button Even Smaller */
-button[type="roll"].evensmallerbutton-roll {
-  color: #261c19;
-  background-color: #1a1a1a;
-  font-weight: bolder;
-  font-size: 1px;
-  width: 10px;
-  height: 10px;
-  margin: 0;
-  padding: 0em;
-  border: 1px solid black;
-  border-radius: 5px;
+/*하단*/
+.sheet-rolltemplate-coc-minionattack div.sheet-foot {
+  text-align: left;
+  font-size: 12px;
+  background-color: rgb(255, 189, 102);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 2px 10px;
+}
+/*디폴트*/
+.sheet-rolltemplate-coc-minionattack .inlinerollresult,
+.sheet-rolltemplate-coc-minionattack .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc-minionattack .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc-minionattack .inlinerollresult.importantroll {
+  background-color: transparent;
+  border: none;
 }
