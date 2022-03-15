@@ -365,7 +365,7 @@ input.DYINGT[value="2"]:checked ~ div.frame {
   z-index: 2;
   padding: 0px;
   top: 230px;
-  background-color: transparent;
+  background: transparent;
   font-family: "GangwonEdu_OTFBoldA";
   width: 165px;
   margin: 0px 32px;
