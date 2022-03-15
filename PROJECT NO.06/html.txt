@@ -363,7 +363,7 @@
 
                 <div class="dice subtitle">명중</div>
                 <button class='smallnonskillbutton-roll' type='roll'
-                    value='&{template:coc-body-hit-loc}{{cname=&ulcorn;@{character_name}&drcorn;}}{{roll1=[[1D20]]}} '
+                    value='&{template:coc-body-hit-loc}{{cname=&ulcorn;@{character_name}&drcorn;}}{{roll1=[[1D20]]}}{{cname=&ulcorn;@{character_name}&drcorn;}}{{roll1=[[1D20]]}} {{name=&ulcorn;@{character_name}&drcorn;의&nbsp;명중판정}} '
                     name='roll_body_hit_loc'></button>
             </div>
         </div>
@@ -1706,28 +1706,25 @@
 
 <!----임의 다이스---->
 <rolltemplate class="sheet-rolltemplate-coc-dice-roll">
-
-    <div class="head">
+    <div class="sheet-top">
         <caption>{{name}}</caption>
     </div>
-    <div class="SIMPLE-roll">
-        <div class="template_value">{{diceroll}}</div>
+    <div class="sheet-body">
+        <div class="sheet-result">
+            <div class="template_value">{{diceroll}}</div>
+        </div>
     </div>
-
 </rolltemplate>
 <!----명중---->
 <rolltemplate class="sheet-rolltemplate-coc-body-hit-loc">
-
-    <div class="head">
-        <div class="INDICATER2"> {{cname}}</div>
+    <div class="sheet-top">
+        <caption>{{name}}</caption>
     </div>
-
-    <div class="BODY-HIT">
-
-        <div class="BODY-HIT-TITLE">
-            <caption>명중 부위</caption>
+    <div class="sheet-body">
+        <div class="sheet-section1">
+            명중 부위
         </div>
-        <div class="BODY-HIT-RESULT">
+        <div class="sheet-section2">
             {{#rollTotal() roll1 1}}
             <div class="template_label">오른쪽 다리</div>
             {{/rollTotal() roll1 1}}

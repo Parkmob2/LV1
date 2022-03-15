@@ -19,7 +19,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: "YUniverse-B";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2")
@@ -27,7 +26,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: "GangwonEdu_OTFBoldA";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff")
@@ -35,7 +33,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
 /* 배경/기본 ---------------------------------------------------*/
 .charsheet.bind hr {
   margin: 0px;
