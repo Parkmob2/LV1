@@ -20,6 +20,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Arita-buri-SemiBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* 배경/기본 ---------------------------------------------------*/
 .charsheet.bind hr {
   margin: 0px;
@@ -63,10 +70,10 @@
 }
 /* 디폴트 스타일 값 ---------------------------------------------------*/
 .charsheet {
-  color: #6b6363;
-  background-color: #ffff;
+  color: white;
+  background-color: rgb(201, 201, 201);
   border: solid #ffff 1px;
-  font-family: "SpoqaHanSansNeo-Regular";
+  font-family: 'Arita-buri-SemiBold';
   font-size: 12px;
   border-radius: 3px;
   background-image: url("");
