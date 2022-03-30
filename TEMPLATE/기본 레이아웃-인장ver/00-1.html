@@ -88,21 +88,13 @@
         </div>
         <!---- 로고 ---->
         <div class="logo wrap">
-            <img src="https://park-mob.com/lv99/data/commission/04-cmhd.png" class="logo">
+            <img src="" class="logo">
         </div>
     </div>
     <!---- 기본 ---->
     <div class="basic">
         <!---- 인장 ---->
         <div class="info wrap">
-
-            <div class="avater-frame1">
-                <input type="checkbox" class="MAJORWOUNDT" value="1" style="display:none" name="attr_imgfilter">
-                <input type="checkbox" class="DYINGT" value="2" style="display:none" name="attr_imgfilter">
-                <img class="avater" name="attr_character_avatar">
-                <div class="frame"></div>
-            </div>
-
             <div class="avater-frame2">
                 <input type="checkbox" class="MAJORWOUNDT" value="1" style="display:none" name="attr_imgfilter">
                 <input type="checkbox" class="DYINGT" value="2" style="display:none" name="attr_imgfilter">
@@ -119,7 +111,6 @@
                 </div>
             </div>
         </div>
-
         <!---- 특성치 ---->
         <div class="status wrap">
             <div class="status title">
@@ -127,99 +118,104 @@
             </div>
             <div class="status box">
                 <div class="status section">
-                    <div class="status subtitle">근력</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{str_txt}}} {{success=[[@{str}]]}} {{hard=[[floor(@{str}/2)]]}} {{extreme=[[floor(@{str}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_str_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{str_txt}}} {{success=[[@{str}]]}} {{hard=[[floor(@{str}/2)]]}} {{extreme=[[floor(@{str}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_str_check'></button>
-
-                    <div class="status subtitle">민첩</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{dex_txt}}} {{success=[[@{dex}]]}} {{hard=[[floor(@{dex}/2)]]}} {{extreme=[[floor(@{dex}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_dex_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{dex_txt}}} {{success=[[@{dex}]]}} {{hard=[[floor(@{dex}/2)]]}} {{extreme=[[floor(@{dex}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_dex_check'></button>
-
-                    <div class="status subtitle">정신</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{pow_txt}}} {{success=[[@{pow}]]}} {{hard=[[floor(@{pow}/2)]]}} {{extreme=[[floor(@{pow}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_pow_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{pow_txt}}} {{success=[[@{pow}]]}} {{hard=[[floor(@{pow}/2)]]}} {{extreme=[[floor(@{pow}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_pow_check'></button>
-                </div>
-                <div class="status section1">
-                    <input class="status" type="text" name="attr_str" value="50" />
-                    <input class="status" type="text" name="attr_dex" value="50" />
-                    <input class="status" type="text" name="attr_pow" value="50" />
+                    <div class="status innergrid">
+                        <div class="status subtitle">근력</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{str_txt}}} {{success=[[@{str}]]}} {{hard=[[floor(@{str}/2)]]}} {{extreme=[[floor(@{str}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_str_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{str_txt}}} {{success=[[@{str}]]}} {{hard=[[floor(@{str}/2)]]}} {{extreme=[[floor(@{str}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_str_check'></button>
+                        <input class="status" type="text" name="attr_str" value="50" />
+                    </div>
+                    <div class="status innergrid">
+                        <div class="status subtitle">민첩</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{dex_txt}}} {{success=[[@{dex}]]}} {{hard=[[floor(@{dex}/2)]]}} {{extreme=[[floor(@{dex}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_dex_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{dex_txt}}} {{success=[[@{dex}]]}} {{hard=[[floor(@{dex}/2)]]}} {{extreme=[[floor(@{dex}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_dex_check'></button>
+                        <input class="status" type="text" name="attr_dex" value="50" />
+                    </div>
+                    <div class="status innergrid">
+                        <div class="status subtitle">정신</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{pow_txt}}} {{success=[[@{pow}]]}} {{hard=[[floor(@{pow}/2)]]}} {{extreme=[[floor(@{pow}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_pow_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{pow_txt}}} {{success=[[@{pow}]]}} {{hard=[[floor(@{pow}/2)]]}} {{extreme=[[floor(@{pow}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_pow_check'></button>
+                        <input class="status" type="text" name="attr_pow" value="50" />
+                    </div>
                 </div>
                 <div class="status section">
-                    <div class="status subtitle">건강</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{con_txt}}} {{success=[[@{con}]]}} {{hard=[[floor(@{con}/2)]]}} {{extreme=[[floor(@{con}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_con_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{con_txt}}} {{success=[[@{con}]]}} {{hard=[[floor(@{con}/2)]]}} {{extreme=[[floor(@{con}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_con_check'></button>
-
-                    <div class="status subtitle">외모</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{app_txt}}} {{success=[[@{app}]]}} {{hard=[[floor(@{app}/2)]]}} {{extreme=[[floor(@{app}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_app_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{app_txt}}} {{success=[[@{app}]]}} {{hard=[[floor(@{app}/2)]]}} {{extreme=[[floor(@{app}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_app_check'></button>
-
-                    <div class="status subtitle">교육</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{edu_txt}}} {{success=[[@{edu}]]}} {{hard=[[floor(@{edu}/2)]]}} {{extreme=[[floor(@{edu}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_edu_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{edu_txt}}} {{success=[[@{edu}]]}} {{hard=[[floor(@{edu}/2)]]}} {{extreme=[[floor(@{edu}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_edu_check'></button>
+                    <div class="status innergrid">
+                        <div class="status subtitle">건강</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{con_txt}}} {{success=[[@{con}]]}} {{hard=[[floor(@{con}/2)]]}} {{extreme=[[floor(@{con}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_con_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{con_txt}}} {{success=[[@{con}]]}} {{hard=[[floor(@{con}/2)]]}} {{extreme=[[floor(@{con}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_con_check'></button>
+                        <input class="status" type="text" name="attr_con" value="50" />
+                    </div>
+                    <div class="status innergrid">
+                        <div class="status subtitle">외모</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{app_txt}}} {{success=[[@{app}]]}} {{hard=[[floor(@{app}/2)]]}} {{extreme=[[floor(@{app}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_app_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{app_txt}}} {{success=[[@{app}]]}} {{hard=[[floor(@{app}/2)]]}} {{extreme=[[floor(@{app}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_app_check'></button>
+                        <input class="status" type="text" name="attr_app" value="50" />
+                    </div>
+                    <div class="status innergrid">
+                        <div class="status subtitle">교육</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{edu_txt}}} {{success=[[@{edu}]]}} {{hard=[[floor(@{edu}/2)]]}} {{extreme=[[floor(@{edu}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_edu_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{edu_txt}}} {{success=[[@{edu}]]}} {{hard=[[floor(@{edu}/2)]]}} {{extreme=[[floor(@{edu}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_edu_check'></button>
+                        <input class="status" type="text" name="attr_edu" value="50" />
+                    </div>
                 </div>
-                <div class="status section1">
-                    <input class="status" type="text" name="attr_con" value="50" />
-                    <input class="status" type="text" name="attr_app" value="50" />
-                    <input class="status" type="text" name="attr_edu" value="50" />
-                </div>
-
                 <div class="status section">
-                    <div class="status subtitle">크기</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{siz_txt}}} {{success=[[@{siz}]]}} {{hard=[[floor(@{siz}/2)]]}} {{extreme=[[floor(@{siz}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_siz_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{siz_txt}}} {{success=[[@{siz}]]}} {{hard=[[floor(@{siz}/2)]]}} {{extreme=[[floor(@{siz}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_siz_check'></button>
-
-                    <div class="status subtitle">지능</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{int_txt}}} {{success=[[@{int}]]}} {{hard=[[floor(@{int}/2)]]}} {{extreme=[[floor(@{int}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_int_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{int_txt}}} {{success=[[@{int}]]}} {{hard=[[floor(@{int}/2)]]}} {{extreme=[[floor(@{int}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_int_check'></button>
-
-
-                    <div class="status subtitle">행운</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{luck_txt}}} {{success=[[@{luck}]]}} {{hard=[[floor(@{luck}/2)]]}} {{extreme=[[floor(@{luck}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_luck_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{luck_txt}}} {{success=[[@{luck}]]}} {{hard=[[floor(@{luck}/2)]]}} {{extreme=[[floor(@{luck}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_luck_check'></button>
-                </div>
-                <div class="status section1">
-                    <input class="status" type="text" name="attr_siz" value="50" />
-                    <input class="status" type="text" name="attr_int" value="50" />
-                    <input class="status" type="text" name="attr_luck" min="0" max="99" value="50">
+                    <div class="status innergrid">
+                        <div class="status subtitle">크기</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{siz_txt}}} {{success=[[@{siz}]]}} {{hard=[[floor(@{siz}/2)]]}} {{extreme=[[floor(@{siz}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_siz_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{siz_txt}}} {{success=[[@{siz}]]}} {{hard=[[floor(@{siz}/2)]]}} {{extreme=[[floor(@{siz}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_siz_check'></button>
+                        <input class="status" type="text" name="attr_siz" value="50" />
+                    </div>
+                    <div class="status innergrid">
+                        <div class="status subtitle">지능</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{int_txt}}} {{success=[[@{int}]]}} {{hard=[[floor(@{int}/2)]]}} {{extreme=[[floor(@{int}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_int_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{int_txt}}} {{success=[[@{int}]]}} {{hard=[[floor(@{int}/2)]]}} {{extreme=[[floor(@{int}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_int_check'></button>
+                        <input class="status" type="text" name="attr_int" value="50" />
+                    </div>
+                    <div class="status innergrid">
+                        <div class="status subtitle">행운</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{luck_txt}}} {{success=[[@{luck}]]}} {{hard=[[floor(@{luck}/2)]]}} {{extreme=[[floor(@{luck}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_luck_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{luck_txt}}} {{success=[[@{luck}]]}} {{hard=[[floor(@{luck}/2)]]}} {{extreme=[[floor(@{luck}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_luck_check'></button>
+                        <input class="status" type="text" name="attr_luk" value="50" />
+                    </div>
                 </div>
             </div>
         </div>
+
         <!----이성---->
         <div class="san wrap">
             <div class="san title">
@@ -2177,7 +2173,8 @@
                 {{#rollTotal() roll1 6}}
                 <div class="template_value">
                     <span style="color: #919191;">{{name}}</span>의 백스토리에서 중요한 사람들을 찾아 그 관계가 중요한 이유를 확인합니다.
-                    <span style="color: #919191;">{{name}}</span>은(는) 발작이 지속되는 동안 (1D10시간 이상) 중요한 사람에게 가까이 가서 관계의 성질에 맞는
+                    <span style="color: #919191;">{{name}}</span>은(는) 발작이 지속되는 동안 (1D10시간 이상) 중요한 사람에게 가까이 가서 관계의
+                    성질에 맞는
                     행동을
                     하려고 합니다.
                 </div>
@@ -2197,7 +2194,8 @@
                 <div class="template_value">
                     <span style="color: #919191;">{{name}}</span>에게 새로운 공포증이 생깁니다.
                     룰북에 있는 공포증의 예를 참고해 1D100으로 정하거나 수호자가 적절한것을 고릅니다.
-                    <span style="color: #919191;">{{name}}</span>은(는) 새로운 공포의 대상을 피하기 위해 온갖 조치를 다 취한 상태로 1D10시간 후에 정신을
+                    <span style="color: #919191;">{{name}}</span>은(는) 새로운 공포의 대상을 피하기 위해 온갖 조치를 다 취한 상태로 1D10시간 후에
+                    정신을
                     차립니다.
                 </div>
                 {{/rollTotal() roll1 9}}
@@ -2228,36 +2226,36 @@
         </div>
         <div class="sheet-section2">
             {{#rollTotal() roll1 1}}
-            <div class="template_value2">대성공</div>
+            <div class="sheet-template_value2">대성공</div>
             {{/rollTotal() roll1 1}}
             {{#rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 hard}}
-            <div class="template_value2">보통 성공</div>
+            <div class="sheet-template_value2">보통 성공</div>
             {{/rollGreater() roll1 hard}}
             {{#rollBetween() roll1 2 hard}}
             {{#rollGreater() roll1 extreme}}
-            <div class="template_value2">어려운 성공</div>
+            <div class="sheet-template_value2">어려운 성공</div>
             {{/rollGreater() roll1 extreme}}
             {{#rollBetween() roll1 2 extreme}}
-            <div class="template_value2">극단적 성공</div>
+            <div class="sheet-template_value2">극단적 성공</div>
             {{/rollBetween() roll1 2 extreme}}
             {{/rollBetween() roll1 2 hard}}
             {{/rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 success}}
             {{#rollGreater() success 49}}
             {{#rollTotal() roll1 100}}
-            <div class="template_value2">대실패</div>
+            <div class="sheet-template_value2">대실패</div>
             {{/rollTotal() roll1 100}}
             {{#rollLess() roll1 100}}
-            <div class="template_value2">실패</div>
+            <div class="sheet-template_value2">실패</div>
             {{/rollLess() roll1 100}}
             {{/rollGreater() success 49}}
             {{#rollLess() success 50}}
             {{#rollGreater() roll1 95}}
-            <div class="template_value2">대실패</div>
+            <div class="sheet-template_value2">대실패</div>
             {{/rollGreater() roll1 95}}
             {{#rollLess() roll1 96}}
-            <div class="template_value2">실패</div>
+            <div class="sheet-template_value2">실패</div>
             {{/rollLess() roll1 96}}
             {{/rollLess() success 50}}
             {{/rollGreater() roll1 success}}
@@ -4239,36 +4237,36 @@
         </div>
         <div class="sheet-section2">
             {{#rollTotal() roll1 1}}
-            <div class="template_value2">대성공</div>
+            <div class="sheet-template_value2">대성공</div>
             {{/rollTotal() roll1 1}}
             {{#rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 hard}}
-            <div class="template_value2">보통 성공</div>
+            <div class="sheet-template_value2">보통 성공</div>
             {{/rollGreater() roll1 hard}}
             {{#rollBetween() roll1 2 hard}}
             {{#rollGreater() roll1 extreme}}
-            <div class="template_value2">어려운 성공</div>
+            <div class="sheet-template_value2">어려운 성공</div>
             {{/rollGreater() roll1 extreme}}
             {{#rollBetween() roll1 2 extreme}}
-            <div class="template_value2">극단적 성공</div>
+            <div class="sheet-template_value2">극단적 성공</div>
             {{/rollBetween() roll1 2 extreme}}
             {{/rollBetween() roll1 2 hard}}
             {{/rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 success}}
             {{#rollGreater() success 49}}
             {{#rollTotal() roll1 100}}
-            <div class="template_value2"> 대실패</div>
+            <div class="sheet-template_value2"> 대실패</div>
             {{/rollTotal() roll1 100}}
             {{#rollLess() roll1 100}}
-            <div class="template_value2">실패 </div>
+            <div class="sheet-template_value2">실패 </div>
             {{/rollLess() roll1 100}}
             {{/rollGreater() success 49}}
             {{#rollLess() success 50}}
             {{#rollGreater() roll1 95}}
-            <div class="template_value2">대실패</div>
+            <div class="sheet-template_value2">대실패</div>
             {{/rollGreater() roll1 95}}
             {{#rollLess() roll1 96}}
-            <div class="template_value2">실패</div>
+            <div class="sheet-template_value2">실패</div>
             {{/rollLess() roll1 96}}
             {{/rollLess() success 50}}
             {{/rollGreater() roll1 success}}
@@ -4291,36 +4289,36 @@
         </div>
         <div class="sheet-section2">
             {{#rollTotal() roll1 1}}
-            <div class="template_value2">대성공</div>
+            <div class="sheet-template_value2">대성공</div>
             {{/rollTotal() roll1 1}}
             {{#rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 hard}}
-            <div class="template_value2">보통 성공</div>
+            <div class="sheet-template_value2">보통 성공</div>
             {{/rollGreater() roll1 hard}}
             {{#rollBetween() roll1 2 hard}}
             {{#rollGreater() roll1 extreme}}
-            <div class="template_value2">어려운 성공</div>
+            <div class="sheet-template_value2">어려운 성공</div>
             {{/rollGreater() roll1 extreme}}
             {{#rollBetween() roll1 2 extreme}}
-            <div class="template_value2">극단적 성공</div>
+            <div class="sheet-template_value2">극단적 성공</div>
             {{/rollBetween() roll1 2 extreme}}
             {{/rollBetween() roll1 2 hard}}
             {{/rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 success}}
             {{#rollGreater() success 49}}
             {{#rollTotal() roll1 100}}
-            <div class="template_value2">대실패</div>
+            <div class="sheet-template_value2">대실패</div>
             {{/rollTotal() roll1 100}}
             {{#rollLess() roll1 100}}
-            <div class="template_value2">실패</div>
+            <div class="sheet-template_value2">실패</div>
             {{/rollLess() roll1 100}}
             {{/rollGreater() success 49}}
             {{#rollLess() success 50}}
             {{#rollGreater() roll1 95}}
-            <div class="template_value2">대실패</div>
+            <div class="sheet-template_value2">대실패</div>
             {{/rollGreater() roll1 95}}
             {{#rollLess() roll1 96}}
-            <div class="template_value2">실패</div>
+            <div class="sheet-template_value2">실패</div>
             {{/rollLess() roll1 96}}
             {{/rollLess() success 50}}
             {{/rollGreater() roll1 success}}

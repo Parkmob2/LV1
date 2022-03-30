@@ -2219,36 +2219,36 @@
         </div>
         <div class="sheet-section2">
             {{#rollTotal() roll1 1}}
-            <div class="template_value2">대성공</div>
+            <div class="sheet-template_value2">대성공</div>
             {{/rollTotal() roll1 1}}
             {{#rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 hard}}
-            <div class="template_value2">보통 성공</div>
+            <div class="sheet-template_value2">보통 성공</div>
             {{/rollGreater() roll1 hard}}
             {{#rollBetween() roll1 2 hard}}
             {{#rollGreater() roll1 extreme}}
-            <div class="template_value2">어려운 성공</div>
+            <div class="sheet-template_value2">어려운 성공</div>
             {{/rollGreater() roll1 extreme}}
             {{#rollBetween() roll1 2 extreme}}
-            <div class="template_value2">극단적 성공</div>
+            <div class="sheet-template_value2">극단적 성공</div>
             {{/rollBetween() roll1 2 extreme}}
             {{/rollBetween() roll1 2 hard}}
             {{/rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 success}}
             {{#rollGreater() success 49}}
             {{#rollTotal() roll1 100}}
-            <div class="template_value2">대실패</div>
+            <div class="sheet-template_value2">대실패</div>
             {{/rollTotal() roll1 100}}
             {{#rollLess() roll1 100}}
-            <div class="template_value2">실패</div>
+            <div class="sheet-template_value2">실패</div>
             {{/rollLess() roll1 100}}
             {{/rollGreater() success 49}}
             {{#rollLess() success 50}}
             {{#rollGreater() roll1 95}}
-            <div class="template_value2">대실패</div>
+            <div class="sheet-template_value2">대실패</div>
             {{/rollGreater() roll1 95}}
             {{#rollLess() roll1 96}}
-            <div class="template_value2">실패</div>
+            <div class="sheet-template_value2">실패</div>
             {{/rollLess() roll1 96}}
             {{/rollLess() success 50}}
             {{/rollGreater() roll1 success}}
@@ -4230,36 +4230,36 @@
         </div>
         <div class="sheet-section2">
             {{#rollTotal() roll1 1}}
-            <div class="template_value2">대성공</div>
+            <div class="sheet-template_value2">대성공</div>
             {{/rollTotal() roll1 1}}
             {{#rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 hard}}
-            <div class="template_value2">보통 성공</div>
+            <div class="sheet-template_value2">보통 성공</div>
             {{/rollGreater() roll1 hard}}
             {{#rollBetween() roll1 2 hard}}
             {{#rollGreater() roll1 extreme}}
-            <div class="template_value2">어려운 성공</div>
+            <div class="sheet-template_value2">어려운 성공</div>
             {{/rollGreater() roll1 extreme}}
             {{#rollBetween() roll1 2 extreme}}
-            <div class="template_value2">극단적 성공</div>
+            <div class="sheet-template_value2">극단적 성공</div>
             {{/rollBetween() roll1 2 extreme}}
             {{/rollBetween() roll1 2 hard}}
             {{/rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 success}}
             {{#rollGreater() success 49}}
             {{#rollTotal() roll1 100}}
-            <div class="template_value2"> 대실패</div>
+            <div class="sheet-template_value2"> 대실패</div>
             {{/rollTotal() roll1 100}}
             {{#rollLess() roll1 100}}
-            <div class="template_value2">실패 </div>
+            <div class="sheet-template_value2">실패 </div>
             {{/rollLess() roll1 100}}
             {{/rollGreater() success 49}}
             {{#rollLess() success 50}}
             {{#rollGreater() roll1 95}}
-            <div class="template_value2">대실패</div>
+            <div class="sheet-template_value2">대실패</div>
             {{/rollGreater() roll1 95}}
             {{#rollLess() roll1 96}}
-            <div class="template_value2">실패</div>
+            <div class="sheet-template_value2">실패</div>
             {{/rollLess() roll1 96}}
             {{/rollLess() success 50}}
             {{/rollGreater() roll1 success}}
@@ -4282,36 +4282,36 @@
         </div>
         <div class="sheet-section2">
             {{#rollTotal() roll1 1}}
-            <div class="template_value2">대성공</div>
+            <div class="sheet-template_value2">대성공</div>
             {{/rollTotal() roll1 1}}
             {{#rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 hard}}
-            <div class="template_value2">보통 성공</div>
+            <div class="sheet-template_value2">보통 성공</div>
             {{/rollGreater() roll1 hard}}
             {{#rollBetween() roll1 2 hard}}
             {{#rollGreater() roll1 extreme}}
-            <div class="template_value2">어려운 성공</div>
+            <div class="sheet-template_value2">어려운 성공</div>
             {{/rollGreater() roll1 extreme}}
             {{#rollBetween() roll1 2 extreme}}
-            <div class="template_value2">극단적 성공</div>
+            <div class="sheet-template_value2">극단적 성공</div>
             {{/rollBetween() roll1 2 extreme}}
             {{/rollBetween() roll1 2 hard}}
             {{/rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 success}}
             {{#rollGreater() success 49}}
             {{#rollTotal() roll1 100}}
-            <div class="template_value2">대실패</div>
+            <div class="sheet-template_value2">대실패</div>
             {{/rollTotal() roll1 100}}
             {{#rollLess() roll1 100}}
-            <div class="template_value2">실패</div>
+            <div class="sheet-template_value2">실패</div>
             {{/rollLess() roll1 100}}
             {{/rollGreater() success 49}}
             {{#rollLess() success 50}}
             {{#rollGreater() roll1 95}}
-            <div class="template_value2">대실패</div>
+            <div class="sheet-template_value2">대실패</div>
             {{/rollGreater() roll1 95}}
             {{#rollLess() roll1 96}}
-            <div class="template_value2">실패</div>
+            <div class="sheet-template_value2">실패</div>
             {{/rollLess() roll1 96}}
             {{/rollLess() success 50}}
             {{/rollGreater() roll1 success}}

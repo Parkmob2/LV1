@@ -1,7 +1,5 @@
 <div class='bind'>
-    <div id='stars'></div>
-    <div id='stars2'></div>
-    <!----옵션---->
+    <!----옵션 체크---->
 
     <input class="option area" type="checkbox" checked name="OPTION-AREA" />
     <a class="option btn"></a>
@@ -58,169 +56,154 @@
         </fieldset>
     </div>
     <!----이미지---->
-    <div class="header">
-        <!----상단 스테이터스---->
-        <div class="topstatus wrap">
-            <!--<div class="topstatus title"> 스테이터스</div>-->
-            <div class="topstatus box">
-                <div class="topstatus subtitle">
-                    <div class="topstatus index">피해 보너스</div>
-                    <div class="topstatus  index">체구</div>
-                    <div class="topstatus  index">이동력</div>
-                </div>
-                <input class="topstatus" type="text" name="attr_mov" />
-                <input class="topstatus" type="text" name="attr_build" placeholder="">
-                <select class="topstatus" name="attr_damage_bonus">
-                    <option value="-2">-2</option>
-                    <option value="-1">-1</option>
-                    <option value="0" selected data-i18n="0">+0 </option>
-                    <option value="1d4">+1d4</option>
-                    <option value="1d6">+1d6</option>
-                    <option value="2d6">+2d6</option>
-                    <option value="3d6">+3d6</option>
-                    <option value="4d6">+4d6</option>
-                    <option value="5d6">+5d6</option>
-                    <option value="6d6">+6d6</option>
-                    <option value="7d6">+7d6</option>
-                    <option value="8d6">+8d6</option>
-                    <option value="9d6">+9d6</option>
-                    <option value="10d6">+10d6</option>
-                </select>
-            </div>
-        </div>
-        <!---- 로고 ---->
-        <div class="logo wrap">
-            <img src="https://park-mob.com/lv99/data/commission/04-cmhd.png" class="logo">
-        </div>
-    </div>
-    <!---- 기본 ---->
-    <div class="basic">
-        <!---- 인장 ---->
+
+
+    <div class="basic1">
+        <!---- 플레이어 ---->
         <div class="info wrap">
-
-            <div class="avater-frame1">
-                <input type="checkbox" class="MAJORWOUNDT" value="1" style="display:none" name="attr_imgfilter">
-                <input type="checkbox" class="DYINGT" value="2" style="display:none" name="attr_imgfilter">
-                <img class="avater" name="attr_character_avatar">
-                <div class="frame"></div>
+            <div class="info title">
+                · 프로필 ·
             </div>
-
-            <div class="avater-frame2">
-                <input type="checkbox" class="MAJORWOUNDT" value="1" style="display:none" name="attr_imgfilter">
-                <input type="checkbox" class="DYINGT" value="2" style="display:none" name="attr_imgfilter">
-                <img class="avater" name="attr_character_avatar">
-                <div class="frame"></div>
-                <div class="bio wrap">
-                    <div class="bio line1">
-                        <input class="bio line1" type="text" name="attr_date" placeholder="20xx.xx.xx" />
-                        <input class="bio line1" type="text" name="attr_age" placeholder="나이" />
-                    </div>
-                    <div class="bio line2">
-                        <input class="bio line2" type="text" name="attr_name" placeholder="- 캐릭터 이름" />
-                    </div>
-                </div>
+            <div class="info box">
+                <div> 이름 </div>
+                <input class="info" type="text" name="attr_name" />
+                <div> 플레이어 </div>
+                <input class="info" type="text" name="attr_player" />
+                <div> 나이 </div>
+                <input class="info" type="text" name="attr_age" />
+                <div> 직업 </div>
+                <input class="info" type="text" name="attr_occupation" />
+                <div> 거주지 </div>
+                <input class="info" type="text" name="attr_birth_place" />
+                <div> 출생지 </div>
+                <input class="info" type="text" name="attr_location" />
             </div>
         </div>
 
-        <!---- 특성치 ---->
+        <!---- 바이오/특성치 ---->
         <div class="status wrap">
             <div class="status title">
                 · 특성치 ·
             </div>
             <div class="status box">
                 <div class="status section">
-                    <div class="status subtitle">근력</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{str_txt}}} {{success=[[@{str}]]}} {{hard=[[floor(@{str}/2)]]}} {{extreme=[[floor(@{str}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_str_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{str_txt}}} {{success=[[@{str}]]}} {{hard=[[floor(@{str}/2)]]}} {{extreme=[[floor(@{str}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_str_check'></button>
-
-                    <div class="status subtitle">민첩</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{dex_txt}}} {{success=[[@{dex}]]}} {{hard=[[floor(@{dex}/2)]]}} {{extreme=[[floor(@{dex}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_dex_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{dex_txt}}} {{success=[[@{dex}]]}} {{hard=[[floor(@{dex}/2)]]}} {{extreme=[[floor(@{dex}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_dex_check'></button>
-
-                    <div class="status subtitle">정신</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{pow_txt}}} {{success=[[@{pow}]]}} {{hard=[[floor(@{pow}/2)]]}} {{extreme=[[floor(@{pow}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_pow_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{pow_txt}}} {{success=[[@{pow}]]}} {{hard=[[floor(@{pow}/2)]]}} {{extreme=[[floor(@{pow}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_pow_check'></button>
-                </div>
-                <div class="status section1">
-                    <input class="status" type="text" name="attr_str" value="50" />
-                    <input class="status" type="text" name="attr_dex" value="50" />
-                    <input class="status" type="text" name="attr_pow" value="50" />
+                    <div class="status innergrid">
+                        <div class="status subtitle">근력</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{str_txt}}} {{success=[[@{str}]]}} {{hard=[[floor(@{str}/2)]]}} {{extreme=[[floor(@{str}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_str_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{str_txt}}} {{success=[[@{str}]]}} {{hard=[[floor(@{str}/2)]]}} {{extreme=[[floor(@{str}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_str_check'></button>
+                        <input class="status" type="text" name="attr_str" value="50" />
+                    </div>
+                    <div class="status innergrid">
+                        <div class="status subtitle">민첩</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{dex_txt}}} {{success=[[@{dex}]]}} {{hard=[[floor(@{dex}/2)]]}} {{extreme=[[floor(@{dex}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_dex_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{dex_txt}}} {{success=[[@{dex}]]}} {{hard=[[floor(@{dex}/2)]]}} {{extreme=[[floor(@{dex}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_dex_check'></button>
+                        <input class="status" type="text" name="attr_dex" value="50" />
+                    </div>
+                    <div class="status innergrid">
+                        <div class="status subtitle">정신</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{pow_txt}}} {{success=[[@{pow}]]}} {{hard=[[floor(@{pow}/2)]]}} {{extreme=[[floor(@{pow}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_pow_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{pow_txt}}} {{success=[[@{pow}]]}} {{hard=[[floor(@{pow}/2)]]}} {{extreme=[[floor(@{pow}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_pow_check'></button>
+                        <input class="status" type="text" name="attr_pow" value="50" />
+                    </div>
                 </div>
                 <div class="status section">
-                    <div class="status subtitle">건강</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{con_txt}}} {{success=[[@{con}]]}} {{hard=[[floor(@{con}/2)]]}} {{extreme=[[floor(@{con}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_con_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{con_txt}}} {{success=[[@{con}]]}} {{hard=[[floor(@{con}/2)]]}} {{extreme=[[floor(@{con}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_con_check'></button>
-
-                    <div class="status subtitle">외모</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{app_txt}}} {{success=[[@{app}]]}} {{hard=[[floor(@{app}/2)]]}} {{extreme=[[floor(@{app}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_app_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{app_txt}}} {{success=[[@{app}]]}} {{hard=[[floor(@{app}/2)]]}} {{extreme=[[floor(@{app}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_app_check'></button>
-
-                    <div class="status subtitle">교육</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{edu_txt}}} {{success=[[@{edu}]]}} {{hard=[[floor(@{edu}/2)]]}} {{extreme=[[floor(@{edu}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_edu_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{edu_txt}}} {{success=[[@{edu}]]}} {{hard=[[floor(@{edu}/2)]]}} {{extreme=[[floor(@{edu}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_edu_check'></button>
+                    <div class="status innergrid">
+                        <div class="status subtitle">건강</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{con_txt}}} {{success=[[@{con}]]}} {{hard=[[floor(@{con}/2)]]}} {{extreme=[[floor(@{con}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_con_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{con_txt}}} {{success=[[@{con}]]}} {{hard=[[floor(@{con}/2)]]}} {{extreme=[[floor(@{con}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_con_check'></button>
+                        <input class="status" type="text" name="attr_con" value="50" />
+                    </div>
+                    <div class="status innergrid">
+                        <div class="status subtitle">외모</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{app_txt}}} {{success=[[@{app}]]}} {{hard=[[floor(@{app}/2)]]}} {{extreme=[[floor(@{app}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_app_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{app_txt}}} {{success=[[@{app}]]}} {{hard=[[floor(@{app}/2)]]}} {{extreme=[[floor(@{app}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_app_check'></button>
+                        <input class="status" type="text" name="attr_app" value="50" />
+                    </div>
+                    <div class="status innergrid">
+                        <div class="status subtitle">교육</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{edu_txt}}} {{success=[[@{edu}]]}} {{hard=[[floor(@{edu}/2)]]}} {{extreme=[[floor(@{edu}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_edu_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{edu_txt}}} {{success=[[@{edu}]]}} {{hard=[[floor(@{edu}/2)]]}} {{extreme=[[floor(@{edu}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_edu_check'></button>
+                        <input class="status" type="text" name="attr_edu" value="50" />
+                    </div>
                 </div>
-                <div class="status section1">
-                    <input class="status" type="text" name="attr_con" value="50" />
-                    <input class="status" type="text" name="attr_app" value="50" />
-                    <input class="status" type="text" name="attr_edu" value="50" />
-                </div>
-
                 <div class="status section">
-                    <div class="status subtitle">크기</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{siz_txt}}} {{success=[[@{siz}]]}} {{hard=[[floor(@{siz}/2)]]}} {{extreme=[[floor(@{siz}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_siz_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{siz_txt}}} {{success=[[@{siz}]]}} {{hard=[[floor(@{siz}/2)]]}} {{extreme=[[floor(@{siz}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_siz_check'></button>
-
-                    <div class="status subtitle">지능</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{int_txt}}} {{success=[[@{int}]]}} {{hard=[[floor(@{int}/2)]]}} {{extreme=[[floor(@{int}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_int_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{int_txt}}} {{success=[[@{int}]]}} {{hard=[[floor(@{int}/2)]]}} {{extreme=[[floor(@{int}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_int_check'></button>
-
-
-                    <div class="status subtitle">행운</div>
-                    <button class='status' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{luck_txt}}} {{success=[[@{luck}]]}} {{hard=[[floor(@{luck}/2)]]}} {{extreme=[[floor(@{luck}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_luck_check'></button>
-                    <button class='status1' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{luck_txt}}} {{success=[[@{luck}]]}} {{hard=[[floor(@{luck}/2)]]}} {{extreme=[[floor(@{luck}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_luck_check'></button>
-                </div>
-                <div class="status section1">
-                    <input class="status" type="text" name="attr_siz" value="50" />
-                    <input class="status" type="text" name="attr_int" value="50" />
-                    <input class="status" type="text" name="attr_luck" min="0" max="99" value="50">
+                    <div class="status innergrid">
+                        <div class="status subtitle">크기</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{siz_txt}}} {{success=[[@{siz}]]}} {{hard=[[floor(@{siz}/2)]]}} {{extreme=[[floor(@{siz}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_siz_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{siz_txt}}} {{success=[[@{siz}]]}} {{hard=[[floor(@{siz}/2)]]}} {{extreme=[[floor(@{siz}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_siz_check'></button>
+                        <input class="status" type="text" name="attr_siz" value="50" />
+                    </div>
+                    <div class="status innergrid">
+                        <div class="status subtitle">지능</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{int_txt}}} {{success=[[@{int}]]}} {{hard=[[floor(@{int}/2)]]}} {{extreme=[[floor(@{int}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_int_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{int_txt}}} {{success=[[@{int}]]}} {{hard=[[floor(@{int}/2)]]}} {{extreme=[[floor(@{int}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_int_check'></button>
+                        <input class="status" type="text" name="attr_int" value="50" />
+                    </div>
+                    <div class="status innergrid">
+                        <div class="status subtitle">이동</div>
+                        <input class="status" type="text" name="attr_mov" />
+                        <div></div>
+                        <div></div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <!---- 센터 ---->
+    <div class="basic2">
+        <!----체력---->
+        <div class="hp wrap">
+            <div class="hp title">
+                · 체력 ·
+            </div>
+            <div class="hp box">
+                <input type="checkbox" style="display:none" value="5" name="attr_pulp_hp" class="sheet-pulphp">
+                <input class="secondary-attr-input-HP" placeholder="현재 체력" type="number" min="0" name="attr_hp">
+                <input class="secondary-attr-input-HP" placeholder="최대 체력" type="number" min="0" name="attr_hp_max"
+                    value="floor((@{con}+@{siz})/(10-@{pulp_hp}))" disabled="true">
+                <div class="hp-filter">
+                    <div class="majorwoundT"> 중상 </div>
+                    <input type="checkbox" class="MAJORWOUNDT" value="1" name="attr_imgfilter">
+                    <div class="dyingT"> 빈사 </div>
+                    <input type="checkbox" class="DYINGT" value="2" name="attr_imgfilter">
+                </div>
+            </div>
+        </div>
+        <!----로고---->
+        <div class="logo wrap">
+            <img src="" class="logo">
         </div>
         <!----이성---->
         <div class="san wrap">
@@ -270,26 +253,6 @@
                 </div>
             </div>
         </div>
-        <!----체력---->
-        <div class="hp wrap">
-            <div class="hp title">
-                · 체력 ·
-            </div>
-            <div class="hp box">
-                <input type="checkbox" style="display:none" value="5" name="attr_pulp_hp" class="sheet-pulphp">
-                <div class="hp line1">
-                    <input class="secondary-attr-input-HP" placeholder="현재 체력" type="number" min="0" name="attr_hp">
-                    <input class="secondary-attr-input-HP" placeholder="최대 체력" type="number" min="0" name="attr_hp_max"
-                        value="floor((@{con}+@{siz})/(10-@{pulp_hp}))" disabled="true">
-                </div>
-                <div class="hp line2">
-                    <div class="majorwoundT"> 중상 </div>
-                    <input type="checkbox" class="MAJORWOUNDT" value="1" name="attr_imgfilter">
-                    <div class="dyingT"> 빈사 </div>
-                    <input type="checkbox" class="DYINGT" value="2" name="attr_imgfilter">
-                </div>
-            </div>
-        </div>
         <!----마력---->
         <div class="mp wrap">
             <div class="mp title">
@@ -301,16 +264,49 @@
                     disabled="true">
             </div>
         </div>
+        <!----행운---->
+        <div class="luk wrap">
+            <div class="luk title">
+                · 행운 ·
+            </div>
+            <div class="luk box">
+                <input class="luk" type="text" name="attr_luck" min="0" max="99" value="50">
+                <button class='luk' type='roll'
+                    value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{luck_txt}}} {{success=[[@{luck}]]}} {{hard=[[floor(@{luck}/2)]]}} {{extreme=[[floor(@{luck}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                    name='roll_luck_check'></button>
+                <button class='luk1' type='roll'
+                    value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{luck_txt}}} {{success=[[@{luck}]]}} {{hard=[[floor(@{luck}/2)]]}} {{extreme=[[floor(@{luck}/5)]]}} {{roll1=[[1d100]]}}'
+                    name='roll_luck_check'></button>
+            </div>
+        </div>
+        <!----피해 체구보너스---->
+        <div class="build-db wrap">
+            <div class="build-db title"> 체구 / 피해 보너스</div>
+            <div class="build-db box">
+                <input class="build-db" type="text" name="attr_build" placeholder="">
+                <select class="build-db" name="attr_damage_bonus">
+                    <option value="-2">-2</option>
+                    <option value="-1">-1</option>
+                    <option value="0" selected data-i18n="0">+0 </option>
+                    <option value="1d4">+1d4</option>
+                    <option value="1d6">+1d6</option>
+                    <option value="2d6">+2d6</option>
+                    <option value="3d6">+3d6</option>
+                    <option value="4d6">+4d6</option>
+                    <option value="5d6">+5d6</option>
+                    <option value="6d6">+6d6</option>
+                    <option value="7d6">+7d6</option>
+                    <option value="8d6">+8d6</option>
+                    <option value="9d6">+9d6</option>
+                    <option value="10d6">+10d6</option>
+                </select>
+            </div>
+        </div>
     </div>
+
     <!----구분선 및 요약 ---->
     <div class="sub-logo wrap">
-
-
-        <div id="typedtext"></div>
-
-
     </div>
-
     <!----다이스---->
     <input type="checkbox" class="add_function_dice" name="attr_add_dr" style="display:none" name="attr_add"
         value="1" />
@@ -1567,8 +1563,25 @@
             </div>
         </div>
     </div>
+    <!----구분선 및 요약2 ---->
+    <div class="division wrap">
+        <div class="page-select">
+            <div class="sks">
+                <input type="checkbox" class="shift_page_combet" name="attr_page" value="0" checked />
+                <div class="sks-false">· 전투/무기 ·</div>
+            </div>
+            <div class="cb">
+                <input type="checkbox" class="shift_page_gear" name="attr_page" value="1" />
+                <div class="cb-false">· 소지품/자금 ·</div>
+            </div>
+            <div class="bs">
+                <input type="checkbox" class="shift_page_bg" name="attr_page" value="2" />
+                <div class="bs-false">· 백스토리 ·</div>
+            </div>
+        </div>
+    </div>
     <!----전투---->
-    <input type="checkbox" style="display:none" class="shift_page_combet" name="attr_page" value="1" />
+    <input type="checkbox" style="display:none" class="shift_page_combet" name="attr_page" value="0" />
     <div class="combet wrap">
         <div class="combet title">
             · 전투 및 무기 ·
@@ -1738,8 +1751,8 @@
             </fieldset>
         </div>
     </div>
-
     <!----장비/소지품---->
+    <input type="checkbox" style="display:none" class="shift_page_gear" name="attr_page" value="1" />
     <div class="gear_poss wrap">
         <div class='gear wrap'>
             <div class="gear title">
@@ -1901,7 +1914,6 @@
 
 <!----임의 다이스---->
 <rolltemplate class="sheet-rolltemplate-coc-dice-roll">
-
     <div class="sheet-top">
         <caption>{{name}}</caption>
     </div>
@@ -1910,7 +1922,6 @@
             <div class="template_value">{{diceroll}}</div>
         </div>
     </div>
-
 </rolltemplate>
 <!----명중---->
 <rolltemplate class="sheet-rolltemplate-coc-body-hit-loc">
@@ -2093,7 +2104,6 @@
 </rolltemplate>
 <!----요약 광기의 발작---->
 <rolltemplate class="sheet-rolltemplate-coc-bomadness-summ">
-
     <div class="sheet-body">
         <div class="sheet-section1">
             <div class="sheet-lable">광기의 발작 - 요약</div>
@@ -2168,7 +2178,9 @@
                 {{#rollTotal() roll1 6}}
                 <div class="template_value">
                     <span style="color: #919191;">{{name}}</span>의 백스토리에서 중요한 사람들을 찾아 그 관계가 중요한 이유를 확인합니다.
-                    <span style="color: #919191;">{{name}}</span>은(는) 발작이 지속되는 동안 (1D10시간 이상) 중요한 사람에게 가까이 가서 관계의 성질에 맞는
+                    <span style="color: #919191;">{{name}}</span>은(는) 발작이 지속되는 동안 (1D10시간 이상) 중요한 사람에게 가까이 가서
+                    관계의
+                    성질에 맞는
                     행동을
                     하려고 합니다.
                 </div>
@@ -2188,13 +2200,16 @@
                 <div class="template_value">
                     <span style="color: #919191;">{{name}}</span>에게 새로운 공포증이 생깁니다.
                     룰북에 있는 공포증의 예를 참고해 1D100으로 정하거나 수호자가 적절한것을 고릅니다.
-                    <span style="color: #919191;">{{name}}</span>은(는) 새로운 공포의 대상을 피하기 위해 온갖 조치를 다 취한 상태로 1D10시간 후에 정신을
+                    <span style="color: #919191;">{{name}}</span>은(는) 새로운 공포의 대상을 피하기 위해 온갖 조치를 다 취한 상태로 1D10시간
+                    후에
+                    정신을
                     차립니다.
                 </div>
                 {{/rollTotal() roll1 9}}
                 {{#rollTotal() roll1 10}}
                 <div class="template_value">
-                    <span style="color: #919191;">{{name}}</span>에게 새로운 집착증이 생깁니다. 룰북에 있는 집착증의 예를 참고해 1D100으로 정하거나
+                    <span style="color: #919191;">{{name}}</span>에게 새로운 집착증이 생깁니다. 룰북에 있는 집착증의 예를 참고해 1D100으로
+                    정하거나
                     수호자가 적절한 것을 고릅니다. 이 발작이 지속되는 동안,
                     <span style="color: #919191;">{{name}}</span>은(는) 새로운 집착증에 완전히 빠집니다.
                     다른 사람이 보기에도 명확하게 드러나는지는 수호자와 플레이어가결정합니다.
@@ -4323,6 +4338,7 @@
 
 </rolltemplate>
 <!----WORKERS---->
+
 <script type="text/worker">
 on("add:dex add:siz add:str change:dex change:siz change:str", function() {
   getAttrs(["str", "siz", "dex", "age"], function(values) {
