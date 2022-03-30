@@ -80,14 +80,22 @@
                 <input type="checkbox" class="MAJORWOUNDT" value="1" style="display:none" name="attr_imgfilter">
                 <input type="checkbox" class="DYINGT" value="2" style="display:none" name="attr_imgfilter">
                 <img class="avater" name="attr_character_avatar">
+                <div class="avater-overlay"></div>
                 <div class="frame"></div>
+                <div class="bio-part1">
+                    <input class="bio pl" type="text" name="attr_player" placeholder="플레이어" />
+                    <input class="bio ch" type="text" name="attr_name" placeholder="캐릭터 이름" />
+                </div>
                 <div class="bio wrap">
                     <div class="bio line1">
-                        <input class="bio line1" type="text" name="attr_date" placeholder="20xx.xx.xx" />
-                        <input class="bio line1" type="text" name="attr_age" placeholder="나이" />
-                    </div>
-                    <div class="bio line2">
-                        <input class="bio line2" type="text" name="attr_name" placeholder="- 캐릭터 이름" />
+                        <div> 나이 </div>
+                        <input class="info" type="text" name="attr_age" />
+                        <div> 직업 </div>
+                        <input class="info" type="text" name="attr_occupation" />
+                        <!--   <div> 거주지 </div>
+                        <input class="info" type="text" name="attr_birth_place" />-->
+                        <div> 출생지 </div>
+                        <input class="info" type="text" name="attr_location" />
                     </div>
                 </div>
             </div>

@@ -268,40 +268,30 @@ img.logo {
 }
 /*인장---------------------------------------------------*/
 .info.wrap {
-  grid-area: 1 / 1 / 4 / 2;
+  grid-area: 1 / 1 / 5 / 2;
   background: transparent;
   padding: 0px;
   margin-left: 0px;
+  margin-top: 0px;
 }
-.avater-frame2 {
- /* position: absolute;
-  width: 230px;
-  height: 290px;
-  background-color: transparent;*/
-}
-
 img.avater {
   display: block;
   width: 100%;
-  height: 230px;
+  height: 240px;
   overflow: hidden;
   object-fit: cover;
   z-index: 0;
-  background-color: #ffecd2;
+  background: linear-gradient(0deg, rgb(255 255 255) 0%, rgba(0, 0, 0, 0) 80%);
 }
-.frame {
-  /* display: block;
+.avater-overlay{
+  width: 100%;
+  height: 240px;
+  background: linear-gradient(0deg, rgb(255 255 255) 0%, rgba(0, 0, 0, 0) 50%);
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  background-image: url(https://i.imgur.com/qzuIdLH.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top;*/
+  z-index: 999;
 }
+
 input.MAJORWOUNDT[value="1"]:checked ~ img.avater {
   display: block;
   opacity: 100%;
@@ -316,50 +306,62 @@ input.DYINGT[value="2"]:checked ~ img.avater {
   background-color: rgba(27, 27, 27, 0.8);
   filter: grayscale(100%);
 }
-input.MAJORWOUNDT[value="1"]:checked ~ div.frame {
-  background-image: url(https://i.imgur.com/arkN7wE.png);
-  background-repeat: no-repeat;
-  filter: brightness(0.9);
+input.MAJORWOUNDT[value="1"]:checked ~ div.avater-overlay{
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%);
 }
-input.DYINGT[value="2"]:checked ~ div.frame {
-  background-image: url(https://i.imgur.com/arkN7wE.png);
-  background-repeat: no-repeat;
-  filter: brightness(0.8);
+input.DYINGT[value="2"]:checked ~ div.avater-overlay {
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%);
+}
+/* 이름 */
+.bio-part1{
+  text-align: center;
+  margin-top: -40px;
+  position: relative;
+  z-index: 999;
+}
+input.bio.pl {
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 8px;
+  font-family: "Pretendard-Regular";
+  color: white !important;
+  text-shadow: 0 0 3px #303030;
+  background:transparent;
+  border:none;
+  }
+
+input.bio.pl::placeholder {
+    color: white !important;
+}
+
+input.bio.ch {
+font-size: 15px;
+margin-bottom: 10px;
+letter-spacing: 1px;
+line-height: 90%;
+color: gray !important;
+text-shadow: 0 0 3px #ffffff7d;
+background:transparent;
+border:none;
 }
 /* 바이오 */
 .bio.wrap {
-  position: absolute;
   z-index: 2;
-  padding: 0px;
-  top: 230px;
+  padding: 2px;
+  margin: 0px;
   background: transparent;
-  font-family: "GangwonEdu_OTFBoldA";
-  width: 165px;
-  margin: 0px 32px;
+  backdrop-filter: none;
 }
-input.bio {
-  background-color: transparent;
-  border: none;
-}
+
 .bio.line1 {
-  text-align: left;
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  row-gap: 2px;
 }
-input.bio.line1 {
-  text-align: left;
-  margin-left: 5px;
+input.info{
   width: 100%;
-  color: rgb(14, 14, 14);
 }
-.bio.line2 {
-  text-align: right;
-  margin-right: 5px;
-}
-input.bio.line2 {
-  text-align: right;
-  margin-right: 5px !important;
-  width: 100%;
-  color: rgb(14, 14, 14);
-}
+
 /*특성치 ---------------------------------------------------*/
 .status.wrap {
   grid-area: 4/2/4/4;
@@ -470,7 +472,7 @@ input.san.start::placeholder {
  color: rgb(72 119 41);
 }
 input[type="number"].san.current {
-  width: 4.08em;
+  width: 6.03em;
 }
 /*버튼1*/
 button[type="roll"].san.current:hover {
@@ -842,6 +844,7 @@ input.shift_page_bg[value="2"]:checked ~ .backstory.wrap {
 	display: block;
 }
 
+
 .page-select {
 	display: grid;
 	display: grid;
@@ -893,8 +896,6 @@ input.shift_page_bg[value="2"]:checked ~ .bs-false {
 
 /* 전투-------------------------------------------- */
 .combet.wrap {
-  display:none;
-  background: rgba(255, 255, 255, 0.6);
 }
 .combet.title {
 }
@@ -918,6 +919,9 @@ select.ATK {
   margin: 1px;
   font-size: 11px;
 }
+select.ATK option {
+background-color: #fe9494;
+}
 input.ATK {
   width: 70px;
   margin: 1px;
@@ -931,7 +935,7 @@ input.ATK.dif {
   margin: 1px;
 }
 input.ATK.dif1 {
-  width: 114.2px;
+  width: 102px;
   margin: 1px;
 }
 input.ATK.dif2 {
