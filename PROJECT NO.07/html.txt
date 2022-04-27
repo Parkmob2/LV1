@@ -1,6 +1,8 @@
 <div class='bind'>
     <!----옵션 체크---->
-
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
     <input class="option area" type="checkbox" checked name="OPTION-AREA" />
     <a class="option btn"></a>
     <div class="function wrap">
@@ -56,31 +58,154 @@
         </fieldset>
     </div>
     <!----이미지---->
-
-
-    <div class="basic1">
-        <!---- 플레이어 ---->
-        <div class="info wrap">
-            <div class="info title">
-                · 프로필 ·
+    <div class="header">
+        <!----상단 스테이터스---->
+        <div class="topstatus wrap">
+            <!--<div class="topstatus title"> 스테이터스</div>-->
+            <div class="topstatus box">
+                <div class="topstatus subtitle">
+                    <div class="topstatus  index">이동력</div>
+                </div>
+                <input class="topstatus" type="text" name="attr_mov" />
             </div>
-            <div class="info box">
-                <div> 이름 </div>
-                <input class="info" type="text" name="attr_name" />
-                <div> 플레이어 </div>
-                <input class="info" type="text" name="attr_player" />
-                <div> 나이 </div>
-                <input class="info" type="text" name="attr_age" />
-                <div> 직업 </div>
-                <input class="info" type="text" name="attr_occupation" />
-                <div> 거주지 </div>
-                <input class="info" type="text" name="attr_birth_place" />
-                <div> 출생지 </div>
-                <input class="info" type="text" name="attr_location" />
+        </div>
+        <!---- 로고 ---->
+        <div class="logo wrap">
+            <img src="https://i.imgur.com/mdnLr9R.png" class="logo">
+        </div>
+    </div>
+    <!---- 기본 ---->
+    <div class="basic">
+        <!---- 인장 ---->
+        <div class="info wrap">
+            <div class="avater-frame2">
+                <input type="checkbox" class="MAJORWOUNDT" value="1" style="display:none" name="attr_imgfilter">
+                <input type="checkbox" class="DYINGT" value="2" style="display:none" name="attr_imgfilter">
+                <img class="avater" name="attr_character_avatar">
+                <div class="avater-overlay"></div>
+                <div class="frame"></div>
+                <div class="bio-part1">
+                    <input class="bio pl" type="text" name="attr_player" placeholder="플레이어" />
+                    <input class="bio ch" type="text" name="attr_name" placeholder="캐릭터 이름" />
+                </div>
+                <div class="bio wrap">
+                    <div class="bio line1">
+                        <div> 나이 </div>
+                        <input class="info" type="text" name="attr_age" />
+                        <div> 직업 </div>
+                        <input class="info" type="text" name="attr_occupation" />
+                        <!--   <div> 거주지 </div>
+                        <input class="info" type="text" name="attr_birth_place" />-->
+                        <div> 출생지 </div>
+                        <input class="info" type="text" name="attr_location" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!----체력---->
+        <div class="hp wrap">
+            <div class="hp title">
+                · 체력 ·
+            </div>
+            <div class="hp box">
+                <input type="checkbox" style="display:none" value="5" name="attr_pulp_hp" class="sheet-pulphp">
+                <div class="hp line1">
+                    <input class="secondary-attr-input-HP" placeholder="현재 체력" type="number" min="0" name="attr_hp">
+                    <input class="secondary-attr-input-HP" placeholder="최대 체력" type="number" min="0" name="attr_hp_max"
+                        value="floor((@{con}+@{siz})/(10-@{pulp_hp}))" disabled="true">
+                </div>
+                <div class="hp line2">
+                    <div class="majorwoundT"> 중상 </div>
+                    <input type="checkbox" class="MAJORWOUNDT" value="1" name="attr_imgfilter">
+                    <div class="dyingT"> 빈사 </div>
+                    <input type="checkbox" class="DYINGT" value="2" name="attr_imgfilter">
+                </div>
+            </div>
+        </div>
+        <!----이성---->
+        <div class="san wrap">
+            <div class="san title">
+                · 이성 ·
+            </div>
+            <div class="san box">
+                <!---- 이성치 기입 ---->
+                <div class="san section1">
+                    <input class="san start" placeholder="초기 이성치" type="text" min="0" name="attr_san_start">
+                    <input class="san current" type="number" placeholder="4/5" min="0" name="attr_san_thresh"
+                        value="floor(@{san_start}*4/5)" disabled="true">
+                    <input class="san current" type="number" placeholder="현재" min="0" name="attr_san">
+                    <input class="san current" type="number" min="0" name="attr_san_max" placeholder="max"
+                        value="99-@{cthulhu_mythos_mdr}" disabled="true">
+                    <button class='san current' type='roll'
+                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{san_txt}}} {{success=[[@{san}]]}} {{hard=[[floor(@{san}/2)]]}} {{extreme=[[floor(@{san}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                        name='roll_san_check'></button>
+                    <button class='san current2' type='roll'
+                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{san_txt}}} {{success=[[@{san}]]}} {{hard=[[floor(@{san}/2)]]}} {{extreme=[[floor(@{san}/5)]]}} {{roll1=[[1d100]]}}'
+                        name='roll_san_check'></button>
+                </div>
+                <!---- 광기의 발작 ---->
+                <div class="san section2">
+                    <div class="san subtitle ">광기의 발작</div>
+                    <div class="san bom">
+                        <div class="san san bomindication">일시적 광기</div>
+                        <input class="bom" type="checkbox" value="1" name="attr_temp_insane-toggle">
+                        <div class="san bomindication">장기적 광기</div>
+                        <input class="san bom" type="checkbox" value="1" name="attr_indef_insane-toggle">
+
+                        <div class="san bomindication"> 실시간 발작 </div>
+                        <button class='san bom' type='roll'
+                            value='&{template:coc-bomadness-rt} {{roll1=[[1D4]]}} {{rounds=[[1d6]]}}{{name=@{character_name}}}'
+                            name='roll_bomadness-20-rt'></button>
+                        <div class="san bomindication"> 광기의 요약 </div>
+                        <button class='san bom1' type='roll'
+                            value='&{template:coc-bomadness-summ} {{roll1=[[1D10]]}}{{name=@{character_name}}}'
+                            name='roll_bomadness-20-summ'></button>
+                    </div>
+                </div>
+                <!----정신 상태---->
+                <div class="san section3">
+                    <div class="san subtitle"> 현재 정신 상태</div>
+                    <input class="san cmc" type="text" name="attr_current_mental_condition"
+                        style="text-align:center;width:99%" placeholder="평정심">
+                </div>
             </div>
         </div>
 
-        <!---- 바이오/특성치 ---->
+        <!----마력---->
+        <div class="mp wrap">
+            <div class="mp title">
+                · 마력 ·
+            </div>
+            <div class="mp box">
+                <input class="mp" placeholder="현재 마력" type="text" min="0" name="attr_mp">
+                <input class="mp" placeholder="max" type="number" min="0" name="attr_mp_max" value="floor(@{pow}/5)"
+                    disabled="true">
+            </div>
+        </div>
+        <!----피해 체구보너스---->
+        <div class="build-db wrap">
+            <div class="build-db title"> · 체구/피해 보너스 ·</div>
+            <div class="build-db box">
+                <input class="build-db" type="text" name="attr_build" placeholder="">
+                <select class="build-db" name="attr_damage_bonus">
+                    <option value="-2">-2</option>
+                    <option value="-1">-1</option>
+                    <option value="0" selected data-i18n="0">+0 </option>
+                    <option value="1d4">+1d4</option>
+                    <option value="1d6">+1d6</option>
+                    <option value="2d6">+2d6</option>
+                    <option value="3d6">+3d6</option>
+                    <option value="4d6">+4d6</option>
+                    <option value="5d6">+5d6</option>
+                    <option value="6d6">+6d6</option>
+                    <option value="7d6">+7d6</option>
+                    <option value="8d6">+8d6</option>
+                    <option value="9d6">+9d6</option>
+                    <option value="10d6">+10d6</option>
+                </select>
+            </div>
+        </div>
+        <!---- 특성치 ---->
         <div class="status wrap">
             <div class="status title">
                 · 특성치 ·
@@ -172,138 +297,19 @@
                         <input class="status" type="text" name="attr_int" value="50" />
                     </div>
                     <div class="status innergrid">
-                        <div class="status subtitle">이동</div>
-                        <input class="status" type="text" name="attr_mov" />
-                        <div></div>
-                        <div></div>
+                        <div class="status subtitle">행운</div>
+                        <button class='status' type='roll'
+                            value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{luck_txt}}} {{success=[[@{luck}]]}} {{hard=[[floor(@{luck}/2)]]}} {{extreme=[[floor(@{luck}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
+                            name='roll_luck_check'></button>
+                        <button class='status1' type='roll'
+                            value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{luck_txt}}} {{success=[[@{luck}]]}} {{hard=[[floor(@{luck}/2)]]}} {{extreme=[[floor(@{luck}/5)]]}} {{roll1=[[1d100]]}}'
+                            name='roll_luck_check'></button>
+                        <input class="status" type="text" name="attr_luk" value="50" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!---- 센터 ---->
-    <div class="basic2">
-        <!----체력---->
-        <div class="hp wrap">
-            <div class="hp title">
-                · 체력 ·
-            </div>
-            <div class="hp box">
-                <input type="checkbox" style="display:none" value="5" name="attr_pulp_hp" class="sheet-pulphp">
-                <input class="secondary-attr-input-HP" placeholder="현재 체력" type="number" min="0" name="attr_hp">
-                <input class="secondary-attr-input-HP" placeholder="최대 체력" type="number" min="0" name="attr_hp_max"
-                    value="floor((@{con}+@{siz})/(10-@{pulp_hp}))" disabled="true">
-                <div class="hp-filter">
-                    <div class="majorwoundT"> 중상 </div>
-                    <input type="checkbox" class="MAJORWOUNDT" value="1" name="attr_imgfilter">
-                    <div class="dyingT"> 빈사 </div>
-                    <input type="checkbox" class="DYINGT" value="2" name="attr_imgfilter">
-                </div>
-            </div>
-        </div>
-        <!----로고---->
-        <div class="logo wrap">
-            <img src="" class="logo">
-        </div>
-        <!----이성---->
-        <div class="san wrap">
-            <div class="san title">
-                · 이성 ·
-            </div>
-            <div class="san box">
-                <!---- 이성치 기입 ---->
-                <div class="san section1">
-                    <input class="san start" placeholder="초기 이성치" type="text" min="0" name="attr_san_start">
-                    <input class="san current" type="number" placeholder="4/5" min="0" name="attr_san_thresh"
-                        value="floor(@{san_start}*4/5)" disabled="true">
-                    <input class="san current" type="number" placeholder="현재" min="0" name="attr_san">
-                    <input class="san current" type="number" min="0" name="attr_san_max" placeholder="max"
-                        value="99-@{cthulhu_mythos_mdr}" disabled="true">
-                    <button class='san current' type='roll'
-                        value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{san_txt}}} {{success=[[@{san}]]}} {{hard=[[floor(@{san}/2)]]}} {{extreme=[[floor(@{san}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                        name='roll_san_check'></button>
-                    <button class='san current2' type='roll'
-                        value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{san_txt}}} {{success=[[@{san}]]}} {{hard=[[floor(@{san}/2)]]}} {{extreme=[[floor(@{san}/5)]]}} {{roll1=[[1d100]]}}'
-                        name='roll_san_check'></button>
-                </div>
-                <!---- 광기의 발작 ---->
-                <div class="san section2">
-                    <div class="san subtitle ">광기의 발작</div>
-                    <div class="san bom">
-                        <div class="san san bomindication">일시적 광기</div>
-                        <input class="bom" type="checkbox" value="1" name="attr_temp_insane-toggle">
-                        <div class="san bomindication">장기적 광기</div>
-                        <input class="san bom" type="checkbox" value="1" name="attr_indef_insane-toggle">
-
-                        <div class="san bomindication"> 실시간 발작 </div>
-                        <button class='san bom' type='roll'
-                            value='&{template:coc-bomadness-rt} {{roll1=[[1D4]]}} {{rounds=[[1d6]]}}{{name=@{character_name}}}'
-                            name='roll_bomadness-20-rt'></button>
-                        <div class="san bomindication"> 광기의 요약 </div>
-                        <button class='san bom1' type='roll'
-                            value='&{template:coc-bomadness-summ} {{roll1=[[1D10]]}}{{name=@{character_name}}}'
-                            name='roll_bomadness-20-summ'></button>
-                    </div>
-                </div>
-                <!----정신 상태---->
-                <div class="san section3">
-                    <div class="san subtitle"> 현재 정신 상태</div>
-                    <input class="san cmc" type="text" name="attr_current_mental_condition"
-                        style="text-align:center;width:99%" placeholder="평정심">
-                </div>
-            </div>
-        </div>
-        <!----마력---->
-        <div class="mp wrap">
-            <div class="mp title">
-                · 마력 ·
-            </div>
-            <div class="mp box">
-                <input class="mp" placeholder="현재 마력" type="text" min="0" name="attr_mp">
-                <input class="mp" placeholder="max" type="number" min="0" name="attr_mp_max" value="floor(@{pow}/5)"
-                    disabled="true">
-            </div>
-        </div>
-        <!----행운---->
-        <div class="luk wrap">
-            <div class="luk title">
-                · 행운 ·
-            </div>
-            <div class="luk box">
-                <input class="luk" type="text" name="attr_luck" min="0" max="99" value="50">
-                <button class='luk' type='roll'
-                    value='&{template:coc}{{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}} {{name=@{luck_txt}}} {{success=[[@{luck}]]}} {{hard=[[floor(@{luck}/2)]]}} {{extreme=[[floor(@{luck}/5)]]}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}}'
-                    name='roll_luck_check'></button>
-                <button class='luk1' type='roll'
-                    value='&{template:coc-1} {{cname=&ulcorn;@{character_name}&drcorn;의&nbsp;판정}}  {{name=@{luck_txt}}} {{success=[[@{luck}]]}} {{hard=[[floor(@{luck}/2)]]}} {{extreme=[[floor(@{luck}/5)]]}} {{roll1=[[1d100]]}}'
-                    name='roll_luck_check'></button>
-            </div>
-        </div>
-        <!----피해 체구보너스---->
-        <div class="build-db wrap">
-            <div class="build-db title"> 체구 / 피해 보너스</div>
-            <div class="build-db box">
-                <input class="build-db" type="text" name="attr_build" placeholder="">
-                <select class="build-db" name="attr_damage_bonus">
-                    <option value="-2">-2</option>
-                    <option value="-1">-1</option>
-                    <option value="0" selected data-i18n="0">+0 </option>
-                    <option value="1d4">+1d4</option>
-                    <option value="1d6">+1d6</option>
-                    <option value="2d6">+2d6</option>
-                    <option value="3d6">+3d6</option>
-                    <option value="4d6">+4d6</option>
-                    <option value="5d6">+5d6</option>
-                    <option value="6d6">+6d6</option>
-                    <option value="7d6">+7d6</option>
-                    <option value="8d6">+8d6</option>
-                    <option value="9d6">+9d6</option>
-                    <option value="10d6">+10d6</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
     <!----구분선 및 요약 ---->
     <div class="sub-logo wrap">
     </div>
@@ -1606,16 +1612,16 @@
                 <button class='ATK2' type='roll'
                     value='&{template:coc-attack-1}{{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}} {{weaponname=@{unarmed_txt}}} {{success=[[@{fighting_brawl_mdr}]]}} {{hard=[[floor(@{fighting_brawl_mdr}/2)]]}} {{extreme=[[floor(@{fighting_brawl_mdr}/5)]]}} {{roll1=[[1d100]]}} {{damage=[[1d3+@{damage_bonus}]]}}'
                     name='roll_unarmed_mdr_check'></button>
-                <input class="ATK dif1" type="text" placeholder="근접전(격투)" disabled="true" />
-                <input class="ATK" type="text" value="1d3" disabled="true" />
-                <input class="ATK dif1" type="text" value="+db" disabled="true" />
-                <input class="ATK" type="text" value="-" disabled="true" />
-                <input class="ATK" type="text" value="1" disabled="true" />
-                <input class="ATK" type="text" value="-" disabled="true" />
-                <input class="ATK" type="text" value="-" disabled="true" />
+                <input class="ATK def2" type="text" placeholder="근접전(격투)" disabled="true" />
+                <input class="ATK def1" type="text" value="1d3" disabled="true" />
+                <input class="ATK def2" type="text" value="+db" disabled="true" />
+                <input class="ATK def1" type="text" value="-" disabled="true" />
+                <input class="ATK def1" type="text" value="1" disabled="true" />
+                <input class="ATK def1" type="text" value="-" disabled="true" />
+                <input class="ATK def1" type="text" value="-" disabled="true" />
             </div>
             <div class="combet line">
-                <input class="ATK dif2" type="text" name="attr_weapon1_mdr_name" />
+                <input class="ATK default" type="text" name="attr_weapon1_mdr_name" />
                 <button class='ATK1' type='roll'
                     value='&{template:coc-attack} {{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}}{{weaponname=@{weapon1_mdr_name}}} {{success=[[@{weapon1_mdr_skill}]]}} {{hard=[[floor(@{weapon1_mdr_skill}/2)]]}} {{extreme=[[floor(@{weapon1_mdr_skill}/5)]]}} {{malf=@{weapon1_mdr_malf}}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}} {{damage=[[@{weapon1_mdr_damage}@{weapon1_mdr_db}]]}}'
                     name='roll_weapon1_mdr_attack'></button>
@@ -1648,7 +1654,7 @@
                 <input class="ATK" type="text" name="attr_weapon1_mdr_malf" />
             </div>
             <div class="combet line">
-                <input class="ATK dif2" type="text" name="attr_weapon2_mdr_name" />
+                <input class="ATK default" type="text" name="attr_weapon2_mdr_name" />
                 <button class='ATK1' type='roll'
                     value='&{template:coc-attack} {{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}} {{weaponname=@{weapon2_mdr_name}}} {{success=[[@{weapon2_mdr_skill}]]}} {{hard=[[floor(@{weapon2_mdr_skill}/2)]]}} {{extreme=[[floor(@{weapon2_mdr_skill}/5)]]}} {{malf=@{weapon2_mdr_malf}}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}} {{damage=[[@{weapon2_mdr_damage}@{weapon2_mdr_db}]]}}'
                     name='roll_weapon2_mdr_attack'></button>
@@ -1682,7 +1688,7 @@
             </div>
 
             <div class="combet line">
-                <input class="ATK dif2" type="text" name="attr_weapon3_mdr_name" />
+                <input class="ATK default" type="text" name="attr_weapon3_mdr_name" />
                 <button class='ATK1' type='roll'
                     value='&{template:coc-attack}  {{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}} {{weaponname=@{weapon3_mdr_name}}} {{success=[[@{weapon3_mdr_skill}]]}} {{hard=[[floor(@{weapon3_mdr_skill}/2)]]}} {{extreme=[[floor(@{weapon3_mdr_skill}/5)]]}} {{malf=@{weapon3_mdr_malf}}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}} {{damage=[[@{weapon3_mdr_damage}@{weapon3_mdr_db}]]}}'
                     name='roll_weapon3_mdr_attack'></button>
@@ -1716,7 +1722,7 @@
             </div>
             <fieldset class="repeating_weaponsmdr">
                 <div class="combet line">
-                    <input class="ATK dif2" type="text" name="attr_weaponname_mdr" />
+                    <input class="ATK default" type="text" name="attr_weaponname_mdr" />
                     <button class='ATK1' type='roll'
                         value='&{template:coc-attack} {{name=&ulcorn;@{character_name}&drcorn;의&nbsp;공격}} {{weaponname=@{weaponname_mdr}}} {{success=[[@{weaponskill_mdr}]]}} {{hard=[[floor(@{weaponskill_mdr}/2)]]}} {{extreme=[[floor(@{weaponskill_mdr}/5)]]}} {{malf=@{weaponmalf_mdr}}} {{roll1=[[1d100]]}} {{roll2=[[1d100]]}} {{roll3=[[1d100]]}} {{damage=[[@{weapondamage_mdr}@{weapondb_mdr}]]}}'
                         name='roll_weaponskill_mdr_check'></button>
@@ -1797,58 +1803,83 @@
             · 백그라운드 스토리 ·
         </div>
         <div class='backstory box'>
-            <div class='BACKSTORY-vertical1'>
-                <span>
-                    겉보기
-                </span>
-                <textarea name="attr_personal_description" class="backstory-box"></textarea>
-                <span>
-                    사상/신념
-                </span>
-                <textarea name="attr_ideaology_beliefs" class="backstory-box"> </textarea>
-                <span>
-                    중요한 사람들
-                </span>
-                <textarea name="attr_significant_people" class="backstory-box"> </textarea>
-                <span>
-                    의미있는 장소들
-                </span>
-                <textarea name="attr_meaningful_locations" class="backstory-box"></textarea>
-                <span>
-                    소중한 물건들
-                </span>
-                <textarea name="attr_treasured_posessions" class="backstory-box"></textarea>
+
+            <div class="backstory sub-box">
+                <div>
+                    <span>
+                        겉보기
+                    </span>
+                    <textarea name="attr_personal_description" class="backstory-box"></textarea>
+                </div>
+                <div>
+                    <span>
+                        성격
+                    </span>
+                    <textarea name="attr_traits" class="backstory-box"></textarea>
+                </div>
             </div>
-            <div class='BACKSTORY-vertical2'>
-                <span>
-                    성격
-                </span>
-                <textarea name="attr_traits" class="backstory-box"></textarea>
-                <span>
-                    부상과 흉터
-                </span>
-                <textarea name="attr_injuries_scars" class="backstory-box"></textarea>
-                <span>
-                    공포증과 집착증
-                </span>
-                <textarea name="attr_phobias_manias" class="backstory-box"></textarea>
-                <span>
-                    신화서, 주문, 유물
-                </span>
-                <textarea name="attr_tomes_spells_artifacts" class="backstory-box"></textarea>
-                <span>
-                    기이한 존재들과의 만남
-                </span>
-                <textarea name="attr_encounters_with_strange_entities" class="backstory-box"></textarea>
+            <div class="backstory sub-box">
+                <div>
+                    <span>
+                        사상/신념
+                    </span>
+                    <textarea name="attr_ideaology_beliefs" class="backstory-box"> </textarea>
+                </div>
+                <div>
+                    <span>
+                        부상과 흉터
+                    </span>
+                    <textarea name="attr_injuries_scars" class="backstory-box"></textarea>
+                </div>
+            </div>
+            <div class="backstory sub-box">
+                <div>
+                    <span>
+                        공포증과 집착증
+                    </span>
+                    <textarea name="attr_phobias_manias" class="backstory-box"></textarea>
+                </div>
+                <div>
+                    <span>
+                        중요한 사람들
+                    </span>
+                    <textarea name="attr_significant_people" class="backstory-box"> </textarea>
+                </div>
+
+            </div>
+            <div class="backstory sub-box">
+                <div>
+                    <span>
+                        의미있는 장소들
+                    </span>
+                    <textarea name="attr_meaningful_locations" class="backstory-box"></textarea>
+                </div>
+                <div>
+                    <span>
+                        소중한 물건들
+                    </span>
+                    <textarea name="attr_treasured_posessions" class="backstory-box"></textarea>
+                </div>
+            </div>
+            <div class="backstory sub-box">
+                <div>
+                    <span>
+                        신화서, 주문, 유물
+                    </span>
+                    <textarea name="attr_tomes_spells_artifacts" class="backstory-box"></textarea>
+                </div>
+                <div>
+                    <span>
+                        기이한 존재들과의 만남
+                    </span>
+                    <textarea name="attr_encounters_with_strange_entities" class="backstory-box"></textarea>
+                </div>
             </div>
         </div>
     </div>
     <div class="footer">
         <div class="type2">
-            앞으로 하고 싶은 것들을 생각하는 삶.<br />
-            그리고 그 모든 시간 사이에 당신이 제 손을 잡고 있으면 한다.<br />
-            그렇게 당신과 함께 살아가고 싶다고.
-
+            한 그루의 나무는 언제까지나 그 자리에서 다시 돌아올 그대를 기다릴 것이다.
         </div>
     </div>
 </div>
@@ -1914,6 +1945,7 @@
 
 <!----임의 다이스---->
 <rolltemplate class="sheet-rolltemplate-coc-dice-roll">
+
     <div class="sheet-top">
         <caption>{{name}}</caption>
     </div>
@@ -1922,6 +1954,7 @@
             <div class="template_value">{{diceroll}}</div>
         </div>
     </div>
+
 </rolltemplate>
 <!----명중---->
 <rolltemplate class="sheet-rolltemplate-coc-body-hit-loc">
@@ -2104,6 +2137,7 @@
 </rolltemplate>
 <!----요약 광기의 발작---->
 <rolltemplate class="sheet-rolltemplate-coc-bomadness-summ">
+
     <div class="sheet-body">
         <div class="sheet-section1">
             <div class="sheet-lable">광기의 발작 - 요약</div>
@@ -4245,17 +4279,21 @@
         </div>
         <div class="sheet-section2">
             {{#rollTotal() roll1 1}}
+            <div class="sheet-template_value1" style="color:chartreuse;">cRiticAl</div>
             <div class="sheet-template_value2">대성공</div>
             {{/rollTotal() roll1 1}}
             {{#rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 hard}}
+            <div class="sheet-template_value1">success</div>
             <div class="sheet-template_value2">보통 성공</div>
             {{/rollGreater() roll1 hard}}
             {{#rollBetween() roll1 2 hard}}
             {{#rollGreater() roll1 extreme}}
+            <div class="sheet-template_value1">HARd</div>
             <div class="sheet-template_value2">어려운 성공</div>
             {{/rollGreater() roll1 extreme}}
             {{#rollBetween() roll1 2 extreme}}
+            <div class="sheet-template_value1">eXtReMe</div>
             <div class="sheet-template_value2">극단적 성공</div>
             {{/rollBetween() roll1 2 extreme}}
             {{/rollBetween() roll1 2 hard}}
@@ -4263,17 +4301,21 @@
             {{#rollGreater() roll1 success}}
             {{#rollGreater() success 49}}
             {{#rollTotal() roll1 100}}
+            <div class="sheet-template_value1" style="color:red;">fuMble</div>
             <div class="sheet-template_value2"> 대실패</div>
             {{/rollTotal() roll1 100}}
             {{#rollLess() roll1 100}}
+            <div class="sheet-template_value1">fAil</div>
             <div class="sheet-template_value2">실패 </div>
             {{/rollLess() roll1 100}}
             {{/rollGreater() success 49}}
             {{#rollLess() success 50}}
             {{#rollGreater() roll1 95}}
+            <div class="sheet-template_value1" style="color:red;">fuMble</div>
             <div class="sheet-template_value2">대실패</div>
             {{/rollGreater() roll1 95}}
             {{#rollLess() roll1 96}}
+            <div class="sheet-template_value1">fAil</div>
             <div class="sheet-template_value2">실패</div>
             {{/rollLess() roll1 96}}
             {{/rollLess() success 50}}
@@ -4297,17 +4339,21 @@
         </div>
         <div class="sheet-section2">
             {{#rollTotal() roll1 1}}
+            <div class="sheet-template_value1" style="color:chartreuse;">cRiticAl</div>
             <div class="sheet-template_value2">대성공</div>
             {{/rollTotal() roll1 1}}
             {{#rollBetween() roll1 2 success}}
             {{#rollGreater() roll1 hard}}
+            <div class="sheet-template_value1">success</div>
             <div class="sheet-template_value2">보통 성공</div>
             {{/rollGreater() roll1 hard}}
             {{#rollBetween() roll1 2 hard}}
             {{#rollGreater() roll1 extreme}}
+            <div class="sheet-template_value1">HARd</div>
             <div class="sheet-template_value2">어려운 성공</div>
             {{/rollGreater() roll1 extreme}}
             {{#rollBetween() roll1 2 extreme}}
+            <div class="sheet-template_value1">eXtReMe</div>
             <div class="sheet-template_value2">극단적 성공</div>
             {{/rollBetween() roll1 2 extreme}}
             {{/rollBetween() roll1 2 hard}}
@@ -4315,17 +4361,21 @@
             {{#rollGreater() roll1 success}}
             {{#rollGreater() success 49}}
             {{#rollTotal() roll1 100}}
+            <div class="sheet-template_value1" style="color:red;">fuMble</div>
             <div class="sheet-template_value2">대실패</div>
             {{/rollTotal() roll1 100}}
             {{#rollLess() roll1 100}}
+            <div class="sheet-template_value1">fAil</div>
             <div class="sheet-template_value2">실패</div>
             {{/rollLess() roll1 100}}
             {{/rollGreater() success 49}}
             {{#rollLess() success 50}}
             {{#rollGreater() roll1 95}}
+            <div class="sheet-template_value1" style="color:red;">fuMble</div>
             <div class="sheet-template_value2">대실패</div>
             {{/rollGreater() roll1 95}}
             {{#rollLess() roll1 96}}
+            <div class="sheet-template_value1">fAil</div>
             <div class="sheet-template_value2">실패</div>
             {{/rollLess() roll1 96}}
             {{/rollLess() success 50}}
@@ -4338,7 +4388,6 @@
 
 </rolltemplate>
 <!----WORKERS---->
-
 <script type="text/worker">
 on("add:dex add:siz add:str change:dex change:siz change:str", function() {
   getAttrs(["str", "siz", "dex", "age"], function(values) {
