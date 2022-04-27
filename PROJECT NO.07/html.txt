@@ -1881,6 +1881,9 @@
         <div class="type2">
             한 그루의 나무는 언제까지나 그 자리에서 다시 돌아올 그대를 기다릴 것이다.
         </div>
+        <div class="copyright" style="font-size:10px; color:#dadada;">
+            design by. PARKMOB @MOBCA_D
+        </div>
     </div>
 </div>
 <!----출력---->
